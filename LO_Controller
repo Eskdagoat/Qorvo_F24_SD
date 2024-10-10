@@ -1,0 +1,97 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+-- Entity declaration for SPI_Controller_ADF4351
+-- This entity controls the SPI communication with the ADF4351 LO chip
+entity SPI_Controller_ADF4351 is
+    Port (
+        clk           : in  std_logic;                -- System clock input
+        reset         : in  std_logic;                -- Asynchronous reset input
+        start         : in  std_logic;                -- Start signal to initiate SPI communication
+        data_in       : in  std_logic_vector(31 downto 0); -- 32-bit data to be sent via SPI
+        spi_clk       : out std_logic;                -- SPI clock output
+        spi_data      : out std_logic;                -- SPI data output
+        spi_le        : out std_logic;                -- Load enable signal output for latching data
+        done          : out std_logic                 -- Signal indicating the operation is complete
+    );
+end SPI_Controller_ADF4351;
+
+architecture Behavioral of SPI_Controller_ADF4351 is
+    -- Define the states for the state machine
+    type state_type is (IDLE, LOAD, SHIFT, LATCH);
+    signal state       : state_type := IDLE;          -- Current state of the FSM
+    signal bit_counter : integer range 0 to 31 := 0;  -- Counter for the bits to be transmitted
+    signal data_reg    : std_logic_vector(31 downto 0) := (others => '0'); -- Register to hold the data to be transmitted
+    signal clk_div     : integer range 0 to 3 := 0;   -- Clock divider to generate slower SPI clock
+    signal spi_clk_int : std_logic := '0';            -- Internal signal for SPI clock generation
+
+begin
+    -- Main process for the SPI controller state machine
+    process (clk, reset)
+    begin
+        if reset = '1' then
+            -- Asynchronous reset: return to IDLE state and reset all signals
+            state <= IDLE;
+            bit_counter <= 0;
+            data_reg <= (others => '0');
+            spi_clk_int <= '0';
+            spi_le <= '0';
+            done <= '0';
+        elsif rising_edge(clk) then
+            case state is
+                when IDLE =>
+                    -- IDLE state: Wait for the start signal
+                    spi_le <= '0';
+                    done <= '0';
+                    if start = '1' then
+                        -- Load data into data register and move to LOAD state
+                        data_reg <= data_in;
+                        bit_counter <= 31;
+                        state <= LOAD;
+                    end if;
+                
+                when LOAD =>
+                    -- LOAD state: Generate initial SPI clock pulse
+                    if clk_div = 3 then
+                        spi_clk_int <= '1';
+                        clk_div <= 0;
+                        state <= SHIFT;
+                    else
+                        clk_div <= clk_div + 1;
+                    end if;
+                
+                when SHIFT =>
+                    -- SHIFT state: Shift out data bits over SPI
+                    if clk_div = 3 then
+                        spi_clk_int <= not spi_clk_int;
+                        clk_div <= 0;
+
+                        if spi_clk_int = '1' then
+                            -- On the rising edge of SPI clock, shift data
+                            if bit_counter = 0 then
+                                -- If all bits are transmitted, move to LATCH state
+                                state <= LATCH;
+                            else
+                                bit_counter <= bit_counter - 1;
+                            end if;
+                        end if;
+                    else
+                        clk_div <= clk_div + 1;
+                    end if;
+                
+                when LATCH =>
+                    -- LATCH state: Set load enable to latch data into the ADF4351
+                    spi_le <= '1';
+                    state <= IDLE;
+                    done <= '1';  -- Indicate that the SPI transaction is complete
+            end case;
+        end if;
+    end process;
+
+    -- Assign internal SPI clock and data to output ports
+    spi_clk <= spi_clk_int;
+    spi_data <= data_reg(bit_counter);
+
+end Behavioral;
