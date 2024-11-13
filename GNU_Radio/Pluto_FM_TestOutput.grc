@@ -167,11 +167,11 @@ blocks:
       \ is registered (properties work, too).\n        self.example_param = example_param\n\
       \n            \n    def work(self, input_items, output_items):\n        if \
       \ self.example_param == 1:\n            client_socket = socket.socket(socket.AF_INET,\
-      \ socket.SOCK_STREAM)\n            client_socket.connect(('192.168.49.58', 1005))\n\
+      \ socket.SOCK_STREAM)\n            client_socket.connect(('192.168.49.99', 1005))\n\
       \            client_socket.sendall(b'LED ON')\n            response = client_socket.recv(1024)\n\
       \            print(f\"Received response: {response.decode('utf-8')}\")\n   \
       \         client_socket.close()\n        else:\n            client_socket =\
-      \ socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n            client_socket.connect(('192.168.49.58',\
+      \ socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n            client_socket.connect(('192.168.49.99',\
       \ 1005))\n            client_socket.sendall(b'LED OFF')\n            response\
       \ = client_socket.recv(1024)\n            print(f\"Received response: {response.decode('utf-8')}\"\
       )\n            client_socket.close()        \n        return len(input_items)"

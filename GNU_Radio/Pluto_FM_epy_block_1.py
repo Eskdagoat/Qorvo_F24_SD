@@ -28,14 +28,14 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
     def work(self, input_items, output_items):
         if  self.example_param == 1:
             client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            client_socket.connect(('192.168.49.58', 1005))
+            client_socket.connect(('192.168.49.99', 1005))
             client_socket.sendall(b'LED ON')
             response = client_socket.recv(1024)
             print(f"Received response: {response.decode('utf-8')}")
             client_socket.close()
         else:
             client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            client_socket.connect(('192.168.49.58', 1005))
+            client_socket.connect(('192.168.49.99', 1005))
             client_socket.sendall(b'LED OFF')
             response = client_socket.recv(1024)
             print(f"Received response: {response.decode('utf-8')}")

@@ -102,7 +102,7 @@ class Pluto_FM(gr.top_block, Qt.QWidget):
             lambda i: self.set_mixer_chooser1(self._mixer_chooser1_options[i]))
         self.top_layout.addWidget(self._mixer_chooser1_group_box)
         self._freq_range = qtgui.Range(90000000, 107000000, 50000, 103700000, 200)
-        self._freq_win = qtgui.RangeWidget(self._freq_range, self.set_freq, "'freq'", "counter_slider", int, QtCore.Qt.Horizontal)
+        self._freq_win = qtgui.RangeWidget(self._freq_range, self.set_freq, "Frequency", "counter_slider", int, QtCore.Qt.Horizontal)
         self.top_layout.addWidget(self._freq_win)
         self.qtgui_waterfall_sink_x_0 = qtgui.waterfall_sink_c(
             32768, #size
