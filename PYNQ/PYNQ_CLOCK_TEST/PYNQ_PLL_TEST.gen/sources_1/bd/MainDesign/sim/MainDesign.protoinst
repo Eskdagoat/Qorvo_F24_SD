@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"MainDesign": {
+			"proto_instances": {
+			}
+		}
+	}
+}

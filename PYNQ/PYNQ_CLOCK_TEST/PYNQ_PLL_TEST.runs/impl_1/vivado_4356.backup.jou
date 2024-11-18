@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Sun Nov 17 22:18:59 2024
+# Process ID: 4356
+# Current directory: B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.runs/impl_1
+# Command line: vivado.exe -log MainDesign_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source MainDesign_wrapper.tcl -notrace
+# Log file: B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.runs/impl_1/MainDesign_wrapper.vdi
+# Journal file: B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.runs/impl_1\vivado.jou
+# Running On        :AB-Beast
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :22631
+# Processor Detail  :Intel(R) Core(TM) i7-10700K CPU @ 3.80GHz
+# CPU Frequency     :3792 MHz
+# CPU Physical cores:8
+# CPU Logical cores :16
+# Host memory       :51385 MB
+# Swap memory       :7516 MB
+# Total Virtual     :58901 MB
+# Available Virtual :41960 MB
+#-----------------------------------------------------------
+source MainDesign_wrapper.tcl -notrace
