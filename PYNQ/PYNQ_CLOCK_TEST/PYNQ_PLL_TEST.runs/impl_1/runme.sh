@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.runs/impl_1'
+HD_PWD='B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

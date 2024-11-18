@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.runs/synth_1/MainDesign_wrapper.tcl"
+  variable script "B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.runs/synth_1/MainDesign_wrapper.tcl"
   variable category "vivado_synth"
 }
 
@@ -56,9 +56,6 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 4
-set_param xicom.use_bs_reader 1
-set_msg_config -id {HDL-1065} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg400-1
 
@@ -66,19 +63,19 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.cache/wt [current_project]
-set_property parent.project_path B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.xpr [current_project]
+set_property webtalk.parent_dir B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.cache/wt [current_project]
+set_property parent.project_path B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part_repo_paths {C:/Users/ambsc/AppData/Roaming/Xilinx/Vivado/2024.1/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part tul.com.tw:pynq-z2:part0:1.0 [current_project]
-set_property ip_output_repo b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.cache/ip [current_project]
+set_property ip_output_repo b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/hdl/MainDesign_wrapper.v
-add_files B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.srcs/sources_1/bd/MainDesign/MainDesign.bd
-set_property used_in_implementation false [get_files -all b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/MainDesign_ooc.xdc]
+read_verilog -library xil_defaultlib B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/hdl/MainDesign_wrapper.v
+add_files B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.srcs/sources_1/bd/MainDesign/MainDesign.bd
+set_property used_in_implementation false [get_files -all b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/MainDesign_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -89,14 +86,14 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.srcs/constrs_1/new/Constraints.xdc
-set_property used_in_implementation false [get_files B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.srcs/constrs_1/new/Constraints.xdc]
+read_xdc B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.srcs/constrs_1/new/Constraints.xdc
+set_property used_in_implementation false [get_files B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.srcs/constrs_1/new/Constraints.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.srcs/utils_1/imports/synth_1/MainDesign_wrapper.dcp
+read_checkpoint -auto_incremental -incremental B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.srcs/utils_1/imports/synth_1/MainDesign_wrapper.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

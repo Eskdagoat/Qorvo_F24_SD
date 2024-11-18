@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.runs/impl_1/MainDesign_wrapper.tcl"
+  variable script "B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.runs/impl_1/MainDesign_wrapper.tcl"
   variable category "vivado_impl"
 }
 
@@ -97,7 +97,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {HDL-1065} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
@@ -107,10 +106,9 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 4
-  set_param xicom.use_bs_reader 1
   set_param runs.launchOptions { -jobs 16  }
   open_checkpoint MainDesign_wrapper_routed.dcp
-  set_property webtalk.parent_dir B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.cache/wt [current_project]
+  set_property webtalk.parent_dir B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.cache/wt [current_project]
 set_property TOP MainDesign_wrapper [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }

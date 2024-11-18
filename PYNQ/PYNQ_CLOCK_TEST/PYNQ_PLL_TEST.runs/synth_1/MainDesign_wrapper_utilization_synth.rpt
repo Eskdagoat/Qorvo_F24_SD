@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Sun Nov 17 23:13:09 2024
+| Date         : Sun Nov 17 23:51:03 2024
 | Host         : AB-Beast running 64-bit major release  (build 9200)
 | Command      : report_utilization -file MainDesign_wrapper_utilization_synth.rpt -pb MainDesign_wrapper_utilization_synth.pb
 | Design       : MainDesign_wrapper
@@ -93,7 +93,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |    5 |     0 |          0 |       125 |  4.00 |
+| Bonded IOB                  |    2 |     0 |          0 |       125 |  1.60 |
 | Bonded IPADs                |    0 |     0 |          0 |         2 |  0.00 |
 | Bonded IOPADs               |    0 |     0 |          0 |       130 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         4 |  0.00 |
@@ -149,7 +149,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| OBUF     |    4 |                  IO |
+| OBUF     |    1 |                  IO |
 | IBUF     |    1 |                  IO |
 +----------+------+---------------------+
 
@@ -161,9 +161,6 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 |           Ref Name          | Used |
 +-----------------------------+------+
 | MainDesign_ClockDivider_4_0 |    1 |
-| MainDesign_ClockDivider_3_0 |    1 |
-| MainDesign_ClockDivider_2_0 |    1 |
-| MainDesign_ClockDivider_1_0 |    1 |
 +-----------------------------+------+
 
 

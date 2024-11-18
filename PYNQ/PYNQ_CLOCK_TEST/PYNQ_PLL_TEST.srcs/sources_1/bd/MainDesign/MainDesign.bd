@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xEEC0842B57DFCFC7",
+      "boundary_crc": "0x2EEAC3997591F153",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign",
       "name": "MainDesign",
@@ -11,18 +11,9 @@
       "validated": "true"
     },
     "design_tree": {
-      "ClockDivider_1": "",
-      "ClockDivider_2": "",
-      "ClockDivider_3": "",
       "ClockDivider_4": ""
     },
     "ports": {
-      "LD2": {
-        "direction": "O"
-      },
-      "LD3": {
-        "direction": "O"
-      },
       "CLK_IN": {
         "type": "clk",
         "direction": "I",
@@ -48,131 +39,11 @@
           }
         }
       },
-      "LD1": {
-        "direction": "O"
-      },
       "PMODa0": {
         "direction": "O"
       }
     },
     "components": {
-      "ClockDivider_1": {
-        "vlnv": "xilinx.com:module_ref:ClockDivider:1.0",
-        "ip_revision": "1",
-        "xci_name": "MainDesign_ClockDivider_1_0",
-        "xci_path": "ip\\MainDesign_ClockDivider_1_0\\MainDesign_ClockDivider_1_0.xci",
-        "inst_hier_path": "ClockDivider_1",
-        "parameters": {
-          "DIVISOR": {
-            "value": "0x7735940"
-          }
-        },
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "ClockDivider",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "CLK_IN": {
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "125000000",
-                "value_src": "user_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "default_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "MainDesign_CLK_IN",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "CLK_OUT": {
-            "direction": "O"
-          }
-        }
-      },
-      "ClockDivider_2": {
-        "vlnv": "xilinx.com:module_ref:ClockDivider:1.0",
-        "ip_revision": "1",
-        "xci_name": "MainDesign_ClockDivider_2_0",
-        "xci_path": "ip\\MainDesign_ClockDivider_2_0\\MainDesign_ClockDivider_2_0.xci",
-        "inst_hier_path": "ClockDivider_2",
-        "parameters": {
-          "DIVISOR": {
-            "value": "0x3B9ACA0"
-          }
-        },
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "ClockDivider",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "CLK_IN": {
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "125000000",
-                "value_src": "user_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "default_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "MainDesign_CLK_IN",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "CLK_OUT": {
-            "direction": "O"
-          }
-        }
-      },
-      "ClockDivider_3": {
-        "vlnv": "xilinx.com:module_ref:ClockDivider:1.0",
-        "ip_revision": "1",
-        "xci_name": "MainDesign_ClockDivider_3_0",
-        "xci_path": "ip\\MainDesign_ClockDivider_3_0\\MainDesign_ClockDivider_3_0.xci",
-        "inst_hier_path": "ClockDivider_3",
-        "parameters": {
-          "DIVISOR": {
-            "value": "0x1DCD650"
-          }
-        },
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "ClockDivider",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "CLK_IN": {
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "125000000",
-                "value_src": "user_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "default_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "MainDesign_CLK_IN",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "CLK_OUT": {
-            "direction": "O"
-          }
-        }
-      },
       "ClockDivider_4": {
         "vlnv": "xilinx.com:module_ref:ClockDivider:1.0",
         "ip_revision": "1",
@@ -181,7 +52,7 @@
         "inst_hier_path": "ClockDivider_4",
         "parameters": {
           "DIVISOR": {
-            "value": "0x0EE6B28"
+            "value": "0x7735940"
           }
         },
         "reference_info": {
@@ -217,28 +88,7 @@
       "CLK_IN_1": {
         "ports": [
           "CLK_IN",
-          "ClockDivider_1/CLK_IN",
-          "ClockDivider_2/CLK_IN",
-          "ClockDivider_3/CLK_IN",
           "ClockDivider_4/CLK_IN"
-        ]
-      },
-      "ClockDivider_1_CLK_OUT": {
-        "ports": [
-          "ClockDivider_1/CLK_OUT",
-          "LD1"
-        ]
-      },
-      "ClockDivider_2_CLK_OUT": {
-        "ports": [
-          "ClockDivider_2/CLK_OUT",
-          "LD2"
-        ]
-      },
-      "ClockDivider_3_CLK_OUT": {
-        "ports": [
-          "ClockDivider_3/CLK_OUT",
-          "LD3"
         ]
       },
       "ClockDivider_4_CLK_OUT": {

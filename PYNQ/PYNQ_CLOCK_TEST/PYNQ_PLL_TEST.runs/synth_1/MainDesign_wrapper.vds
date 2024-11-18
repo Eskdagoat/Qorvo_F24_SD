@@ -3,12 +3,12 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Sun Nov 17 23:12:21 2024
-# Process ID: 21852
-# Current directory: B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.runs/synth_1
+# Start of session at: Sun Nov 17 23:50:14 2024
+# Process ID: 23448
+# Current directory: B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.runs/synth_1
 # Command line: vivado.exe -log MainDesign_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MainDesign_wrapper.tcl
-# Log file: B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.runs/synth_1/MainDesign_wrapper.vds
-# Journal file: B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.runs/synth_1\vivado.jou
+# Log file: B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.runs/synth_1/MainDesign_wrapper.vds
+# Journal file: B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.runs/synth_1\vivado.jou
 # Running On        :AB-Beast
 # Platform          :Windows Server 2016 or Windows 10
 # Operating System  :22631
@@ -19,15 +19,15 @@
 # Host memory       :51385 MB
 # Swap memory       :7516 MB
 # Total Virtual     :58901 MB
-# Available Virtual :39995 MB
+# Available Virtual :38642 MB
 #-----------------------------------------------------------
 source MainDesign_wrapper.tcl -notrace
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 549.023 ; gain = 239.137
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 547.758 ; gain = 237.496
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.1/data/ip'.
-Command: read_checkpoint -auto_incremental -incremental B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.srcs/utils_1/imports/synth_1/MainDesign_wrapper.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.srcs/utils_1/imports/synth_1/MainDesign_wrapper.dcp for incremental synthesis
+Command: read_checkpoint -auto_incremental -incremental B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.srcs/utils_1/imports/synth_1/MainDesign_wrapper.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.srcs/utils_1/imports/synth_1/MainDesign_wrapper.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top MainDesign_wrapper -part xc7z020clg400-1
 Starting synth_design
@@ -39,87 +39,75 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 10876
+INFO: [Synth 8-7075] Helper process launched with PID 23504
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1442.195 ; gain = 448.754
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1440.496 ; gain = 449.961
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'MainDesign_wrapper' [b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/hdl/MainDesign_wrapper.v:13]
-INFO: [Synth 8-6157] synthesizing module 'MainDesign' [b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/synth/MainDesign.v:13]
-INFO: [Synth 8-6157] synthesizing module 'MainDesign_ClockDivider_1_0' [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.runs/synth_1/.Xil/Vivado-21852-AB-Beast/realtime/MainDesign_ClockDivider_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'MainDesign_ClockDivider_1_0' (0#1) [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.runs/synth_1/.Xil/Vivado-21852-AB-Beast/realtime/MainDesign_ClockDivider_1_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'MainDesign_ClockDivider_2_0' [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.runs/synth_1/.Xil/Vivado-21852-AB-Beast/realtime/MainDesign_ClockDivider_2_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'MainDesign_ClockDivider_2_0' (0#1) [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.runs/synth_1/.Xil/Vivado-21852-AB-Beast/realtime/MainDesign_ClockDivider_2_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'MainDesign_ClockDivider_3_0' [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.runs/synth_1/.Xil/Vivado-21852-AB-Beast/realtime/MainDesign_ClockDivider_3_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'MainDesign_ClockDivider_3_0' (0#1) [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.runs/synth_1/.Xil/Vivado-21852-AB-Beast/realtime/MainDesign_ClockDivider_3_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'MainDesign_ClockDivider_4_0' [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.runs/synth_1/.Xil/Vivado-21852-AB-Beast/realtime/MainDesign_ClockDivider_4_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'MainDesign_ClockDivider_4_0' (0#1) [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.runs/synth_1/.Xil/Vivado-21852-AB-Beast/realtime/MainDesign_ClockDivider_4_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'MainDesign' (0#1) [b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/synth/MainDesign.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'MainDesign_wrapper' (0#1) [b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/hdl/MainDesign_wrapper.v:13]
+INFO: [Synth 8-6157] synthesizing module 'MainDesign_wrapper' [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/hdl/MainDesign_wrapper.v:13]
+INFO: [Synth 8-6157] synthesizing module 'MainDesign' [b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/synth/MainDesign.v:13]
+INFO: [Synth 8-6157] synthesizing module 'MainDesign_ClockDivider_4_0' [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.runs/synth_1/.Xil/Vivado-23448-AB-Beast/realtime/MainDesign_ClockDivider_4_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'MainDesign_ClockDivider_4_0' (0#1) [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.runs/synth_1/.Xil/Vivado-23448-AB-Beast/realtime/MainDesign_ClockDivider_4_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'MainDesign' (0#1) [b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/synth/MainDesign.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'MainDesign_wrapper' (0#1) [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/hdl/MainDesign_wrapper.v:13]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1550.348 ; gain = 556.906
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1549.586 ; gain = 559.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1550.348 ; gain = 556.906
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1549.586 ; gain = 559.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1550.348 ; gain = 556.906
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1549.586 ; gain = 559.051
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1550.348 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1549.586 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/ip/MainDesign_ClockDivider_1_0/MainDesign_ClockDivider_1_0/MainDesign_ClockDivider_1_0_in_context.xdc] for cell 'MainDesign_i/ClockDivider_1'
-Finished Parsing XDC File [b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/ip/MainDesign_ClockDivider_1_0/MainDesign_ClockDivider_1_0/MainDesign_ClockDivider_1_0_in_context.xdc] for cell 'MainDesign_i/ClockDivider_1'
-Parsing XDC File [b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/ip/MainDesign_ClockDivider_2_0/MainDesign_ClockDivider_2_0/MainDesign_ClockDivider_2_0_in_context.xdc] for cell 'MainDesign_i/ClockDivider_2'
-Finished Parsing XDC File [b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/ip/MainDesign_ClockDivider_2_0/MainDesign_ClockDivider_2_0/MainDesign_ClockDivider_2_0_in_context.xdc] for cell 'MainDesign_i/ClockDivider_2'
-Parsing XDC File [b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/ip/MainDesign_ClockDivider_3_0/MainDesign_ClockDivider_3_0/MainDesign_ClockDivider_3_0_in_context.xdc] for cell 'MainDesign_i/ClockDivider_3'
-Finished Parsing XDC File [b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/ip/MainDesign_ClockDivider_3_0/MainDesign_ClockDivider_3_0/MainDesign_ClockDivider_3_0_in_context.xdc] for cell 'MainDesign_i/ClockDivider_3'
-Parsing XDC File [b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/ip/MainDesign_ClockDivider_4_0/MainDesign_ClockDivider_4_0/MainDesign_ClockDivider_4_0_in_context.xdc] for cell 'MainDesign_i/ClockDivider_4'
-Finished Parsing XDC File [b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/ip/MainDesign_ClockDivider_4_0/MainDesign_ClockDivider_4_0/MainDesign_ClockDivider_4_0_in_context.xdc] for cell 'MainDesign_i/ClockDivider_4'
-Parsing XDC File [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.srcs/constrs_1/new/Constraints.xdc]
-WARNING: [Vivado 12-584] No ports matched 'LD0'. [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.srcs/constrs_1/new/Constraints.xdc:2]
-Finished Parsing XDC File [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.srcs/constrs_1/new/Constraints.xdc]
-WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.srcs/constrs_1/new/Constraints.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/MainDesign_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.srcs/constrs_1/new/Constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/MainDesign_wrapper_propImpl.xdc].
+Parsing XDC File [b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/ip/MainDesign_ClockDivider_4_0/MainDesign_ClockDivider_4_0/MainDesign_ClockDivider_4_0_in_context.xdc] for cell 'MainDesign_i/ClockDivider_4'
+Finished Parsing XDC File [b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/ip/MainDesign_ClockDivider_4_0/MainDesign_ClockDivider_4_0/MainDesign_ClockDivider_4_0_in_context.xdc] for cell 'MainDesign_i/ClockDivider_4'
+Parsing XDC File [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.srcs/constrs_1/new/Constraints.xdc]
+WARNING: [Vivado 12-584] No ports matched 'LD0'. [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.srcs/constrs_1/new/Constraints.xdc:2]
+WARNING: [Vivado 12-584] No ports matched 'LD1'. [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.srcs/constrs_1/new/Constraints.xdc:3]
+WARNING: [Vivado 12-584] No ports matched 'LD2'. [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.srcs/constrs_1/new/Constraints.xdc:4]
+WARNING: [Vivado 12-584] No ports matched 'LD3'. [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.srcs/constrs_1/new/Constraints.xdc:5]
+Finished Parsing XDC File [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.srcs/constrs_1/new/Constraints.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.srcs/constrs_1/new/Constraints.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/MainDesign_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.srcs/constrs_1/new/Constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/MainDesign_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/MainDesign_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.runs/synth_1/dont_touch.xdc]
+Parsing XDC File [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1561.684 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1549.586 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1561.684 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1549.586 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1561.684 ; gain = 568.242
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 1549.586 ; gain = 559.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1561.684 ; gain = 568.242
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 1549.586 ; gain = 559.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property KEEP_HIERARCHY = SOFT for MainDesign_i. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for MainDesign_i/ClockDivider_1. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for MainDesign_i/ClockDivider_2. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for MainDesign_i/ClockDivider_3. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for MainDesign_i/ClockDivider_4. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1561.684 ; gain = 568.242
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 1549.586 ; gain = 559.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1561.684 ; gain = 568.242
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:16 . Memory (MB): peak = 1549.586 ; gain = 559.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -142,25 +130,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1561.684 ; gain = 568.242
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:17 . Memory (MB): peak = 1549.586 ; gain = 559.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:23 . Memory (MB): peak = 1561.684 ; gain = 568.242
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:23 . Memory (MB): peak = 1549.586 ; gain = 559.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:23 . Memory (MB): peak = 1561.684 ; gain = 568.242
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:23 . Memory (MB): peak = 1549.586 ; gain = 559.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:23 . Memory (MB): peak = 1561.684 ; gain = 568.242
+Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:23 . Memory (MB): peak = 1549.586 ; gain = 559.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -178,37 +166,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1561.684 ; gain = 568.242
+Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1549.586 ; gain = 559.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1561.684 ; gain = 568.242
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1549.586 ; gain = 559.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1561.684 ; gain = 568.242
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1549.586 ; gain = 559.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1561.684 ; gain = 568.242
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1549.586 ; gain = 559.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1561.684 ; gain = 568.242
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1549.586 ; gain = 559.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1561.684 ; gain = 568.242
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1549.586 ; gain = 559.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -218,43 +206,37 @@ Report BlackBoxes:
 +------+----------------------------+----------+
 |      |BlackBox name               |Instances |
 +------+----------------------------+----------+
-|1     |MainDesign_ClockDivider_1_0 |         1|
-|2     |MainDesign_ClockDivider_2_0 |         1|
-|3     |MainDesign_ClockDivider_3_0 |         1|
-|4     |MainDesign_ClockDivider_4_0 |         1|
+|1     |MainDesign_ClockDivider_4_0 |         1|
 +------+----------------------------+----------+
 
 Report Cell Usage: 
 +------+--------------------------+------+
 |      |Cell                      |Count |
 +------+--------------------------+------+
-|1     |MainDesign_ClockDivider_1 |     1|
-|2     |MainDesign_ClockDivider_2 |     1|
-|3     |MainDesign_ClockDivider_3 |     1|
-|4     |MainDesign_ClockDivider_4 |     1|
-|5     |IBUF                      |     1|
-|6     |OBUF                      |     4|
+|1     |MainDesign_ClockDivider_4 |     1|
+|2     |IBUF                      |     1|
+|3     |OBUF                      |     1|
 +------+--------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1561.684 ; gain = 568.242
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1549.586 ; gain = 559.051
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:25 . Memory (MB): peak = 1561.684 ; gain = 556.906
-Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1561.684 ; gain = 568.242
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:26 . Memory (MB): peak = 1549.586 ; gain = 559.051
+Synthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1549.586 ; gain = 559.051
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1561.684 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1549.586 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1561.684 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1549.586 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: c95b9f8c
+Synth Design complete | Checksum: d02f9158
 INFO: [Common 17-83] Releasing license: Synthesis
-35 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+29 Infos, 6 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:34 . Memory (MB): peak = 1561.684 ; gain = 997.035
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1561.684 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.runs/synth_1/MainDesign_wrapper.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:35 . Memory (MB): peak = 1549.586 ; gain = 986.070
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1549.586 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.runs/synth_1/MainDesign_wrapper.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file MainDesign_wrapper_utilization_synth.rpt -pb MainDesign_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Nov 17 23:13:09 2024...
+INFO: [Common 17-206] Exiting Vivado at Sun Nov 17 23:51:03 2024...

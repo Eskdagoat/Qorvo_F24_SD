@@ -2,10 +2,10 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-// Date        : Sun Nov 17 22:05:24 2024
+// Date        : Sun Nov 17 23:50:11 2024
 // Host        : AB-Beast running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/PYNQ/PYNQ_PLL_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/ip/MainDesign_ClockDivider_4_0/MainDesign_ClockDivider_4_0_sim_netlist.v
+//               b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/PYNQ/PYNQ_CLOCK_TEST/PYNQ_PLL_TEST.gen/sources_1/bd/MainDesign/ip/MainDesign_ClockDivider_4_0/MainDesign_ClockDivider_4_0_sim_netlist.v
 // Design      : MainDesign_ClockDivider_4_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -39,12 +39,11 @@ module MainDesign_ClockDivider_4_0_ClockDivider
 
   wire CLK_IN;
   wire CLK_OUT;
+  wire CLK_OUT_i_1_n_0;
   wire CLK_OUT_i_2_n_0;
   wire CLK_OUT_i_3_n_0;
   wire CLK_OUT_i_4_n_0;
   wire CLK_OUT_i_5_n_0;
-  wire CLK_OUT_i_6_n_0;
-  wire CLK_OUT_i_7_n_0;
   wire \counter[0]_i_10_n_0 ;
   wire \counter[0]_i_1_n_0 ;
   wire \counter[0]_i_3_n_0 ;
@@ -54,7 +53,7 @@ module MainDesign_ClockDivider_4_0_ClockDivider
   wire \counter[0]_i_7_n_0 ;
   wire \counter[0]_i_8_n_0 ;
   wire \counter[0]_i_9_n_0 ;
-  wire [23:0]counter_reg;
+  wire [26:0]counter_reg;
   wire \counter_reg[0]_i_2_n_0 ;
   wire \counter_reg[0]_i_2_n_1 ;
   wire \counter_reg[0]_i_2_n_2 ;
@@ -79,6 +78,7 @@ module MainDesign_ClockDivider_4_0_ClockDivider
   wire \counter_reg[16]_i_1_n_5 ;
   wire \counter_reg[16]_i_1_n_6 ;
   wire \counter_reg[16]_i_1_n_7 ;
+  wire \counter_reg[20]_i_1_n_0 ;
   wire \counter_reg[20]_i_1_n_1 ;
   wire \counter_reg[20]_i_1_n_2 ;
   wire \counter_reg[20]_i_1_n_3 ;
@@ -86,6 +86,11 @@ module MainDesign_ClockDivider_4_0_ClockDivider
   wire \counter_reg[20]_i_1_n_5 ;
   wire \counter_reg[20]_i_1_n_6 ;
   wire \counter_reg[20]_i_1_n_7 ;
+  wire \counter_reg[24]_i_1_n_2 ;
+  wire \counter_reg[24]_i_1_n_3 ;
+  wire \counter_reg[24]_i_1_n_5 ;
+  wire \counter_reg[24]_i_1_n_6 ;
+  wire \counter_reg[24]_i_1_n_7 ;
   wire \counter_reg[4]_i_1_n_0 ;
   wire \counter_reg[4]_i_1_n_1 ;
   wire \counter_reg[4]_i_1_n_2 ;
@@ -102,146 +107,133 @@ module MainDesign_ClockDivider_4_0_ClockDivider
   wire \counter_reg[8]_i_1_n_5 ;
   wire \counter_reg[8]_i_1_n_6 ;
   wire \counter_reg[8]_i_1_n_7 ;
-  wire p_0_in;
-  wire [3:3]\NLW_counter_reg[20]_i_1_CO_UNCONNECTED ;
+  wire [3:2]\NLW_counter_reg[24]_i_1_CO_UNCONNECTED ;
+  wire [3:3]\NLW_counter_reg[24]_i_1_O_UNCONNECTED ;
 
   LUT6 #(
-    .INIT(64'h00000000FFFF00F8)) 
+    .INIT(64'h1555155515555555)) 
     CLK_OUT_i_1
-       (.I0(CLK_OUT_i_2_n_0),
-        .I1(CLK_OUT_i_3_n_0),
-        .I2(CLK_OUT_i_4_n_0),
-        .I3(counter_reg[19]),
-        .I4(CLK_OUT_i_5_n_0),
-        .I5(counter_reg[23]),
-        .O(p_0_in));
-  LUT2 #(
-    .INIT(4'h1)) 
+       (.I0(counter_reg[26]),
+        .I1(counter_reg[24]),
+        .I2(counter_reg[25]),
+        .I3(counter_reg[23]),
+        .I4(counter_reg[22]),
+        .I5(CLK_OUT_i_2_n_0),
+        .O(CLK_OUT_i_1_n_0));
+  LUT6 #(
+    .INIT(64'h00000000FEEEEEEE)) 
     CLK_OUT_i_2
-       (.I0(counter_reg[14]),
-        .I1(counter_reg[15]),
+       (.I0(counter_reg[17]),
+        .I1(counter_reg[18]),
+        .I2(CLK_OUT_i_3_n_0),
+        .I3(counter_reg[16]),
+        .I4(counter_reg[15]),
+        .I5(CLK_OUT_i_4_n_0),
         .O(CLK_OUT_i_2_n_0));
   LUT6 #(
-    .INIT(64'hAAAAAAAAAAAAFFBF)) 
+    .INIT(64'hFFFFEAAAAAAAAAAA)) 
     CLK_OUT_i_3
-       (.I0(CLK_OUT_i_6_n_0),
-        .I1(counter_reg[8]),
-        .I2(counter_reg[7]),
-        .I3(CLK_OUT_i_7_n_0),
-        .I4(counter_reg[11]),
-        .I5(counter_reg[9]),
+       (.I0(counter_reg[14]),
+        .I1(CLK_OUT_i_5_n_0),
+        .I2(counter_reg[10]),
+        .I3(counter_reg[11]),
+        .I4(counter_reg[12]),
+        .I5(counter_reg[13]),
         .O(CLK_OUT_i_3_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT3 #(
     .INIT(8'h7F)) 
     CLK_OUT_i_4
-       (.I0(counter_reg[18]),
-        .I1(counter_reg[17]),
-        .I2(counter_reg[16]),
-        .O(CLK_OUT_i_4_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT3 #(
-    .INIT(8'h7F)) 
-    CLK_OUT_i_5
-       (.I0(counter_reg[22]),
+       (.I0(counter_reg[20]),
         .I1(counter_reg[21]),
-        .I2(counter_reg[20]),
-        .O(CLK_OUT_i_5_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT4 #(
-    .INIT(16'h777F)) 
-    CLK_OUT_i_6
-       (.I0(counter_reg[13]),
-        .I1(counter_reg[12]),
-        .I2(counter_reg[10]),
-        .I3(counter_reg[11]),
-        .O(CLK_OUT_i_6_n_0));
+        .I2(counter_reg[19]),
+        .O(CLK_OUT_i_4_n_0));
   LUT5 #(
-    .INIT(32'h01010111)) 
-    CLK_OUT_i_7
-       (.I0(counter_reg[6]),
-        .I1(counter_reg[5]),
-        .I2(counter_reg[4]),
-        .I3(counter_reg[3]),
-        .I4(counter_reg[2]),
-        .O(CLK_OUT_i_7_n_0));
+    .INIT(32'hFFFFFFE0)) 
+    CLK_OUT_i_5
+       (.I0(counter_reg[5]),
+        .I1(counter_reg[6]),
+        .I2(counter_reg[7]),
+        .I3(counter_reg[9]),
+        .I4(counter_reg[8]),
+        .O(CLK_OUT_i_5_n_0));
   FDRE CLK_OUT_reg
        (.C(CLK_IN),
         .CE(1'b1),
-        .D(p_0_in),
+        .D(CLK_OUT_i_1_n_0),
         .Q(CLK_OUT),
         .R(1'b0));
   LUT6 #(
-    .INIT(64'hA8A8A8A8A8A8A888)) 
+    .INIT(64'h00000000FFFF00AE)) 
     \counter[0]_i_1 
        (.I0(\counter[0]_i_3_n_0 ),
-        .I1(counter_reg[20]),
-        .I2(\counter[0]_i_4_n_0 ),
-        .I3(\counter[0]_i_5_n_0 ),
-        .I4(counter_reg[15]),
-        .I5(counter_reg[16]),
+        .I1(\counter[0]_i_4_n_0 ),
+        .I2(\counter[0]_i_5_n_0 ),
+        .I3(\counter[0]_i_6_n_0 ),
+        .I4(counter_reg[23]),
+        .I5(\counter[0]_i_7_n_0 ),
         .O(\counter[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT3 #(
-    .INIT(8'hF8)) 
+  LUT6 #(
+    .INIT(64'h7FFFFFFFFFFFFFFF)) 
     \counter[0]_i_10 
-       (.I0(counter_reg[10]),
-        .I1(counter_reg[11]),
-        .I2(counter_reg[12]),
-        .O(\counter[0]_i_10_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT3 #(
-    .INIT(8'h80)) 
-    \counter[0]_i_3 
-       (.I0(counter_reg[23]),
-        .I1(counter_reg[22]),
-        .I2(counter_reg[21]),
-        .O(\counter[0]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT3 #(
-    .INIT(8'h80)) 
-    \counter[0]_i_4 
-       (.I0(counter_reg[19]),
-        .I1(counter_reg[18]),
-        .I2(counter_reg[17]),
-        .O(\counter[0]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'h8888888880808000)) 
-    \counter[0]_i_5 
-       (.I0(counter_reg[14]),
-        .I1(counter_reg[13]),
-        .I2(\counter[0]_i_7_n_0 ),
-        .I3(\counter[0]_i_8_n_0 ),
-        .I4(\counter[0]_i_9_n_0 ),
-        .I5(\counter[0]_i_10_n_0 ),
-        .O(\counter[0]_i_5_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \counter[0]_i_6 
-       (.I0(counter_reg[0]),
-        .O(\counter[0]_i_6_n_0 ));
-  LUT3 #(
-    .INIT(8'h80)) 
-    \counter[0]_i_7 
-       (.I0(counter_reg[9]),
-        .I1(counter_reg[8]),
-        .I2(counter_reg[11]),
-        .O(\counter[0]_i_7_n_0 ));
-  LUT6 #(
-    .INIT(64'hAAAAAAAAAAAA8000)) 
-    \counter[0]_i_8 
-       (.I0(counter_reg[5]),
-        .I1(counter_reg[2]),
-        .I2(counter_reg[1]),
-        .I3(counter_reg[0]),
-        .I4(counter_reg[3]),
+       (.I0(counter_reg[2]),
+        .I1(counter_reg[3]),
+        .I2(counter_reg[0]),
+        .I3(counter_reg[1]),
+        .I4(counter_reg[5]),
         .I5(counter_reg[4]),
-        .O(\counter[0]_i_8_n_0 ));
+        .O(\counter[0]_i_10_n_0 ));
   LUT2 #(
     .INIT(4'hE)) 
+    \counter[0]_i_3 
+       (.I0(counter_reg[19]),
+        .I1(counter_reg[18]),
+        .O(\counter[0]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFEAAAAAAAAAAA)) 
+    \counter[0]_i_4 
+       (.I0(counter_reg[15]),
+        .I1(\counter[0]_i_9_n_0 ),
+        .I2(counter_reg[12]),
+        .I3(counter_reg[11]),
+        .I4(counter_reg[13]),
+        .I5(counter_reg[14]),
+        .O(\counter[0]_i_4_n_0 ));
+  LUT2 #(
+    .INIT(4'h7)) 
+    \counter[0]_i_5 
+       (.I0(counter_reg[17]),
+        .I1(counter_reg[16]),
+        .O(\counter[0]_i_5_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT3 #(
+    .INIT(8'h7F)) 
+    \counter[0]_i_6 
+       (.I0(counter_reg[20]),
+        .I1(counter_reg[21]),
+        .I2(counter_reg[22]),
+        .O(\counter[0]_i_6_n_0 ));
+  LUT3 #(
+    .INIT(8'h7F)) 
+    \counter[0]_i_7 
+       (.I0(counter_reg[24]),
+        .I1(counter_reg[25]),
+        .I2(counter_reg[26]),
+        .O(\counter[0]_i_7_n_0 ));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \counter[0]_i_8 
+       (.I0(counter_reg[0]),
+        .O(\counter[0]_i_8_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFFFD00)) 
     \counter[0]_i_9 
-       (.I0(counter_reg[6]),
-        .I1(counter_reg[7]),
+       (.I0(\counter[0]_i_10_n_0 ),
+        .I1(counter_reg[6]),
+        .I2(counter_reg[7]),
+        .I3(counter_reg[8]),
+        .I4(counter_reg[9]),
+        .I5(counter_reg[10]),
         .O(\counter[0]_i_9_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
@@ -258,7 +250,7 @@ module MainDesign_ClockDivider_4_0_ClockDivider
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b1}),
         .O({\counter_reg[0]_i_2_n_4 ,\counter_reg[0]_i_2_n_5 ,\counter_reg[0]_i_2_n_6 ,\counter_reg[0]_i_2_n_7 }),
-        .S({counter_reg[3:1],\counter[0]_i_6_n_0 }));
+        .S({counter_reg[3:1],\counter[0]_i_8_n_0 }));
   FDRE #(
     .INIT(1'b0)) 
     \counter_reg[10] 
@@ -374,7 +366,7 @@ module MainDesign_ClockDivider_4_0_ClockDivider
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \counter_reg[20]_i_1 
        (.CI(\counter_reg[16]_i_1_n_0 ),
-        .CO({\NLW_counter_reg[20]_i_1_CO_UNCONNECTED [3],\counter_reg[20]_i_1_n_1 ,\counter_reg[20]_i_1_n_2 ,\counter_reg[20]_i_1_n_3 }),
+        .CO({\counter_reg[20]_i_1_n_0 ,\counter_reg[20]_i_1_n_1 ,\counter_reg[20]_i_1_n_2 ,\counter_reg[20]_i_1_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O({\counter_reg[20]_i_1_n_4 ,\counter_reg[20]_i_1_n_5 ,\counter_reg[20]_i_1_n_6 ,\counter_reg[20]_i_1_n_7 }),
@@ -402,6 +394,38 @@ module MainDesign_ClockDivider_4_0_ClockDivider
         .CE(1'b1),
         .D(\counter_reg[20]_i_1_n_4 ),
         .Q(counter_reg[23]),
+        .R(\counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \counter_reg[24] 
+       (.C(CLK_IN),
+        .CE(1'b1),
+        .D(\counter_reg[24]_i_1_n_7 ),
+        .Q(counter_reg[24]),
+        .R(\counter[0]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \counter_reg[24]_i_1 
+       (.CI(\counter_reg[20]_i_1_n_0 ),
+        .CO({\NLW_counter_reg[24]_i_1_CO_UNCONNECTED [3:2],\counter_reg[24]_i_1_n_2 ,\counter_reg[24]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\NLW_counter_reg[24]_i_1_O_UNCONNECTED [3],\counter_reg[24]_i_1_n_5 ,\counter_reg[24]_i_1_n_6 ,\counter_reg[24]_i_1_n_7 }),
+        .S({1'b0,counter_reg[26:24]}));
+  FDRE #(
+    .INIT(1'b0)) 
+    \counter_reg[25] 
+       (.C(CLK_IN),
+        .CE(1'b1),
+        .D(\counter_reg[24]_i_1_n_6 ),
+        .Q(counter_reg[25]),
+        .R(\counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \counter_reg[26] 
+       (.C(CLK_IN),
+        .CE(1'b1),
+        .D(\counter_reg[24]_i_1_n_5 ),
+        .Q(counter_reg[26]),
         .R(\counter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
