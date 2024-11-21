@@ -1,0 +1,66 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x2EEAC3992EEAC399",
+      "device": "xc7z020clg484-1",
+      "gen_directory": "../../../../Eclypse_Test_PLL_1.gen/sources_1/bd/ClockDivider_Block",
+      "name": "ClockDivider_Block",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2024.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "ClockDivider_0": ""
+    },
+    "ports": {
+      "CLK_IN": {
+        "direction": "I"
+      },
+      "PMODa0": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "ClockDivider_0": {
+        "vlnv": "xilinx.com:module_ref:ClockDivider:1.0",
+        "ip_revision": "1",
+        "xci_name": "ClockDivider_Block_ClockDivider_0_0",
+        "xci_path": "ip\\ClockDivider_Block_ClockDivider_0_0\\ClockDivider_Block_ClockDivider_0_0.xci",
+        "inst_hier_path": "ClockDivider_0",
+        "parameters": {
+          "DIVISOR": {
+            "value": "0x7735940"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ClockDivider",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "CLK_IN": {
+            "direction": "I"
+          },
+          "CLK_OUT": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "CLK_IN_1": {
+        "ports": [
+          "CLK_IN",
+          "ClockDivider_0/CLK_IN"
+        ]
+      },
+      "ClockDivider_0_CLK_OUT": {
+        "ports": [
+          "ClockDivider_0/CLK_OUT",
+          "PMODa0"
+        ]
+      }
+    }
+  }
+}

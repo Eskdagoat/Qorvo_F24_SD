@@ -1,0 +1,17 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-488,-141",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.7.1 2023-07-26 3bc4126617 VDI=43 GEI=38 GUI=JA:21.0
+#  -string -flagsOSRD
+preplace port port-id_CLK_IN -pg 1 -lvl 0 -x -20 -y 60 -defaultsOSRD
+preplace port port-id_PMODa0 -pg 1 -lvl 2 -x 260 -y 140 -defaultsOSRD
+preplace inst ClockDivider_0 -pg 1 -lvl 1 -x 120 -y 60 -defaultsOSRD
+preplace netloc CLK_IN_1 1 0 1 N 60
+preplace netloc ClockDivider_0_CLK_OUT 1 1 1 240 60n
+levelinfo -pg 1 -20 120 260
+pagesize -pg 1 -db -bbox -sgen -120 -30 370 160
+"
+}
+
