@@ -3,5 +3,5 @@
 ## **Computer Engineering**
 ### *GNU Radio*
 
-[GNU Radio](GNU_Radio/GNU_Radio.md)
+[GNU Radio](GNU_Radio/GNU_Radio.MD)
 
