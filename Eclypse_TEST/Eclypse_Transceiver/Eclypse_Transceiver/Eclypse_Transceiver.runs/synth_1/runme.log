@@ -1,0 +1,1017 @@
+
+*** Running vivado
+    with args -log system_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_wrapper.tcl
+
+
+****** Vivado v2024.2 (64-bit)
+  **** SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Sat Nov 23 22:44:04 2024
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source system_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/andrew/eclypse-z7-notes/tmp/cores'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2024.2/data/ip'.
+INFO: [Project 1-5578] Found utility IPs instantiated in block design /home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.srcs/sources_1/bd/system/system.bd which have equivalent inline hdl with improved performance and reduced diskspace.
+It is recommended to migrate these utility IPs to inline hdl  using the command upgrade_project -migrate_to_inline_hdl.  The utility IPs may be deprecated in future releases.
+More information on inline hdl is available in UG994. 
+Command: synth_design -top system_wrapper -part xc7z020clg484-1 -directive PerformanceOptimized -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 35368
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2317.586 ; gain = 0.000 ; free physical = 4855 ; free virtual = 11664
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_bcast_0_0/synth/system_bcast_0_0.v:83]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_PARAMETER' is already specified; last one will take precedence [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_bcast_0_0/synth/system_bcast_0_0.v:84]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_comb_0_0/synth/system_comb_0_0.v:85]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_PARAMETER' is already specified; last one will take precedence [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_comb_0_0/synth/system_comb_0_0.v:92]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_bcast_0_1/synth/system_bcast_0_1.v:89]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_PARAMETER' is already specified; last one will take precedence [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_bcast_0_1/synth/system_bcast_0_1.v:90]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_comb_0_1/synth/system_comb_0_1.v:85]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_PARAMETER' is already specified; last one will take precedence [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_comb_0_1/synth/system_comb_0_1.v:92]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_bcast_0_2/synth/system_bcast_0_2.v:87]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_PARAMETER' is already specified; last one will take precedence [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_bcast_0_2/synth/system_bcast_0_2.v:88]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_comb_0_2/synth/system_comb_0_2.v:85]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_PARAMETER' is already specified; last one will take precedence [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_comb_0_2/synth/system_comb_0_2.v:92]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_bcast_0_3/synth/system_bcast_0_3.v:89]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_PARAMETER' is already specified; last one will take precedence [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_bcast_0_3/synth/system_bcast_0_3.v:90]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_comb_0_3/synth/system_comb_0_3.v:85]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_PARAMETER' is already specified; last one will take precedence [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_comb_0_3/synth/system_comb_0_3.v:92]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_bcast_0_4/synth/system_bcast_0_4.v:87]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_PARAMETER' is already specified; last one will take precedence [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_bcast_0_4/synth/system_bcast_0_4.v:88]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_comb_0_4/synth/system_comb_0_4.v:85]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_PARAMETER' is already specified; last one will take precedence [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_comb_0_4/synth/system_comb_0_4.v:92]
+WARNING: [Synth 8-6014] Unused sequential element gen_rd_b.gen_doutb_pipe.enb_pipe_reg[0] was removed.  [/tools/Xilinx/Vivado/2024.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:3077]
+WARNING: [Synth 8-6014] Unused sequential element r0_is_null_r_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/e446/hdl/axis_dwidth_converter_v1_1_vl_rfs.v:310]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'state_reg' through user attribute
+WARNING: [Synth 8-6014] Unused sequential element gen_wr_a.gen_word_wide.wr_sync.addralsb_reg was removed.  [/tools/Xilinx/Vivado/2024.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:1446]
+WARNING: [Synth 8-6014] Unused sequential element gen_rd_b.gen_doutb_pipe.enb_pipe_reg[0] was removed.  [/tools/Xilinx/Vivado/2024.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:3077]
+Info : Asymmetric Ram write pattern identified
+WARNING: [Synth 8-6014] Unused sequential element gen_rd_b.gen_rd_b_synth_template.gen_nc_wide_pipe.rd_sync.addrblsb_reg was removed.  [/tools/Xilinx/Vivado/2024.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:3052]
+WARNING: [Synth 8-6014] Unused sequential element gen_rd_b.gen_doutb_pipe.enb_pipe_reg[0] was removed.  [/tools/Xilinx/Vivado/2024.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:3077]
+Info : Asymmetric Ram read pattern identified
+Info : Asymmetric Ram read pattern identified
+WARNING: [Synth 8-3848] Net led_o in module/entity system does not have driver. [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/synth/system.v:504]
+WARNING: [Synth 8-6014] Unused sequential element phase_max_dly_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:10246]
+WARNING: [Synth 8-6014] Unused sequential element chan_cnt_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:10248]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.chan_max_cntrl_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:32391]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.rfd_cnt_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:32403]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.gen_coef_addr_plus_offset_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:32405]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.flush_data_sub1_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:32409]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.data_in_reg_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:32414]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.blanking_cnt_halt_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:32415]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.blanking_cnt_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:32416]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.blanking_cnt_start_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:32417]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.chan_max_early_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:32428]
+WARNING: [Synth 8-6014] Unused sequential element g_chan_out.chan_out_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:34603]
+WARNING: [Synth 8-6014] Unused sequential element g_chan_out.chan_out_reg_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:34604]
+WARNING: [Synth 8-6014] Unused sequential element g_chan_out.chan_out_max_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:34605]
+WARNING: [Synth 8-6014] Unused sequential element g_chan_out.chan_out_max_dly_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:34606]
+WARNING: [Synth 8-6014] Unused sequential element g_chan_out.latch_op_src_dly_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:34607]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.we_sym_gen_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43916]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.we_sym_gen_cntrl_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43918]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.gen_data_addr_flip_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43925]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.gen_data_sym_addr_flip_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43927]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.frac_phase_cnt_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43937]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.data_addr_step_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43939]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.empty_addr_step_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43940]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.empty_new_addr_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43941]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.slower_chan_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43948]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.dynamic_we_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43949]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.dynamic_re_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43950]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.flush_data_dly_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43953]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.flush_mem_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43956]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.flush_buff_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43957]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.flush_buffx2_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43958]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.data_in_reg_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43961]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.blanking_cnt_start_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43964]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.we_sym_flush_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43968]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.second_phase_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43970]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.coef_phase_max_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43971]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.coef_first_phase_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43972]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.rfd_cnt_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43976]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.num_ops_for_next_ip_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43978]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.max_first_phase_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43983]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.we_last_phase_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43984]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.max_last_phase_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43985]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.px_dly_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43995]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.px_dly_en_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43996]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.g_accum_cntrl.accumulate_dly_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:46739]
+WARNING: [Synth 8-6014] Unused sequential element g_opbuff.opbuff_addr_step_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:47574]
+WARNING: [Synth 8-6014] Unused sequential element g_opbuff.opbuff_pat_addr_step_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:47575]
+WARNING: [Synth 8-6014] Unused sequential element g_opbuff.opbuff_start_addr_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:47576]
+WARNING: [Synth 8-6014] Unused sequential element g_opbuff.latch_op_src_algn_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:47577]
+WARNING: [Synth 8-6014] Unused sequential element g_opbuff.latch_op_src_algn2_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:47578]
+WARNING: [Synth 8-6014] Unused sequential element g_opbuff.hold_lut_value_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:47579]
+WARNING: [Synth 8-6014] Unused sequential element g_opbuff.opbuff_out_chan_cnt_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:47580]
+WARNING: [Synth 8-6014] Unused sequential element g_opbuff.opbuff_out_chan_max_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:47581]
+WARNING: [Synth 8-6014] Unused sequential element g_opbuff.opbuff_out_phase_cnt_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:47582]
+WARNING: [Synth 8-6014] Unused sequential element g_opbuff.opbuff_out_step_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:47584]
+WARNING: [Synth 8-6014] Unused sequential element g_opbuff.opbuff_out_max_dly_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:47585]
+WARNING: [Synth 8-6014] Unused sequential element g_opbuff.opbuff_out_max_dly2_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:47586]
+WARNING: [Synth 8-6014] Unused sequential element g_opbuff.op_rate_max_dly_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:47587]
+WARNING: [Synth 8-6014] Unused sequential element g_opbuff.op_rate_max_dly2_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:47588]
+WARNING: [Synth 8-6014] Unused sequential element g_opbuff.opbuff_first_phase_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:47589]
+WARNING: [Synth 8-6014] Unused sequential element g_opbuff.opbuff_first_chan_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:47594]
+WARNING: [Synth 8-6014] Unused sequential element g_opbuff.opbuff_ops_ready_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:47596]
+WARNING: [Synth 8-6014] Unused sequential element g_opbuff.output_sample_cnt_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:47597]
+WARNING: [Synth 8-6014] Unused sequential element g_opbuff.opbuff_phase_max_dly_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:47598]
+WARNING: [Synth 8-6014] Unused sequential element g_opbuff.opbuff_phase_max_dly2_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:47599]
+WARNING: [Synth 8-6014] Unused sequential element g_opbuff.opbuff_chan_max_dly_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:47600]
+WARNING: [Synth 8-6014] Unused sequential element g_opbuff.opbuff_chan_max_dly2_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:47601]
+WARNING: [Synth 8-6014] Unused sequential element g_chan_out.chan_out_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:48143]
+WARNING: [Synth 8-6014] Unused sequential element g_chan_out.chan_out_reg_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:48144]
+WARNING: [Synth 8-6014] Unused sequential element g_chan_out.chan_out_max_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:48145]
+WARNING: [Synth 8-6014] Unused sequential element g_chan_out.chan_out_max_dly_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:48146]
+WARNING: [Synth 8-6014] Unused sequential element g_chan_out.latch_op_src_dly_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:48147]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.chan_max_cntrl_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:32391]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.rfd_cnt_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:32403]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.gen_coef_addr_plus_offset_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:32405]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.flush_data_sub1_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:32409]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.data_in_reg_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:32414]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.blanking_cnt_halt_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:32415]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.blanking_cnt_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:32416]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.blanking_cnt_start_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:32417]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.chan_max_early_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:32428]
+WARNING: [Synth 8-6014] Unused sequential element g_chan_out.chan_out_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:34603]
+WARNING: [Synth 8-6014] Unused sequential element g_chan_out.chan_out_reg_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:34604]
+WARNING: [Synth 8-6014] Unused sequential element g_chan_out.chan_out_max_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:34605]
+WARNING: [Synth 8-6014] Unused sequential element g_chan_out.chan_out_max_dly_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:34606]
+WARNING: [Synth 8-6014] Unused sequential element g_chan_out.latch_op_src_dly_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:34607]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.we_sym_gen_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43916]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.we_sym_gen_cntrl_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43918]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.gen_data_addr_flip_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43925]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.gen_data_sym_addr_flip_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43927]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.frac_phase_cnt_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43937]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.data_addr_step_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43939]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.empty_addr_step_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43940]
+WARNING: [Synth 8-6014] Unused sequential element g_semi_parallel_and_smac.empty_new_addr_reg was removed.  [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ipshared/2af1/hdl/fir_compiler_v7_2_vh_rfs.vhd:43941]
+INFO: [Common 17-14] Message 'Synth 8-6014' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-7129] Port din[47] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[46] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[45] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[44] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[43] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[42] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[41] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[40] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[39] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[38] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[37] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[36] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[35] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[34] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[33] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[32] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[31] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[30] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[29] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[28] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[27] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[26] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[25] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[24] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[23] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[22] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[21] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[20] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[19] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[18] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[17] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[16] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[15] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[14] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[13] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[12] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[11] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[10] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[9] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[8] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[7] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[6] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[5] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[4] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[3] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[2] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[1] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[0] in module port_slicer__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[63] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[62] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[61] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[60] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[59] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[58] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[57] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[56] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[55] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[54] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[53] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[52] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[51] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[50] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[49] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[48] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[47] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[46] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[45] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[44] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[43] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[42] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[41] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[40] in module port_slicer__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[7] in module port_slicer__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[6] in module port_slicer__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[5] in module port_slicer__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[4] in module port_slicer__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[3] in module port_slicer__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[2] in module port_slicer__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port din[1] in module port_slicer__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclk in module axis_constant is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLK in module cmpy_v6_0_25_delay_line__parameterized10 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module cmpy_v6_0_25_delay_line__parameterized10 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module cmpy_v6_0_25_delay_line__parameterized10 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module cmpy_v6_0_25_delay_line__parameterized9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module cmpy_v6_0_25_delay_line__parameterized9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module cmpy_v6_0_25_delay_line__parameterized8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module cmpy_v6_0_25_delay_line__parameterized8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLK in module mult_gen_v12_0_22_delay_line__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module mult_gen_v12_0_22_delay_line__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module mult_gen_v12_0_22_delay_line__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module mult_gen_v12_0_22_delay_line__parameterized10 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module mult_gen_v12_0_22_delay_line__parameterized10 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module mult_gen_v12_0_22_delay_line__parameterized9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module mult_gen_v12_0_22_delay_line__parameterized9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module mult_gen_v12_0_22_delay_line__parameterized7 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module mult_gen_v12_0_22_delay_line__parameterized7 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module mult_gen_v12_0_22_delay_line__parameterized6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module mult_gen_v12_0_22_delay_line__parameterized6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module mult_gen_v12_0_22_delay_line__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module mult_gen_v12_0_22_delay_line__parameterized5 is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:01:05 ; elapsed = 00:01:34 . Memory (MB): peak = 3670.457 ; gain = 1352.871 ; free physical = 300 ; free virtual = 5213
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:05 ; elapsed = 00:01:35 . Memory (MB): peak = 3670.457 ; gain = 1352.871 ; free physical = 301 ; free virtual = 5214
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:05 ; elapsed = 00:01:35 . Memory (MB): peak = 3670.457 ; gain = 1352.871 ; free physical = 301 ; free virtual = 5214
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.73 ; elapsed = 00:00:01 . Memory (MB): peak = 3670.457 ; gain = 0.000 ; free physical = 312 ; free virtual = 5223
+INFO: [Netlist 29-17] Analyzing 12505 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+WARNING: [Netlist 29-1115] Found multi-term driver net: dac_tri_io[2].
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_board.xdc] for cell 'system_i/pll_0/inst'
+Finished Parsing XDC File [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0_board.xdc] for cell 'system_i/pll_0/inst'
+Parsing XDC File [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc] for cell 'system_i/pll_0/inst'
+Finished Parsing XDC File [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc] for cell 'system_i/pll_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_ps_0_0/system_ps_0_0.xdc] for cell 'system_i/ps_0/inst'
+Finished Parsing XDC File [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_ps_0_0/system_ps_0_0.xdc] for cell 'system_i/ps_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_ps_0_0/system_ps_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0_board.xdc] for cell 'system_i/rst_0/U0'
+Finished Parsing XDC File [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0_board.xdc] for cell 'system_i/rst_0/U0'
+Parsing XDC File [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0.xdc] for cell 'system_i/rst_0/U0'
+Finished Parsing XDC File [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0.xdc] for cell 'system_i/rst_0/U0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_fir_0_0/constraints/fir_compiler_v7_2.xdc] for cell 'system_i/trx_0/rx_0/fir_0/U0'
+Finished Parsing XDC File [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_fir_0_0/constraints/fir_compiler_v7_2.xdc] for cell 'system_i/trx_0/rx_0/fir_0/U0'
+Parsing XDC File [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_fir_0_1/constraints/fir_compiler_v7_2.xdc] for cell 'system_i/trx_0/tx_0/fir_0/U0'
+Finished Parsing XDC File [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_fir_0_1/constraints/fir_compiler_v7_2.xdc] for cell 'system_i/trx_0/tx_0/fir_0/U0'
+Parsing XDC File [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_fir_0_2/constraints/fir_compiler_v7_2.xdc] for cell 'system_i/trx_1/rx_0/fir_0/U0'
+Finished Parsing XDC File [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_fir_0_2/constraints/fir_compiler_v7_2.xdc] for cell 'system_i/trx_1/rx_0/fir_0/U0'
+Parsing XDC File [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_fir_0_3/constraints/fir_compiler_v7_2.xdc] for cell 'system_i/trx_1/tx_0/fir_0/U0'
+Finished Parsing XDC File [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_fir_0_3/constraints/fir_compiler_v7_2.xdc] for cell 'system_i/trx_1/tx_0/fir_0/U0'
+INFO: [Timing 38-2] Deriving generated clocks
+Parsing XDC File [/home/andrew/eclypse-z7-notes/cfg/clocks.xdc]
+Finished Parsing XDC File [/home/andrew/eclypse-z7-notes/cfg/clocks.xdc]
+Parsing XDC File [/home/andrew/eclypse-z7-notes/cfg/ports.xdc]
+Finished Parsing XDC File [/home/andrew/eclypse-z7-notes/cfg/ports.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/andrew/eclypse-z7-notes/cfg/ports.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/tools/Xilinx/Vivado/2024.2/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-1714] 6 XPM XDC files have been applied to the design.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00 . Memory (MB): peak = 3786.949 ; gain = 0.000 ; free physical = 1015 ; free virtual = 5941
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8019 instances were transformed.
+  FDE => FDRE: 38 instances
+  FDR => FDRE: 12 instances
+  FDRSE => FDRSE (FDRE, LUT4, VCC): 4028 instances
+  MUXCY_L => MUXCY: 3940 instances
+  SRL16 => SRL16E: 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.6 ; elapsed = 00:00:00.33 . Memory (MB): peak = 3786.949 ; gain = 0.000 ; free physical = 1016 ; free virtual = 5941
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:01:29 ; elapsed = 00:02:02 . Memory (MB): peak = 3786.949 ; gain = 1469.363 ; free physical = 932 ; free virtual = 5858
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:29 ; elapsed = 00:02:02 . Memory (MB): peak = 3794.953 ; gain = 1477.367 ; free physical = 932 ; free virtual = 5858
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property keep_hierarchy = soft for system_i/pll_0/inst. (constraint file  /home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc, line 53).
+Applied set_property keep_hierarchy = soft for system_i/ps_0/inst. (constraint file  /home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_pll_0_0/system_pll_0_0.xdc, line 57).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/pll_0/inst. (constraint file  /home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.runs/synth_1/dont_touch.xdc, line 315).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/ps_0/inst. (constraint file  /home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.runs/synth_1/dont_touch.xdc, line 323).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/rst_0/U0. (constraint file  /home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.runs/synth_1/dont_touch.xdc, line 326).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rx_0/fir_0/U0. (constraint file  /home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.runs/synth_1/dont_touch.xdc, line 348).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/tx_0/fir_0/U0. (constraint file  /home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.runs/synth_1/dont_touch.xdc, line 363).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rx_0/fir_0/U0. (constraint file  /home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.runs/synth_1/dont_touch.xdc, line 396).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/tx_0/fir_0/U0. (constraint file  /home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.runs/synth_1/dont_touch.xdc, line 411).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/pll_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/ps_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/iic_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/gpio_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/gpio_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/const_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/rst_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/adc_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/bcast_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/comb_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/dac_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/hub_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rst_slice_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rst_slice_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/cfg_slice_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/cfg_slice_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rx_0/slice_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rx_0/slice_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rx_0/slice_2. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rx_0/phase_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rx_0/dds_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rx_0/lfsr_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rx_0/mult_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rx_0/bcast_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rx_0/rate_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rx_0/rate_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rx_0/cic_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rx_0/cic_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rx_0/comb_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rx_0/conv_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rx_0/fir_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rx_0/subset_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rx_0/fp_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rx_0/conv_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rx_0/fifo_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/tx_0/slice_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/tx_0/slice_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/tx_0/slice_2. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/tx_0/fifo_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/tx_0/conv_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/tx_0/fp_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/tx_0/fir_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/tx_0/conv_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/tx_0/bcast_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/tx_0/rate_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/tx_0/rate_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/tx_0/cic_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/tx_0/cic_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/tx_0/comb_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/tx_0/phase_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/tx_0/dds_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/tx_0/lfsr_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/tx_0/mult_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/concat_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/hub_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rst_slice_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rst_slice_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/cfg_slice_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/cfg_slice_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rx_0/slice_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rx_0/slice_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rx_0/slice_2. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rx_0/phase_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rx_0/dds_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rx_0/lfsr_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rx_0/mult_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rx_0/bcast_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rx_0/rate_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rx_0/rate_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rx_0/cic_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rx_0/cic_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rx_0/comb_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rx_0/conv_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rx_0/fir_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rx_0/subset_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rx_0/fp_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rx_0/conv_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rx_0/fifo_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/tx_0/slice_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/tx_0/slice_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/tx_0/slice_2. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/tx_0/fifo_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/tx_0/conv_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/tx_0/fp_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/tx_0/fir_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/tx_0/conv_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/tx_0/bcast_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/tx_0/rate_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/tx_0/rate_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/tx_0/cic_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/tx_0/cic_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/tx_0/comb_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/tx_0/phase_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/tx_0/dds_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/tx_0/lfsr_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/tx_0/mult_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/concat_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/fifo_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/spi_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/fifo_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/spi_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/fifo_0/inst/fifo_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/fifo_1/inst/fifo_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/rx_0/fifo_0/inst/fifo_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/rx_0/fifo_0/inst/fifo_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_0/tx_0/fifo_0/inst/fifo_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for system_i/trx_1/tx_0/fifo_0/inst/fifo_0. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:30 ; elapsed = 00:02:03 . Memory (MB): peak = 3794.953 ; gain = 1477.367 ; free physical = 934 ; free virtual = 5859
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'gen_fwft.curr_fwft_state_reg' in module 'xpm_fifo_base'
+INFO: [Synth 8-4490] FSM extraction disabled for register 'state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'state_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'state_reg' through user attribute
+INFO: [Synth 8-802] inferred FSM for state register 'gen_fwft.curr_fwft_state_reg' in module 'xpm_fifo_base__parameterized0'
+INFO: [Synth 8-802] inferred FSM for state register 'gen_fwft.curr_fwft_state_reg' in module 'xpm_fifo_base__parameterized1'
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 invalid |                             0001 |                               00
+            stage1_valid |                             0010 |                               10
+       both_stages_valid |                             0100 |                               11
+            stage2_valid |                             1000 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'gen_fwft.curr_fwft_state_reg' using encoding 'one-hot' in module 'xpm_fifo_base'
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 invalid |                             0001 |                               00
+            stage1_valid |                             0010 |                               10
+       both_stages_valid |                             0100 |                               11
+            stage2_valid |                             1000 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'gen_fwft.curr_fwft_state_reg' using encoding 'one-hot' in module 'xpm_fifo_base__parameterized0'
+INFO: [Synth 8-3971] The signal "dpt_mem:/gen_bram.gen_write_first.gen_double_reg.ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 invalid |                             0001 |                               00
+            stage1_valid |                             0010 |                               10
+       both_stages_valid |                             0100 |                               11
+            stage2_valid |                             1000 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'gen_fwft.curr_fwft_state_reg' using encoding 'one-hot' in module 'xpm_fifo_base__parameterized1'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:38 ; elapsed = 00:02:11 . Memory (MB): peak = 3794.953 ; gain = 1477.367 ; free physical = 934 ; free virtual = 5870
+---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'system_i/bcast_0/inst/broadcaster_core/MI_SLOT[0].util_vector2axis' (axis_infrastructure_v1_1_1_util_vector2axis) to 'system_i/bcast_0/inst/broadcaster_core/MI_SLOT[1].util_vector2axis'
+INFO: [Synth 8-223] decloning instance 'axis_broadcaster_v1_1_32_core__parameterized0:/MI_SLOT[0].util_vector2axis' (axis_infrastructure_v1_1_1_util_vector2axis__parameterized1) to 'axis_broadcaster_v1_1_32_core__parameterized0:/MI_SLOT[1].util_vector2axis'
+INFO: [Synth 8-223] decloning instance 'decimate:/comb/gen_stages[0].gen_folded.int_comb_stage/gen_split_accum[0].gen_comb_mem_src.gen_en_dly' (delay_bit__parameterized1) to 'decimate:/comb/gen_stages[0].gen_folded.int_comb_stage/gen_split_accum[0].gen_mem_we'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_0/rx_0/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_cntrl_signals[0].g_others.i_delay' (fir_compiler_v7_2_23_delay__parameterized5) to 'system_i/trx_0/rx_0/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_cntrl_signals[1].g_others.i_delay'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_0/rx_0/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_cntrl_signals[4].g_others.i_delay' (fir_compiler_v7_2_23_delay__parameterized8) to 'system_i/trx_0/rx_0/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_cntrl_signals[5].g_others.i_delay'
+INFO: [Synth 8-223] decloning instance 'floating_point_v7_1_19:/i_synth/FIX_TO_FLT_OP.SPD.OP/ROUND/EXTRA_LSB_BIT_DEL' (floating_point_v7_1_19_delay__parameterized10) to 'floating_point_v7_1_19:/i_synth/FIX_TO_FLT_OP.SPD.OP/ROUND/EXTRA_LSB_RND1_DEL'
+INFO: [Synth 8-223] decloning instance 'floating_point_v7_1_19:/i_synth/FIX_TO_FLT_OP.SPD.OP/ROUND/EXP_INC_DELAY' (floating_point_v7_1_19_delay__parameterized10) to 'floating_point_v7_1_19:/i_synth/FIX_TO_FLT_OP.SPD.OP/ROUND/EXP_INC_RND1_DELAY'
+INFO: [Synth 8-223] decloning instance 'floating_point_v7_1_19:/i_synth/DELAY_INVALID_OP' (floating_point_v7_1_19_delay__parameterized10) to 'floating_point_v7_1_19:/i_synth/DELAY_DIVIDE_BY_ZERO'
+INFO: [Synth 8-223] decloning instance 'floating_point_v7_1_19:/i_synth/DELAY_INVALID_OP' (floating_point_v7_1_19_delay__parameterized10) to 'floating_point_v7_1_19:/i_synth/DELAY_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'floating_point_v7_1_19:/i_synth/DELAY_INVALID_OP' (floating_point_v7_1_19_delay__parameterized10) to 'floating_point_v7_1_19:/i_synth/DELAY_UNDERFLOW'
+INFO: [Synth 8-223] decloning instance 'floating_point_v7_1_19:/i_synth/DELAY_INVALID_OP' (floating_point_v7_1_19_delay__parameterized10) to 'floating_point_v7_1_19:/i_synth/DELAY_ACCUM_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'floating_point_v7_1_19:/i_synth/DELAY_INVALID_OP' (floating_point_v7_1_19_delay__parameterized10) to 'floating_point_v7_1_19:/i_synth/DELAY_ACCUM_INPUT_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'axis_broadcaster_v1_1_32_core__parameterized1:/MI_SLOT[0].util_vector2axis' (axis_infrastructure_v1_1_1_util_vector2axis__parameterized1) to 'axis_broadcaster_v1_1_32_core__parameterized1:/MI_SLOT[1].util_vector2axis'
+INFO: [Synth 8-223] decloning instance 'interpolate:/comb/gen_stages[0].gen_folded.int_comb_stage/gen_split_accum[0].gen_comb_mem_src.gen_en_dly' (delay_bit__parameterized1) to 'interpolate:/comb/gen_stages[0].gen_folded.int_comb_stage/gen_split_accum[0].gen_mem_we'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_0/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[0].g_others.i_delay_cntrl_data' (fir_compiler_v7_2_23_delay__parameterized43) to 'system_i/trx_0/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[0].g_others.i_delay_cntrl_data_sym'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_0/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[1].g_others.i_delay_cntrl_data' (fir_compiler_v7_2_23_delay__parameterized43) to 'system_i/trx_0/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[1].g_others.i_delay_cntrl_data_sym'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_0/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[2].g_others.i_delay_cntrl_data' (fir_compiler_v7_2_23_delay__parameterized5) to 'system_i/trx_0/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[2].g_others.i_delay_cntrl_data_sym'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_0/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[3].g_others.i_delay_cntrl_data' (fir_compiler_v7_2_23_delay__parameterized5) to 'system_i/trx_0/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[3].g_others.i_delay_cntrl_data_sym'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_0/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[8].g_others.i_delay_cntrl_data' (fir_compiler_v7_2_23_delay__parameterized5) to 'system_i/trx_0/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[8].g_others.i_delay_cntrl_data_sym'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_0/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[4].g_others.i_delay_cntrl_data' (fir_compiler_v7_2_23_delay__parameterized7) to 'system_i/trx_0/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[4].g_others.i_delay_cntrl_data_sym'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_0/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[4].g_others.i_delay_cntrl_data' (fir_compiler_v7_2_23_delay__parameterized7) to 'system_i/trx_0/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[5].g_others.i_delay_cntrl_data'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_0/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[4].g_others.i_delay_cntrl_data' (fir_compiler_v7_2_23_delay__parameterized7) to 'system_i/trx_0/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[5].g_others.i_delay_cntrl_data_sym'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_0/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[7].g_others.i_delay_cntrl_data' (fir_compiler_v7_2_23_delay__parameterized7) to 'system_i/trx_0/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[7].g_others.i_delay_cntrl_data_sym'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_0/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[6].g_others.i_delay_cntrl_data' (fir_compiler_v7_2_23_delay__parameterized44) to 'system_i/trx_0/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[6].g_others.i_delay_cntrl_data_sym'
+INFO: [Synth 8-223] decloning instance 'floating_point_v7_1_19__parameterized0:/i_synth/DELAY_DIVIDE_BY_ZERO' (floating_point_v7_1_19_delay__parameterized10) to 'floating_point_v7_1_19__parameterized0:/i_synth/DELAY_ACCUM_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'floating_point_v7_1_19__parameterized0:/i_synth/DELAY_DIVIDE_BY_ZERO' (floating_point_v7_1_19_delay__parameterized10) to 'floating_point_v7_1_19__parameterized0:/i_synth/DELAY_ACCUM_INPUT_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_1/rx_0/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_cntrl_signals[0].g_others.i_delay' (fir_compiler_v7_2_23_delay__parameterized5) to 'system_i/trx_1/rx_0/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_cntrl_signals[1].g_others.i_delay'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_1/rx_0/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_cntrl_signals[4].g_others.i_delay' (fir_compiler_v7_2_23_delay__parameterized8) to 'system_i/trx_1/rx_0/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_cntrl_signals[5].g_others.i_delay'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_1/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[0].g_others.i_delay_cntrl_data' (fir_compiler_v7_2_23_delay__parameterized43) to 'system_i/trx_1/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[0].g_others.i_delay_cntrl_data_sym'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_1/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[1].g_others.i_delay_cntrl_data' (fir_compiler_v7_2_23_delay__parameterized43) to 'system_i/trx_1/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[1].g_others.i_delay_cntrl_data_sym'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_1/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[2].g_others.i_delay_cntrl_data' (fir_compiler_v7_2_23_delay__parameterized5) to 'system_i/trx_1/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[2].g_others.i_delay_cntrl_data_sym'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_1/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[3].g_others.i_delay_cntrl_data' (fir_compiler_v7_2_23_delay__parameterized5) to 'system_i/trx_1/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[3].g_others.i_delay_cntrl_data_sym'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_1/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[8].g_others.i_delay_cntrl_data' (fir_compiler_v7_2_23_delay__parameterized5) to 'system_i/trx_1/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[8].g_others.i_delay_cntrl_data_sym'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_1/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[4].g_others.i_delay_cntrl_data' (fir_compiler_v7_2_23_delay__parameterized7) to 'system_i/trx_1/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[4].g_others.i_delay_cntrl_data_sym'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_1/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[4].g_others.i_delay_cntrl_data' (fir_compiler_v7_2_23_delay__parameterized7) to 'system_i/trx_1/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[5].g_others.i_delay_cntrl_data'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_1/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[4].g_others.i_delay_cntrl_data' (fir_compiler_v7_2_23_delay__parameterized7) to 'system_i/trx_1/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[5].g_others.i_delay_cntrl_data_sym'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_1/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[7].g_others.i_delay_cntrl_data' (fir_compiler_v7_2_23_delay__parameterized7) to 'system_i/trx_1/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[7].g_others.i_delay_cntrl_data_sym'
+INFO: [Synth 8-223] decloning instance 'system_i/trx_1/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[6].g_others.i_delay_cntrl_data' (fir_compiler_v7_2_23_delay__parameterized44) to 'system_i/trx_1/tx_0/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_cntrl_signals[6].g_others.i_delay_cntrl_data_sym'
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-3971] The signal "system_i/rx_0i_1/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_paths[0].g_mem_array[0].i_mem/g_packed.g_true_dual_port.i_mem/gen_bram.gen_write_first.gen_double_reg.ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "system_i/rx_0i_1/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_paths[0].g_mem_array[1].i_mem/g_packed.g_true_dual_port.i_mem/gen_bram.gen_write_first.gen_double_reg.ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "system_i/rx_0i_1/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_paths[0].g_mem_array[2].i_mem/g_packed.g_true_dual_port.i_mem/gen_bram.gen_write_first.gen_double_reg.ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "system_i/rx_0i_1/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_paths[0].g_mem_array[3].i_mem/g_packed.g_true_dual_port.i_mem/gen_bram.gen_write_first.gen_double_reg.ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "system_i/rx_0i_1/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_paths[1].g_mem_array[0].i_mem/g_packed.g_true_dual_port.i_mem/gen_bram.gen_write_first.gen_double_reg.ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "system_i/rx_0i_1/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_paths[1].g_mem_array[1].i_mem/g_packed.g_true_dual_port.i_mem/gen_bram.gen_write_first.gen_double_reg.ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "system_i/rx_0i_1/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_paths[1].g_mem_array[2].i_mem/g_packed.g_true_dual_port.i_mem/gen_bram.gen_write_first.gen_double_reg.ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "system_i/rx_0i_1/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_paths[1].g_mem_array[3].i_mem/g_packed.g_true_dual_port.i_mem/gen_bram.gen_write_first.gen_double_reg.ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-3971] The signal "system_i/rx_0i_4/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_paths[0].g_mem_array[0].i_mem/g_packed.g_true_dual_port.i_mem/gen_bram.gen_write_first.gen_double_reg.ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "system_i/rx_0i_4/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_paths[0].g_mem_array[1].i_mem/g_packed.g_true_dual_port.i_mem/gen_bram.gen_write_first.gen_double_reg.ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "system_i/rx_0i_4/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_paths[0].g_mem_array[2].i_mem/g_packed.g_true_dual_port.i_mem/gen_bram.gen_write_first.gen_double_reg.ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "system_i/rx_0i_4/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_paths[0].g_mem_array[3].i_mem/g_packed.g_true_dual_port.i_mem/gen_bram.gen_write_first.gen_double_reg.ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "system_i/rx_0i_4/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_paths[1].g_mem_array[0].i_mem/g_packed.g_true_dual_port.i_mem/gen_bram.gen_write_first.gen_double_reg.ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "system_i/rx_0i_4/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_paths[1].g_mem_array[1].i_mem/g_packed.g_true_dual_port.i_mem/gen_bram.gen_write_first.gen_double_reg.ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "system_i/rx_0i_4/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_paths[1].g_mem_array[2].i_mem/g_packed.g_true_dual_port.i_mem/gen_bram.gen_write_first.gen_double_reg.ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "system_i/rx_0i_4/fir_0/U0/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_paths[1].g_mem_array[3].i_mem/g_packed.g_true_dual_port.i_mem/gen_bram.gen_write_first.gen_double_reg.ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-3332] Sequential element (FLT_TO_FIX_OP.SPD.OP/COND_DET/MANT_CARRY.MANT_ALL_ZERO_DET/CARRY_ZERO_DET/CHAIN_GEN[3].CARRYS_DEL.NEED_DEL.CARRYS_FD) is unused and will be removed from module floating_point_v7_1_19_viv__parameterized1__1.
+INFO: [Synth 8-3332] Sequential element (FLT_TO_FIX_OP.SPD.OP/COND_DET/MANT_CARRY.MANT_ALL_ZERO_DET/CARRY_ZERO_DET/CHAIN_GEN[3].CARRYS_DEL.NEED_DEL.CARRYS_FD) is unused and will be removed from module floating_point_v7_1_19_viv__parameterized1.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (FDRE_inst) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (BSR_OUT_DFF[0].FDRE_BSR) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (PR_OUT_DFF[0].FDRE_PER) is unused and will be removed from module proc_sys_reset.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:01 ; elapsed = 00:02:37 . Memory (MB): peak = 3794.953 ; gain = 1477.367 ; free physical = 894 ; free virtual = 5887
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3321] set_false_path : Empty to list for constraint at line 49 of /home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0.xdc. [/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/ip/system_rst_0_0/system_rst_0_0.xdc:49]
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:40 ; elapsed = 00:02:48 . Memory (MB): peak = 3798.871 ; gain = 1481.285 ; free physical = 1949 ; free virtual = 6949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_wide.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:52 ; elapsed = 00:03:00 . Memory (MB): peak = 3798.871 ; gain = 1481.285 ; free physical = 1910 ; free virtual = 6911
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_2/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[1].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on system_i/tx_0i_5/fir_0/U0/i_synth/g_polyphase_interpolation.i_polyphase_interpolation/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+INFO: [Common 17-14] Message 'Synth 8-5591' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:03:05 ; elapsed = 00:03:13 . Memory (MB): peak = 3798.871 ; gain = 1481.285 ; free physical = 1896 ; free virtual = 6896
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3295] tying undriven pin inst/fifo_0:sleep to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst/fifo_0:sleep to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst/fifo_0:sleep to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst/fifo_0:sleep to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst/fifo_0:sleep to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst/fifo_0:sleep to constant 0
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:03:09 ; elapsed = 00:03:17 . Memory (MB): peak = 3798.871 ; gain = 1481.285 ; free physical = 1825 ; free virtual = 6826
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:09 ; elapsed = 00:03:18 . Memory (MB): peak = 3798.871 ; gain = 1481.285 ; free physical = 1825 ; free virtual = 6826
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:12 ; elapsed = 00:03:20 . Memory (MB): peak = 3798.871 ; gain = 1481.285 ; free physical = 1810 ; free virtual = 6810
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:12 ; elapsed = 00:03:20 . Memory (MB): peak = 3798.871 ; gain = 1481.285 ; free physical = 1810 ; free virtual = 6810
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:12 ; elapsed = 00:03:20 . Memory (MB): peak = 3798.871 ; gain = 1481.285 ; free physical = 1810 ; free virtual = 6810
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:12 ; elapsed = 00:03:21 . Memory (MB): peak = 3798.871 ; gain = 1481.285 ; free physical = 1810 ; free virtual = 6810
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------------------------+-------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name                   | DSP Mapping                   | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------------------------+-------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|xbip_dsp48e1_wrapper_v3_0_890 | (C'+(A'*B')')'                | 17     | 17     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|xbip_dsp48e1_wrapper_v3_0_889 | (C'+(A'*B')')'                | 30     | 18     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|xbip_dsp48e1_wrapper_v3_0_888 | (C'-((A'*B')'))'              | 30     | 18     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|xbip_dsp48e1_wrapper_v3_0_887 | (C'-((A'*B')'))'              | 30     | 11     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|xbip_dsp48e1_wrapper_v3_0_886 | (C'-((A'*B')'))'              | 30     | 11     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calc__parameterized1_804      | (PCIN+(A'*B')')'              | 30     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calc__parameterized3_852      | (C'+A':B')'                   | 30     | 18     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
+|calc__parameterized0_839      | Dynamic                       | -      | -      | -      | -      | 48     | -    | -    | -    | -    | -     | 0    | 1    | 
+|calc_837                      | (C'+(A'*B')')'                | 30     | 17     | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calc_835                      | (PCIN+(A'*B')')'              | 30     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calc_833                      | (PCIN+(A'*B')')'              | 30     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calc_831                      | (PCIN+(A'*B')')'              | 30     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calc__parameterized2_812      | Dynamic                       | -      | -      | -      | -      | 48     | -    | -    | -    | -    | -     | 0    | 1    | 
+|calc__parameterized1_810      | (C'+(A'*B')')'                | 30     | 18     | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calc__parameterized1_808      | (PCIN+(A'*B')')'              | 30     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calc__parameterized1_806      | (PCIN+(A'*B')')'              | 30     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_690                       | (C'-(((D'+A'')'*B'')'))'      | 25     | 0      | 48     | 25     | 43     | 2    | 2    | 1    | 1    | 1     | 1    | 1    | 
+|dsp__parameterized0_688       | (C+(A''*B')'+CARRYIN)'        | 25     | 18     | 12     | -      | 43     | 2    | 1    | 0    | -    | -     | 1    | 1    | 
+|dsp__parameterized1_685       | (C'+((D'-A'')'*B'')')'        | 25     | 18     | 48     | 25     | 43     | 2    | 2    | 1    | 1    | 1     | 1    | 1    | 
+|xbip_dsp48e1_wrapper_v3_0_574 | (C'+(A'*B')')'                | 17     | 17     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|xbip_dsp48e1_wrapper_v3_0_573 | (C'-((A'*B')'))'              | 30     | 18     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|xbip_dsp48e1_wrapper_v3_0_572 | (C'+(A'*B')')'                | 30     | 18     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|xbip_dsp48e1_wrapper_v3_0_571 | (C'-((A'*B')'))'              | 30     | 11     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|xbip_dsp48e1_wrapper_v3_0_570 | (C'-((A'*B')'))'              | 30     | 11     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calc__parameterized6_490      | (PCIN+(A'*B')')'              | 30     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calc__parameterized8_536      | (C'+A':B')'                   | 30     | 18     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
+|calc__parameterized5_526      | Dynamic                       | -      | -      | -      | -      | 48     | -    | -    | -    | -    | -     | 0    | 1    | 
+|calc__parameterized4_524      | (C'+(A'*B')')'                | 30     | 13     | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calc__parameterized4_522      | (PCIN+(A'*B')')'              | 30     | 13     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calc__parameterized4_520      | (PCIN+(A'*B')')'              | 30     | 13     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calc__parameterized4_518      | (PCIN+(A'*B')')'              | 30     | 13     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calc__parameterized7_498      | Dynamic                       | -      | -      | -      | -      | 48     | -    | -    | -    | -    | -     | 0    | 1    | 
+|calc__parameterized6_496      | (C'+(A'*B')')'                | 30     | 18     | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calc__parameterized6_494      | (PCIN+(A'*B')')'              | 30     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calc__parameterized6_492      | (PCIN+(A'*B')')'              | 30     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp__parameterized2_366       | (C'-(((D'+A'')'*B'')'))'      | 25     | 17     | 46     | 25     | 17     | 2    | 2    | 1    | 1    | 1     | 1    | 1    | 
+|dsp__parameterized2_366       | (PCIN>>17-(((D'+A')'*B'')'))' | 0      | 18     | -      | 25     | 43     | 1    | 2    | -    | 1    | 1     | 1    | 1    | 
+|dsp__parameterized3_361       | (C+((D'+A')'*B'')'+CARRYIN)'  | 25     | 17     | 31     | 25     | 17     | 1    | 2    | 0    | 1    | 1     | 1    | 1    | 
+|dsp__parameterized3_361       | (PCIN>>17+((D'+A')'*B'')')'   | 0      | 18     | -      | 25     | 43     | 1    | 2    | -    | 1    | 1     | 1    | 1    | 
+|xbip_dsp48e1_wrapper_v3_0_288 | (C'+(A'*B')')'                | 17     | 17     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|xbip_dsp48e1_wrapper_v3_0_287 | (C'+(A'*B')')'                | 30     | 18     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|xbip_dsp48e1_wrapper_v3_0_286 | (C'-((A'*B')'))'              | 30     | 18     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|xbip_dsp48e1_wrapper_v3_0_285 | (C'-((A'*B')'))'              | 30     | 11     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|xbip_dsp48e1_wrapper_v3_0_284 | (C'-((A'*B')'))'              | 30     | 11     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calc__parameterized1          | (PCIN+(A'*B')')'              | 30     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calc__parameterized3          | (C'+A':B')'                   | 30     | 18     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
+|calc__parameterized0          | Dynamic                       | -      | -      | -      | -      | 48     | -    | -    | -    | -    | -     | 0    | 1    | 
+|calc_241                      | (C'+(A'*B')')'                | 30     | 17     | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calc_239                      | (PCIN+(A'*B')')'              | 30     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calc_237                      | (PCIN+(A'*B')')'              | 30     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calc                          | (PCIN+(A'*B')')'              | 30     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calc__parameterized2          | Dynamic                       | -      | -      | -      | -      | 48     | -    | -    | -    | -    | -     | 0    | 1    | 
+|calc__parameterized1_225      | (C'+(A'*B')')'                | 30     | 18     | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calc__parameterized1_223      | (PCIN+(A'*B')')'              | 30     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calc__parameterized1_221      | (PCIN+(A'*B')')'              | 30     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp                           | (C'-(((D'+A'')'*B'')'))'      | 25     | 0      | 48     | 25     | 43     | 2    | 2    | 1    | 1    | 1     | 1    | 1    | 
+|dsp__parameterized0           | (C+(A''*B')'+CARRYIN)'        | 25     | 18     | 12     | -      | 43     | 2    | 1    | 0    | -    | -     | 1    | 1    | 
+|dsp__parameterized1           | (C'+((D'-A'')'*B'')')'        | 25     | 18     | 48     | 25     | 43     | 2    | 2    | 1    | 1    | 1     | 1    | 1    | 
+|xbip_dsp48e1_wrapper_v3_0_103 | (C'+(A'*B')')'                | 17     | 17     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|xbip_dsp48e1_wrapper_v3_0_102 | (C'-((A'*B')'))'              | 30     | 18     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|xbip_dsp48e1_wrapper_v3_0_101 | (C'+(A'*B')')'                | 30     | 18     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|xbip_dsp48e1_wrapper_v3_0_100 | (C'-((A'*B')'))'              | 30     | 11     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|xbip_dsp48e1_wrapper_v3_0     | (C'-((A'*B')'))'              | 30     | 11     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calc__parameterized6          | (PCIN+(A'*B')')'              | 30     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calc__parameterized8          | (C'+A':B')'                   | 30     | 18     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
+|calc__parameterized5          | Dynamic                       | -      | -      | -      | -      | 48     | -    | -    | -    | -    | -     | 0    | 1    | 
+|calc__parameterized4_80       | (C'+(A'*B')')'                | 30     | 13     | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calc__parameterized4_78       | (PCIN+(A'*B')')'              | 30     | 13     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calc__parameterized4_76       | (PCIN+(A'*B')')'              | 30     | 13     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calc__parameterized4          | (PCIN+(A'*B')')'              | 30     | 13     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calc__parameterized7          | Dynamic                       | -      | -      | -      | -      | 48     | -    | -    | -    | -    | -     | 0    | 1    | 
+|calc__parameterized6_61       | (C'+(A'*B')')'                | 30     | 18     | 0      | -      | 48     | 1    | 1    | 1    | -    | -     | 1    | 1    | 
+|calc__parameterized6_59       | (PCIN+(A'*B')')'              | 30     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|calc__parameterized6_57       | (PCIN+(A'*B')')'              | 30     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp__parameterized2           | (C'-(((D'+A'')'*B'')'))'      | 25     | 17     | 46     | 25     | 17     | 2    | 2    | 1    | 1    | 1     | 1    | 1    | 
+|dsp__parameterized2           | (PCIN>>17-(((D'+A')'*B'')'))' | 0      | 18     | -      | 25     | 43     | 1    | 2    | -    | 1    | 1     | 1    | 1    | 
+|dsp__parameterized3           | (C+((D'+A')'*B'')'+CARRYIN)'  | 25     | 17     | 31     | 25     | 17     | 1    | 2    | 0    | 1    | 1     | 1    | 1    | 
+|dsp__parameterized3           | (PCIN>>17+((D'+A')'*B'')')'   | 0      | 18     | -      | 25     | 43     | 1    | 2    | -    | 1    | 1     | 1    | 1    | 
++------------------------------+-------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |BIBUF     |   130|
+|2     |BUFG      |     3|
+|3     |CARRY4    |   290|
+|4     |DSP48E1   |    78|
+|17    |IDDR      |    14|
+|18    |LUT1      |   496|
+|19    |LUT2      |  4173|
+|20    |LUT3      |  1479|
+|21    |LUT4      |  1781|
+|22    |LUT5      |   828|
+|23    |LUT6      |  5295|
+|24    |MUXCY     |   182|
+|25    |MUXCY_L   |  3940|
+|26    |MUXF7     |   388|
+|27    |MUXF8     |     2|
+|28    |ODDR      |    15|
+|29    |PLLE2_ADV |     1|
+|30    |PS7       |     1|
+|31    |RAM32M    |    20|
+|32    |RAMB18E1  |    20|
+|34    |RAMB36E1  |    38|
+|38    |SRL16     |     1|
+|39    |SRL16E    |  1582|
+|40    |SRLC32E   |   768|
+|41    |XORCY     |  4084|
+|42    |FDE       |    36|
+|43    |FDRE      | 20321|
+|44    |FDSE      |   426|
+|45    |IBUF      |    35|
+|46    |OBUF      |    26|
+|47    |OBUFT     |     8|
++------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:12 ; elapsed = 00:03:21 . Memory (MB): peak = 3798.871 ; gain = 1481.285 ; free physical = 1810 ; free virtual = 6810
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 391 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:54 ; elapsed = 00:03:04 . Memory (MB): peak = 3798.871 ; gain = 1364.793 ; free physical = 5569 ; free virtual = 10570
+Synthesis Optimization Complete : Time (s): cpu = 00:03:13 ; elapsed = 00:03:25 . Memory (MB): peak = 3798.871 ; gain = 1481.285 ; free physical = 5569 ; free virtual = 10570
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.42 ; elapsed = 00:00:00.42 . Memory (MB): peak = 3798.871 ; gain = 0.000 ; free physical = 5573 ; free virtual = 10573
+INFO: [Netlist 29-17] Analyzing 9109 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3798.871 ; gain = 0.000 ; free physical = 5580 ; free virtual = 10581
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1159 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 1102 instances
+  FDE => FDRE: 36 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 20 instances
+  SRL16 => SRL16E: 1 instance 
+
+Synth Design complete | Checksum: a33c812d
+INFO: [Common 17-83] Releasing license: Synthesis
+485 Infos, 506 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:03:31 ; elapsed = 00:03:43 . Memory (MB): peak = 3798.871 ; gain = 2385.727 ; free physical = 5580 ; free virtual = 10581
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 8100.350; main = 2858.309; forked = 5371.871
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 16783.270; main = 3794.957; forked = 12988.312
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3810.961 ; gain = 8.004 ; free physical = 5572 ; free virtual = 10577
+INFO: [Common 17-1381] The checkpoint '/home/andrew/eclypse-z7-notes/tmp/sdr_transceiver.runs/synth_1/system_wrapper.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file system_wrapper_utilization_synth.rpt -pb system_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 23 22:47:55 2024...
