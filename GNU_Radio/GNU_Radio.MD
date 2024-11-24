@@ -2,4 +2,4 @@
 
 
 GNU Radio Flow for the Pluto SDR
-![GNU Radio Flow](GNU_Radio/Images/GNU_RADIO_Flow_Pluto1.png)
+![GNU Radio Flow](Images/GNU_RADIO_Flow_Pluto1.png)
