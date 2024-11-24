@@ -1,5 +1,7 @@
 # **GNU Radio**
 
+# Setup
+1. Copy Eclypse Z7 GNU Radio Blocks to C:\Users\*Username*\radioconda\Library\share\gnuradio\grc\blocks
 
 
 ![GNU Radio Flow](Images/GNU_RADIO_Flow_Pluto1.png)
