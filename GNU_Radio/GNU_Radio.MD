@@ -1,10 +1,11 @@
 # **GNU Radio**
 
-# Setup
+# Setup for Eclypse Z7
 This is assuming you are using a Windows system.  If you are using a Linux system, it should be easier.  https://www.hackster.io/whitney-knitter/getting-started-with-the-sdr-zmod-on-eclypse-z7-gnu-radio-24bdd3
 1. Copy Eclypse Z7 GNU Radio Blocks to C:\Users\*Username*\radioconda\Library\share\gnuradio\grc\blocks
 2. Copy eclypse_z7.py to C:\Users\*Username*\radioconda\Lib\site-packages
 
+#Sample with Pluto
 
 ![GNU Radio Flow](Images/GNU_RADIO_Flow_Pluto1.png)
 Figure 1 GNU Radio Flow for the Pluto SDR
