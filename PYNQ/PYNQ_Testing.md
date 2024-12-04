@@ -23,8 +23,8 @@ Figure 2 - GNU Radio Control Button
 
 ## Proof of Concept for PLL Output
 
-Next a PLL signal was output from the PMOD on the PYNQ to test the feasability of outputing a clock over PMOD ports.
-https://blog.umer-farooq.com/a-pynq-z2-guide-for-absolute-dummies-part-iii-tick-tock-using-fpga-clock-33a34ef3f51a
+Next a PLL signal was output from the PMOD on the PYNQ to test the feasability of outputing a clock over PMOD ports.  The guide linked below was used as a starting place.
+[A PYNQ-Z2 Guide for Absolute Dummies — Part III: Configuring the FPGA Clock](https://blog.umer-farooq.com/a-pynq-z2-guide-for-absolute-dummies-part-iii-tick-tock-using-fpga-clock-33a34ef3f51a)
 
 ![PYNQ-Z2 PLL Output](Images/PYNQ_PLL_1.jpg)
 Figure 3 Sample PLL Output from PYNQ
