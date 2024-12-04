@@ -5,7 +5,7 @@ This is assuming you are using a Windows system.  If you are using a Linux syste
 1. Copy Eclypse Z7 GNU Radio Blocks to C:\Users\*Username*\radioconda\Library\share\gnuradio\grc\blocks
 2. Copy eclypse_z7.py to C:\Users\*Username*\radioconda\Lib\site-packages
 
-#Sample with Pluto
+# Sample with Pluto
 
 ![GNU Radio Flow](Images/GNU_RADIO_Flow_Pluto1.png)
 Figure 1 GNU Radio Flow for the Pluto SDR
