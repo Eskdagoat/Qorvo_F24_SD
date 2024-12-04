@@ -4,6 +4,10 @@
 [Eclypse Z7 General Info](https://digilent.com/reference/programmable-logic/eclypse-z7/start) \
 [Eclypse Z7 Reference Manual](https://digilent.com/reference/programmable-logic/eclypse-z7/reference-manual) \
 
+## GNU Radio
+[GNU Radio Wiki](https://wiki.gnuradio.org/index.php?title=Main_Page)
+[Windows Install](https://wiki.gnuradio.org/index.php/WindowsInstall)
+
 ## PYNQ-Z2
 [A PYNQ-Z2 Guide for Absolute Dummies — Part III: Configuring the FPGA Clock](https://blog.umer-farooq.com/a-pynq-z2-guide-for-absolute-dummies-part-iii-tick-tock-using-fpga-clock-33a34ef3f51a)
 
