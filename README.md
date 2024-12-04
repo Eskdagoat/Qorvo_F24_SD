@@ -29,10 +29,9 @@ Design and Develop a modular and reconfigurable Software Defined Radio (SDR) pla
 ![Computer Flowchart](Computer/Images/Computer_Flow_1.png)
 
 ### Links
-[Eclypse Z7 FPGA Testing](Computer/Eclypse/Eclypse_Testing.MD)
-
-[GNU Radio](Computer/GNU_Radio/GNU_Radio.md)
-
+[Computer Resources](Computer/Computer__Resources.md) \
+[Eclypse Z7 FPGA Testing](Computer/Eclypse/Eclypse_Testing.MD) \
+[GNU Radio](Computer/GNU_Radio/GNU_Radio.md) \
 [PYNQ-Z2 Test FPGA](Computer/PYNQ/PYNQ_Testing.md)
 
 ## Electrical Engineering
