@@ -2,25 +2,29 @@
 ### Objective
 Design and Develop a modular and reconfigurable Software Defined Radio (SDR) platform to support future student projects, ensuring a flexible and adaptive environment.
 ### Key Functionality 
-Facilitate simultaneous testing of multiple RF modules with independent digital control. \
-Operate at a frequency range of 85-2500 MHz, featuring dual receive (Rx) channels. \
-Provide seamless interaction between hardware and software via a USB interface. 
+* Facilitate simultaneous testing of multiple RF modules with independent digital control. \
+* Operate at a frequency range of 85-2500 MHz, featuring dual receive (Rx) channels. \
+* Provide seamless interaction between hardware and software via a USB interface. 
 
 
 ## Computer Engineering
 
 ### FPGA and Control System Integration
-Flexibility: Dynamic reconfiguration support. \
-Connectivity: GNU Radio for user-defined control. \
-Precision: Stable high-quality RF performance. \
-Reliability: Low-latency communication. \
-Expansion: Modular design for hardware enhancement. 
+* Flexibility: Dynamic reconfiguration support. \
+* Connectivity: GNU Radio for user-defined control. \
+* Precision: Stable high-quality RF performance. \
+* Reliability: Low-latency communication. \
+* Expansion: Modular design for hardware enhancement. 
 
 
 ### Design Analysis
-Designed a GNU Radio flow to provide both audio and visual representations of received signals. \
-Validated output using the Pluto SDR platform. \
-Successfully verified GNU based FPGA control. 
+* Designed a GNU Radio flow to provide both audio and visual representations of received signals. \
+* Validated output using the Pluto SDR platform. \
+* Successfully verified GNU based FPGA control. 
+
+### Signal Flow and Control Architecture
+* Comprehensive end-to-end signal processing architecture, from user inputs to RF signal generation and reception.
+* Emphasizes modularity to enable updates and/or additions for future system enhancements.
 
 
 ### Links
@@ -55,3 +59,12 @@ Successfully verified GNU based FPGA control.
 
 
 ### Links
+
+## Implementation Plans for Senior Design 2
+* Procure components and fabricate the enclosure. 
+* Manufacture the RF front-end PCB to design.
+* Program the FPGA for to control the RF front end.
+* Conduct rigorous testing to verify compliance with operational specifications.
+* Refine code for enhanced performance of the software-defined radio system.
+* Deliver a fully functional, modular, and reconfigurable SDR platform.
+
