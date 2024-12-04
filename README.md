@@ -26,6 +26,7 @@ Design and Develop a modular and reconfigurable Software Defined Radio (SDR) pla
 * Comprehensive end-to-end signal processing architecture, from user inputs to RF signal generation and reception.
 * Emphasizes modularity to enable updates and/or additions for future system enhancements.
 
+![Computer Flowchart](Computer/Images/Computer_Flow_1.png)
 
 ### Links
 [Eclypse Z7 FPGA Testing](Eclypse_TEST/Eclypse_Testing.MD)
@@ -45,6 +46,14 @@ Design and Develop a modular and reconfigurable Software Defined Radio (SDR) pla
 * Filtering: Low-pass filters, with s cutoff frequency of 50 MHz, configured to provide (Vcm) for the differential amplifier.
 * Signal Chain: Comprehensive signal chain analysis was performed to mitigate distortion or clipping before the ADC stage, preserving signal integrity during digitization.
 
+### HCC512-AG Power Supply
+* Output: 5 VDC, 12 VDC V, 60 W
+* Linear, Stable, low output ripple
+
+
+### Block Diagram
+![Block Diagram](Electrical/Images/Electrical_Block_1.png)
+
 ### Links
 
 ## Mechanical Engineering
@@ -56,7 +65,7 @@ Design and Develop a modular and reconfigurable Software Defined Radio (SDR) pla
 * Plexiglass lid for accessibility
 * User interface
 
-
+![CAD Model](Mechanical/Images/Box_1.png)
 
 ### Links
 
