@@ -5,11 +5,11 @@
 
 ## Eclypse Z7
 [Eclypse Z7 General Info](https://digilent.com/reference/programmable-logic/eclypse-z7/start) \
-[Eclypse Z7 Reference Manual](https://digilent.com/reference/programmable-logic/eclypse-z7/reference-manual) \
+[Eclypse Z7 Reference Manual](https://digilent.com/reference/programmable-logic/eclypse-z7/reference-manual) 
 
 ## GNU Radio
-[GNU Radio Wiki](https://wiki.gnuradio.org/index.php?title=Main_Page)
-[GNU Radio Pluto Example](https://wiki.gnuradio.org/index.php/PlutoSDR_Source)
+[GNU Radio Wiki](https://wiki.gnuradio.org/index.php?title=Main_Page) \
+[GNU Radio Pluto Example](https://wiki.gnuradio.org/index.php/PlutoSDR_Source) \
 [Windows Install](https://wiki.gnuradio.org/index.php/WindowsInstall)
 
 ## PYNQ-Z2
