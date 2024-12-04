@@ -9,6 +9,6 @@ A PLL signal was output from the PMOD on the PYNQ to test the feasability of out
 
 [Vivado source for PLL Output](https://github.com/Eskdagoat/Qorvo_F24_SD/tree/main/Eclypse_TEST/Eclypse_Test_PLL_1)
 
-![Eclypse PLL Output](Eclypse_TEST/Images/Eclypse_PLL_1.jpg)
+![Eclypse PLL Output](Images/Eclypse_PLL_1.jpg)
 
 Figure 1 - Eclypse PLL Output
