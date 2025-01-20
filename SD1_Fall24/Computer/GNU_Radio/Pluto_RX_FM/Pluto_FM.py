@@ -13,10 +13,8 @@
 from PyQt5 import Qt
 from gnuradio import qtgui
 from PyQt5 import QtCore
-from PyQt5.QtCore import QObject, pyqtSlot
 from gnuradio import analog
 from gnuradio import audio
-from gnuradio import blocks
 from gnuradio import filter
 from gnuradio.filter import firdes
 from gnuradio import gr
@@ -28,7 +26,6 @@ from argparse import ArgumentParser
 from gnuradio.eng_arg import eng_float, intx
 from gnuradio import eng_notation
 from gnuradio import iio
-import Pluto_FM_epy_block_1 as epy_block_1  # embedded python block
 import sip
 
 
@@ -69,40 +66,14 @@ class Pluto_FM(gr.top_block, Qt.QWidget):
         # Variables
         ##################################################
         self.samp_rate = samp_rate = 2048000
-        self.mixer_chooser1 = mixer_chooser1 = 0
         self.freq = freq = 103700000
 
         ##################################################
         # Blocks
         ##################################################
 
-        # Create the options list
-        self._mixer_chooser1_options = [0, 1]
-        # Create the labels list
-        self._mixer_chooser1_labels = ['Low End', 'High End']
-        # Create the combo box
-        # Create the radio buttons
-        self._mixer_chooser1_group_box = Qt.QGroupBox("Low/High Status" + ": ")
-        self._mixer_chooser1_box = Qt.QVBoxLayout()
-        class variable_chooser_button_group(Qt.QButtonGroup):
-            def __init__(self, parent=None):
-                Qt.QButtonGroup.__init__(self, parent)
-            @pyqtSlot(int)
-            def updateButtonChecked(self, button_id):
-                self.button(button_id).setChecked(True)
-        self._mixer_chooser1_button_group = variable_chooser_button_group()
-        self._mixer_chooser1_group_box.setLayout(self._mixer_chooser1_box)
-        for i, _label in enumerate(self._mixer_chooser1_labels):
-            radio_button = Qt.QRadioButton(_label)
-            self._mixer_chooser1_box.addWidget(radio_button)
-            self._mixer_chooser1_button_group.addButton(radio_button, i)
-        self._mixer_chooser1_callback = lambda i: Qt.QMetaObject.invokeMethod(self._mixer_chooser1_button_group, "updateButtonChecked", Qt.Q_ARG("int", self._mixer_chooser1_options.index(i)))
-        self._mixer_chooser1_callback(self.mixer_chooser1)
-        self._mixer_chooser1_button_group.buttonClicked[int].connect(
-            lambda i: self.set_mixer_chooser1(self._mixer_chooser1_options[i]))
-        self.top_layout.addWidget(self._mixer_chooser1_group_box)
         self._freq_range = qtgui.Range(90000000, 107000000, 50000, 103700000, 200)
-        self._freq_win = qtgui.RangeWidget(self._freq_range, self.set_freq, "Frequency", "counter_slider", int, QtCore.Qt.Horizontal)
+        self._freq_win = qtgui.RangeWidget(self._freq_range, self.set_freq, "'freq'", "counter_slider", int, QtCore.Qt.Horizontal)
         self.top_layout.addWidget(self._freq_win)
         self.qtgui_waterfall_sink_x_0 = qtgui.waterfall_sink_c(
             32768, #size
@@ -251,8 +222,6 @@ class Pluto_FM(gr.top_block, Qt.QWidget):
         self.iio_pluto_source_0.set_rfdc(True)
         self.iio_pluto_source_0.set_bbdc(True)
         self.iio_pluto_source_0.set_filter_params('Auto', '', 0, 0)
-        self.epy_block_1 = epy_block_1.blk(example_param=mixer_chooser1)
-        self.blocks_null_source_0_0 = blocks.null_source(gr.sizeof_int*1)
         self.audio_sink_0 = audio.sink(48000, '', True)
         self.analog_wfm_rcv_0 = analog.wfm_rcv(
         	quad_rate=384000,
@@ -264,7 +233,6 @@ class Pluto_FM(gr.top_block, Qt.QWidget):
         # Connections
         ##################################################
         self.connect((self.analog_wfm_rcv_0, 0), (self.audio_sink_0, 0))
-        self.connect((self.blocks_null_source_0_0, 0), (self.epy_block_1, 0))
         self.connect((self.iio_pluto_source_0, 0), (self.low_pass_filter_0, 0))
         self.connect((self.iio_pluto_source_0, 0), (self.qtgui_freq_sink_x_0, 0))
         self.connect((self.iio_pluto_source_0, 0), (self.qtgui_time_sink_x_0, 0))
@@ -289,14 +257,6 @@ class Pluto_FM(gr.top_block, Qt.QWidget):
         self.qtgui_freq_sink_x_0.set_frequency_range(self.freq, self.samp_rate)
         self.qtgui_time_sink_x_0.set_samp_rate(self.samp_rate)
         self.qtgui_waterfall_sink_x_0.set_frequency_range(self.freq, self.samp_rate)
-
-    def get_mixer_chooser1(self):
-        return self.mixer_chooser1
-
-    def set_mixer_chooser1(self, mixer_chooser1):
-        self.mixer_chooser1 = mixer_chooser1
-        self._mixer_chooser1_callback(self.mixer_chooser1)
-        self.epy_block_1.example_param = self.mixer_chooser1
 
     def get_freq(self):
         return self.freq
