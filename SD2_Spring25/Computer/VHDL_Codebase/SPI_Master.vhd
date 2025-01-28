@@ -75,14 +75,15 @@ begin
                     if start_exp = '1' and start_lo = '0' then
                         CS_Exp <= '0';
                         cs_active <= '0';
-                        shift_reg <= data_in(15 downto 0) & (others => '0'); -- Use 16 bits for Exp
+                        shift_reg <= (others => '0');
+                        shift_reg(15 downto 0) <= data_in(15 downto 0); -- Use 16 bits for Exp
                         active_bits <= 16;
                         state <= 1;
                         busy <= '1';
                     elsif start_lo = '1' and start_exp = '0' then
                         CS_LO <= '0';
                         cs_active <= '1';
-                        shift_reg <= data_in; -- Use 32 bits for LO
+                        shift_reg <= data_in; -- Use full 32 bits for LO
                         active_bits <= 32;
                         state <= 1;
                         busy <= '1';
