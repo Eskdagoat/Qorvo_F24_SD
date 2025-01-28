@@ -4,10 +4,10 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 -- SPI Master Module
--- This module controls SPI communication for two devices:
--- 1. Exp: MCP23017 (I/O Expander)
--- 2. LO: ADF4351 (Frequency Synthesizer)
--- Each device is selected using a chip-select (CS) signal.
+-- This module supports two devices:
+-- 1. Exp: MCP23017 (16-bit transactions)
+-- 2. LO: ADF4351 (32-bit transactions)
+-- It manages SPI communication, timing, and device-specific requirements.
 
 entity SPI_Master is
     Port (
@@ -27,8 +27,8 @@ entity SPI_Master is
         CS_LO         : out STD_LOGIC;               -- Chip-select for LO (ADF4351)
 
         -- Data interface
-        data_in       : in  STD_LOGIC_VECTOR(7 downto 0); -- Data to be transmitted
-        data_out      : out STD_LOGIC_VECTOR(7 downto 0); -- Data received from the device
+        data_in       : in  STD_LOGIC_VECTOR(31 downto 0); -- Data to be transmitted
+        data_out      : out STD_LOGIC_VECTOR(31 downto 0); -- Data received from the device
         done          : out STD_LOGIC                -- Indicates transaction completion
     );
 end SPI_Master;
@@ -36,11 +36,12 @@ end SPI_Master;
 architecture Behavioral of SPI_Master is
 
     -- Internal signals
-    signal bit_counter : integer range 0 to 7 := 0; -- Counts bits sent/received
-    signal shift_reg   : STD_LOGIC_VECTOR(7 downto 0); -- Shift register for MOSI
-    signal rx_reg      : STD_LOGIC_VECTOR(7 downto 0); -- Shift register for MISO
-    signal state       : integer range 0 to 2 := 0;  -- State for the FSM (0=Idle, 1=Transmit, 2=Complete)
+    signal bit_counter : integer range 0 to 31 := 0; -- Counts bits sent/received
+    signal shift_reg   : STD_LOGIC_VECTOR(31 downto 0); -- Shift register for MOSI
+    signal rx_reg      : STD_LOGIC_VECTOR(31 downto 0); -- Shift register for MISO
+    signal state       : integer range 0 to 2 := 0;  -- FSM state (0=Idle, 1=Transmit, 2=Complete)
     signal cs_active   : STD_LOGIC := '0';           -- Active device chip-select
+    signal active_bits : integer := 16;             -- Number of bits for current transaction (16 or 32)
 
 begin
 
@@ -61,6 +62,7 @@ begin
             rx_reg <= (others => '0');
             done <= '0';
             busy <= '0';
+            active_bits <= 16;
         elsif rising_edge(clk) then
             case state is
                 when 0 =>  -- Idle state
@@ -69,42 +71,45 @@ begin
                     CS_Exp <= '1';
                     CS_LO <= '1';
 
-                    -- Start communication based on input signals
-                    if start_exp = '1' then
+                    -- Start transaction based on control signals
+                    if start_exp = '1' and start_lo = '0' then
                         CS_Exp <= '0';
                         cs_active <= '0';
-                        shift_reg <= data_in;
+                        shift_reg <= data_in(15 downto 0) & (others => '0'); -- Use 16 bits for Exp
+                        active_bits <= 16;
                         state <= 1;
                         busy <= '1';
-                    elsif start_lo = '1' then
+                    elsif start_lo = '1' and start_exp = '0' then
                         CS_LO <= '0';
                         cs_active <= '1';
-                        shift_reg <= data_in;
+                        shift_reg <= data_in; -- Use 32 bits for LO
+                        active_bits <= 32;
                         state <= 1;
                         busy <= '1';
                     end if;
 
                 when 1 =>  -- Transmit state
                     -- Send data on MOSI
-                    MOSI <= shift_reg(7);
-                    shift_reg <= shift_reg(6 downto 0) & '0';
+                    MOSI <= shift_reg(31);
+                    shift_reg <= shift_reg(30 downto 0) & '0';
 
                     -- Read data from MISO
-                    rx_reg <= rx_reg(6 downto 0) & MISO;
+                    rx_reg <= rx_reg(30 downto 0) & MISO;
                     bit_counter <= bit_counter + 1;
 
-                    if bit_counter = 7 then
+                    if bit_counter = (active_bits - 1) then
                         state <= 2;  -- Move to complete state
                     end if;
 
                 when 2 =>  -- Complete state
-                    -- End the transaction
+                    -- Deactivate the appropriate chip-select line
                     if cs_active = '0' then
                         CS_Exp <= '1';
                     elsif cs_active = '1' then
                         CS_LO <= '1';
                     end if;
 
+                    -- Output the received data and complete the transaction
                     data_out <= rx_reg;
                     done <= '1';
                     state <= 0;  -- Return to idle
