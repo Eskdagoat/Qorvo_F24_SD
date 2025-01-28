@@ -1,0 +1,31 @@
+Key Features of SPI_Master_tb.vhd
+
+1. Clock Generation:
+
+    Generates a 10 MHz clock signal to drive the SPI_Master module.
+    Ensures timing accuracy for the simulation.
+
+2. Reset Logic:
+
+    Applies a reset at the beginning of the simulation to initialize the SPI_Master module.
+
+3. Transaction Simulation:
+
+    Simulates a 16-bit transaction for the MCP23017:
+        Activates start_exp and verifies data transmission and chip-select behavior.
+    Simulates a 32-bit transaction for the ADF4351:
+        Activates start_lo and verifies longer data transactions and chip-select management.
+
+4. Assertions:
+
+    Ensures proper activation and deactivation of chip-select signals (CS_Exp and CS_LO).
+    Verifies the correct behavior of busy and done signals during and after transactions.
+
+5. Expected Results:
+
+    Monitors MOSI and SCK signals to ensure correct data shifting and clock synchronization.
+    Simulates the MISO response to test the reception functionality.
+
+6. Simulation Completion:
+
+    Completes the simulation after verifying both transactions and reports success or failure using assertions.
