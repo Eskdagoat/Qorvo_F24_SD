@@ -1,0 +1,15 @@
+Key Features of SPI_Master.vhdl
+
+    Clock Divider:
+        The clock divider generates the SPI clock (SCK) from the system clock.
+
+    Finite State Machine (FSM):
+        State 0 (Idle): Waits for either start_exp or start_lo to initiate communication.
+        State 1 (Transmit): Sends data via MOSI and receives data via MISO.
+        State 2 (Complete): Finalizes communication, sets done to 1, and returns to idle.
+
+    Chip-Select (CS):
+        CS_Exp and CS_LO are used to select the respective devices (MCP23017 or ADF4351).
+
+    Shift Registers:
+        A shift register manages data transmission (shift_reg) and reception (rx_reg).
