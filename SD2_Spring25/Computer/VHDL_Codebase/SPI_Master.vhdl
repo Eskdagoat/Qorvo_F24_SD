@@ -11,7 +11,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity SPI_Master is
     Port (
-        clk           : in  STD_LOGIC;               -- System clock input
+        clk           : in  STD_LOGIC;               -- 10 MHz Clock input
         reset         : in  STD_LOGIC;               -- Reset signal
 
         -- Control signals
@@ -36,7 +36,6 @@ end SPI_Master;
 architecture Behavioral of SPI_Master is
 
     -- Internal signals
-    signal clk_div     : STD_LOGIC := '0';           -- Clock divider for SCK generation
     signal bit_counter : integer range 0 to 7 := 0; -- Counts bits sent/received
     signal shift_reg   : STD_LOGIC_VECTOR(7 downto 0); -- Shift register for MOSI
     signal rx_reg      : STD_LOGIC_VECTOR(7 downto 0); -- Shift register for MISO
@@ -45,22 +44,14 @@ architecture Behavioral of SPI_Master is
 
 begin
 
-    -- Clock divider process (to generate SCK from the system clock)
-    process (clk, reset)
-    begin
-        if reset = '1' then
-            clk_div <= '0';
-        elsif rising_edge(clk) then
-            clk_div <= not clk_div;  -- Divide clock frequency by 2
-        end if;
-    end process;
+    -- SPI Clock directly driven by 10 MHz clock input
+    SCK <= clk;
 
     -- Main FSM for SPI communication
     process (clk, reset)
     begin
         if reset = '1' then
             -- Reset all signals
-            SCK <= '0';
             MOSI <= '0';
             CS_Exp <= '1';
             CS_LO <= '1';
@@ -70,12 +61,11 @@ begin
             rx_reg <= (others => '0');
             done <= '0';
             busy <= '0';
-        elsif rising_edge(clk_div) then
+        elsif rising_edge(clk) then
             case state is
                 when 0 =>  -- Idle state
                     done <= '0';
                     busy <= '0';
-                    SCK <= '0';
                     CS_Exp <= '1';
                     CS_LO <= '1';
 
@@ -95,21 +85,16 @@ begin
                     end if;
 
                 when 1 =>  -- Transmit state
-                    -- Generate SCK and shift MOSI/MISO
-                    SCK <= not SCK;
+                    -- Send data on MOSI
+                    MOSI <= shift_reg(7);
+                    shift_reg <= shift_reg(6 downto 0) & '0';
 
-                    if SCK = '1' then
-                        -- Send data on MOSI
-                        MOSI <= shift_reg(7);
-                        shift_reg <= shift_reg(6 downto 0) & '0';
-                    else
-                        -- Read data from MISO
-                        rx_reg <= rx_reg(6 downto 0) & MISO;
-                        bit_counter <= bit_counter + 1;
+                    -- Read data from MISO
+                    rx_reg <= rx_reg(6 downto 0) & MISO;
+                    bit_counter <= bit_counter + 1;
 
-                        if bit_counter = 7 then
-                            state <= 2;  -- Move to complete state
-                        end if;
+                    if bit_counter = 7 then
+                        state <= 2;  -- Move to complete state
                     end if;
 
                 when 2 =>  -- Complete state
