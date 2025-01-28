@@ -13,3 +13,7 @@ Key Features of SPI_Master.vhdl
 
     Shift Registers:
         A shift register manages data transmission (shift_reg) and reception (rx_reg).
+
+SPI_Master_tb.vhdl
+
+    Vivado testbench for simulating SPI_Master.vhdl
