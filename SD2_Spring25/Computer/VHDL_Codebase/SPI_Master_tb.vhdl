@@ -36,7 +36,7 @@ architecture Behavioral of SPI_Master_tb is
     end component;
 
     -- Internal signals
-    signal clk         : STD_LOGIC := '0';          -- Clock signal
+    signal clk         : STD_LOGIC := '0';          -- 10 MHz Clock signal
     signal reset       : STD_LOGIC := '0';          -- Reset signal
     signal start_exp   : STD_LOGIC := '0';          -- Start communication with Exp
     signal start_lo    : STD_LOGIC := '0';          -- Start communication with LO
@@ -52,8 +52,8 @@ architecture Behavioral of SPI_Master_tb is
     signal data_out    : STD_LOGIC_VECTOR(7 downto 0);                    -- Data received
     signal done        : STD_LOGIC;                 -- Done signal from SPI_Master
 
-    -- Clock generation: 50 MHz clock
-    constant CLK_PERIOD : time := 20 ns;
+    -- Clock generation: 10 MHz clock
+    constant CLK_PERIOD : time := 100 ns; -- Period for 10 MHz clock
 
 begin
 
@@ -75,7 +75,7 @@ begin
             done        => done
         );
 
-    -- Clock process to generate a clock signal
+    -- Clock process to generate a 10 MHz clock signal
     clk_process : process
     begin
         clk <= '0';
