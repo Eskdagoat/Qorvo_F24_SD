@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/Eclypse_TEST/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.runs/impl_1/ClockDivider_Block_wrapper.tcl"
+  variable script "B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/SD1_Fall24/Computer/Eclypse/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.runs/impl_1/ClockDivider_Block_wrapper.tcl"
   variable category "vivado_impl"
 }
 
@@ -97,9 +97,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {HDL-1065} -limit 10000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 set_msg_config  -id {17-179}  -suppress 
 
 OPTRACE "impl_1" START { ROLLUP_1 }
@@ -110,11 +107,10 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 4
-  set_param checkpoint.writeSynthRtdsInDcp 1
-  set_param synth.incrementalSynthesisCache C:/Users/ambsc/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-27732-AB-Beast/incrSyn
+  set_param xicom.use_bs_reader 1
   set_param runs.launchOptions { -jobs 16  }
   open_checkpoint ClockDivider_Block_wrapper_routed.dcp
-  set_property webtalk.parent_dir B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/Eclypse_TEST/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.cache/wt [current_project]
+  set_property webtalk.parent_dir B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/SD1_Fall24/Computer/Eclypse/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.cache/wt [current_project]
 set_property TOP ClockDivider_Block_wrapper [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }

@@ -7,7 +7,7 @@
       "name": "ClockDivider_Block",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2024.1",
+      "tool_version": "2024.2.1",
       "validated": "true"
     },
     "design_tree": {
@@ -30,7 +30,7 @@
         "inst_hier_path": "ClockDivider_0",
         "parameters": {
           "DIVISOR": {
-            "value": "0x7735940"
+            "value": "0X000000C"
           }
         },
         "reference_info": {

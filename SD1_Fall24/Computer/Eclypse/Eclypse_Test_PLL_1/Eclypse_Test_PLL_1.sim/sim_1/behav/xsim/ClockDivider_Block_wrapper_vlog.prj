@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../Eclypse_Test_PLL_1.srcs/sources_1/new/ClockDivider.v" \
+"../../../../Eclypse_Test_PLL_1.ip_user_files/bd/ClockDivider_Block/ip/ClockDivider_Block_ClockDivider_0_0/sim/ClockDivider_Block_ClockDivider_0_0.v" \
+"../../../../Eclypse_Test_PLL_1.ip_user_files/bd/ClockDivider_Block/sim/ClockDivider_Block.v" \
+"../../../../Eclypse_Test_PLL_1.gen/sources_1/bd/ClockDivider_Block/hdl/ClockDivider_Block_wrapper.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

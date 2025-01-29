@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Nov 20 23:23:51 2024" VIVADOVERSION="2024.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Jan 25 23:21:18 2025" VIVADOVERSION="2024.2.1">
 
-  <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:eclypse-z7:part0:1.1" DEVICE="7z020" NAME="ClockDivider_Block" PACKAGE="clg484" SPEEDGRADE="-1"/>
+  <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="ClockDivider_Block" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
     <PORT DIR="I" NAME="CLK_IN" SIGIS="undef" SIGNAME="External_Ports_CLK_IN">
@@ -22,7 +22,7 @@
     <MODULE COREREVISION="1" FULLNAME="/ClockDivider_0" HWVERSION="1.0" INSTANCE="ClockDivider_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ClockDivider" VLNV="xilinx.com:module_ref:ClockDivider:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="DIVISOR" VALUE="0x7735940"/>
+        <PARAMETER NAME="DIVISOR" VALUE="0X000000C"/>
         <PARAMETER NAME="Component_Name" VALUE="ClockDivider_Block_ClockDivider_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>

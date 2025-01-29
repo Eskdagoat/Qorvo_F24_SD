@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Wed Nov 20 23:26:38 2024
+| Tool Version : Vivado v.2024.2.1 (win64) Build 5266912 Sun Dec 15 09:03:24 MST 2024
+| Date         : Sat Jan 25 23:24:06 2025
 | Host         : AB-Beast running 64-bit major release  (build 9200)
 | Command      : report_methodology -file ClockDivider_Block_wrapper_methodology_drc_routed.rpt -pb ClockDivider_Block_wrapper_methodology_drc_routed.pb -rpx ClockDivider_Block_wrapper_methodology_drc_routed.rpx
 | Design       : ClockDivider_Block_wrapper
@@ -22,14 +22,14 @@ Table of Contents
             Netlist: netlist
           Floorplan: design_1
       Design limits: <entire design considered>
-             Max violations: <unlimited>
-             Violations found: 2
-+-----------+----------+------------------------------------------------------------------+------------+
-| Rule      | Severity | Description                                                      | Violations |
-+-----------+----------+------------------------------------------------------------------+------------+
-| CKLD-2    | Warning  | Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads | 1          |
-| TIMING-18 | Warning  | Missing input or output delay                                    | 1          |
-+-----------+----------+------------------------------------------------------------------+------------+
+             Max checks: <unlimited>
+             Checks found: 2
++-----------+----------+------------------------------------------------------------------+--------+
+| Rule      | Severity | Description                                                      | Checks |
++-----------+----------+------------------------------------------------------------------+--------+
+| CKLD-2    | Warning  | Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads | 1      |
+| TIMING-18 | Warning  | Missing input or output delay                                    | 1      |
++-----------+----------+------------------------------------------------------------------+--------+
 
 2. REPORT DETAILS
 -----------------

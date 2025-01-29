@@ -62,7 +62,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [800, 368.0]
+    coordinate: [432, 312.0]
     rotation: 0
     state: enabled
 - name: blocks_multiply_const_vxx_0
@@ -80,7 +80,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [624, 208.0]
+    coordinate: [256, 152.0]
     rotation: 0
     state: enabled
 - name: blocks_multiply_const_vxx_1
@@ -98,7 +98,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1064, 400.0]
+    coordinate: [696, 344.0]
     rotation: 0
     state: enabled
 - name: blocks_wavfile_source_0
@@ -116,7 +116,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [216, 200.0]
+    coordinate: [24, 144.0]
     rotation: 0
     state: enabled
 - name: iio_pluto_sink_0
@@ -142,7 +142,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1272, 344.0]
+    coordinate: [904, 288.0]
     rotation: 0
     state: enabled
 - name: qtgui_waterfall_sink_x_0
@@ -203,7 +203,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1248, 568.0]
+    coordinate: [880, 512.0]
     rotation: 0
     state: enabled
 

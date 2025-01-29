@@ -1,6 +1,6 @@
 -------------------------------------
-| Tool Version : Vivado v.2024.1
-| Date         : Wed Nov 20 23:26:12 2024
+| Tool Version : Vivado v.2024.2.1
+| Date         : Sat Jan 25 23:23:36 2025
 | Host         : AB-Beast
 | Design       : design_1
 | Device       : xc7z020-clg484-1--

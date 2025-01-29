@@ -1,5 +1,5 @@
 // (c) Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-// (c) Copyright 2022-2024 Advanced Micro Devices, Inc. All rights reserved.
+// (c) Copyright 2022-2025 Advanced Micro Devices, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of AMD and is protected under U.S. and international copyright
@@ -50,9 +50,9 @@
 // IP VLNV: xilinx.com:module_ref:ClockDivider:1.0
 // IP Revision: 1
 
-(* X_CORE_INFO = "ClockDivider,Vivado 2024.1" *)
+(* X_CORE_INFO = "ClockDivider,Vivado 2024.2.1" *)
 (* CHECK_LICENSE_TYPE = "ClockDivider_Block_ClockDivider_0_0,ClockDivider,{}" *)
-(* CORE_GENERATION_INFO = "ClockDivider_Block_ClockDivider_0_0,ClockDivider,{x_ipProduct=Vivado 2024.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=ClockDivider,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,DIVISOR=0x7735940}" *)
+(* CORE_GENERATION_INFO = "ClockDivider_Block_ClockDivider_0_0,ClockDivider,{x_ipProduct=Vivado 2024.2.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=ClockDivider,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,DIVISOR=0X000000C}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module ClockDivider_Block_ClockDivider_0_0 (
@@ -63,9 +63,7 @@ module ClockDivider_Block_ClockDivider_0_0 (
 input wire CLK_IN;
 output wire CLK_OUT;
 
-  ClockDivider #(
-    .DIVISOR(28'H7735940)
-  ) inst (
+  ClockDivider inst (
     .CLK_IN(CLK_IN),
     .CLK_OUT(CLK_OUT)
   );

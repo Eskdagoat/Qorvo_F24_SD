@@ -1,8 +1,8 @@
 //Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-//Date        : Wed Nov 20 23:23:51 2024
+//Tool Version: Vivado v.2024.2.1 (win64) Build 5266912 Sun Dec 15 09:03:24 MST 2024
+//Date        : Sat Jan 25 23:21:18 2025
 //Host        : AB-Beast running 64-bit major release  (build 9200)
 //Command     : generate_target ClockDivider_Block.bd
 //Design      : ClockDivider_Block
@@ -17,12 +17,10 @@ module ClockDivider_Block
   input CLK_IN;
   output PMODa0;
 
-  wire CLK_IN_1;
-  wire ClockDivider_0_CLK_OUT;
+  wire CLK_IN;
+  wire PMODa0;
 
-  assign CLK_IN_1 = CLK_IN;
-  assign PMODa0 = ClockDivider_0_CLK_OUT;
   ClockDivider_Block_ClockDivider_0_0 ClockDivider_0
-       (.CLK_IN(CLK_IN_1),
-        .CLK_OUT(ClockDivider_0_CLK_OUT));
+       (.CLK_IN(CLK_IN),
+        .CLK_OUT(PMODa0));
 endmodule

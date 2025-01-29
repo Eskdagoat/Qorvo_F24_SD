@@ -1,5 +1,5 @@
 // (c) Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-// (c) Copyright 2022-2024 Advanced Micro Devices, Inc. All rights reserved.
+// (c) Copyright 2022-2025 Advanced Micro Devices, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of AMD and is protected under U.S. and international copyright
@@ -62,9 +62,7 @@ module ClockDivider_Block_ClockDivider_0_0 (
 input wire CLK_IN;
 output wire CLK_OUT;
 
-  ClockDivider #(
-    .DIVISOR(28'H7735940)
-  ) inst (
+  ClockDivider inst (
     .CLK_IN(CLK_IN),
     .CLK_OUT(CLK_OUT)
   );

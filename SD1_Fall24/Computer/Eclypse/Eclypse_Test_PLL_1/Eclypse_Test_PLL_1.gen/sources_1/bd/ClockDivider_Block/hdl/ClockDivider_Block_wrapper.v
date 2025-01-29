@@ -1,8 +1,8 @@
 //Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-//Date        : Wed Nov 20 23:23:51 2024
+//Tool Version: Vivado v.2024.2.1 (win64) Build 5266912 Sun Dec 15 09:03:24 MST 2024
+//Date        : Sat Jan 25 23:21:18 2025
 //Host        : AB-Beast running 64-bit major release  (build 9200)
 //Command     : generate_target ClockDivider_Block_wrapper.bd
 //Design      : ClockDivider_Block_wrapper

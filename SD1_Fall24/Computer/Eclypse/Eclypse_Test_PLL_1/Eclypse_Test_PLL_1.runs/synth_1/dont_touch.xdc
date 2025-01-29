@@ -9,4 +9,4 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ClockDivide
 # IP: bd/ClockDivider_Block/ip/ClockDivider_Block_ClockDivider_0_0/ClockDivider_Block_ClockDivider_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ClockDivider_Block_ClockDivider_0_0 || ORIG_REF_NAME==ClockDivider_Block_ClockDivider_0_0} -quiet] -quiet
 
-# XDC: b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/Eclypse_TEST/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.gen/sources_1/bd/ClockDivider_Block/ClockDivider_Block_ooc.xdc
+# XDC: b:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/SD1_Fall24/Computer/Eclypse/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.gen/sources_1/bd/ClockDivider_Block/ClockDivider_Block_ooc.xdc
