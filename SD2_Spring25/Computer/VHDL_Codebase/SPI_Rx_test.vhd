@@ -23,7 +23,7 @@ entity SPI_Master is
 
         -- Data interface
         data_in       : in  STD_LOGIC_VECTOR(31 downto 0); -- Data to be transmitted
-        data_out      : out STD_LOGIC_VECTOR(31 downto 0); -- Data received from SPI
+        data_out      : out STD_LOGIC_VECTOR(15 downto 0); -- Data received from SPI (16 bits for Exp)
         muxout_status : in  STD_LOGIC;               -- MUXOUT status from ADF4351
         muxout_flag   : out STD_LOGIC;               -- MUXOUT signal captured
         done          : out STD_LOGIC                -- Indicates transaction completion
@@ -33,9 +33,9 @@ end SPI_Master;
 architecture Behavioral of SPI_Master is
 
     -- Internal signals
-    signal bit_counter : integer range 0 to 31 := 0;
+    signal bit_counter : integer range 0 to 15 := 0; -- Adjusted for 16-bit data from Exp
     signal shift_reg   : STD_LOGIC_VECTOR(31 downto 0);
-    signal rx_reg      : STD_LOGIC_VECTOR(31 downto 0);
+    signal rx_reg      : STD_LOGIC_VECTOR(15 downto 0); -- Adjusted for 16-bit data from Exp
     signal state       : integer range 0 to 3 := 0;  -- FSM states
     signal cs_active   : STD_LOGIC := '0';           -- Active CS
     signal active_bits : integer := 16;
@@ -89,7 +89,7 @@ begin
                 when 1 =>  -- Transmit and receive
                     MOSI <= shift_reg(31);
                     shift_reg <= shift_reg(30 downto 0) & '0';
-                    rx_reg <= rx_reg(30 downto 0) & MISO;
+                    rx_reg <= rx_reg(14 downto 0) & MISO; -- Capture only 16 bits for Exp
                     bit_counter <= bit_counter + 1;
 
                     if bit_counter = (active_bits - 1) then
@@ -103,7 +103,7 @@ begin
                         CS_LO <= '1';
                     end if;
                     
-                    data_out <= rx_reg;
+                    data_out <= rx_reg;  -- Only 16 bits for Exp
                     done <= '1';
                     state <= 0;
             end case;
