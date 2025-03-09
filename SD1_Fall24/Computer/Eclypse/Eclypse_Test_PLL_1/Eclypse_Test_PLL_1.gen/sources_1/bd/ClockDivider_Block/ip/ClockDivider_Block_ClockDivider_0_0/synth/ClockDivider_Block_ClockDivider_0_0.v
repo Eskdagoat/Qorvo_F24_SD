@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "ClockDivider,Vivado 2024.2.1" *)
 (* CHECK_LICENSE_TYPE = "ClockDivider_Block_ClockDivider_0_0,ClockDivider,{}" *)
-(* CORE_GENERATION_INFO = "ClockDivider_Block_ClockDivider_0_0,ClockDivider,{x_ipProduct=Vivado 2024.2.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=ClockDivider,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,DIVISOR=0X000000C}" *)
+(* CORE_GENERATION_INFO = "ClockDivider_Block_ClockDivider_0_0,ClockDivider,{x_ipProduct=Vivado 2024.2.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=ClockDivider,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,DIVISOR=0x000000C}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module ClockDivider_Block_ClockDivider_0_0 (
@@ -63,7 +63,9 @@ module ClockDivider_Block_ClockDivider_0_0 (
 input wire CLK_IN;
 output wire CLK_OUT;
 
-  ClockDivider inst (
+  ClockDivider #(
+    .DIVISOR(28'H000000C)
+  ) inst (
     .CLK_IN(CLK_IN),
     .CLK_OUT(CLK_OUT)
   );

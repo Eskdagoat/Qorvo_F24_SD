@@ -33,7 +33,28 @@ options:
     state: enabled
 
 blocks:
-- name: samp_rate
+- name: audio_gain
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: 50e-3
+    stop: '1'
+    value: 100e-3
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 48.0]
+    rotation: 0
+    state: enabled
+- name: quad_rate
   id: variable
   parameters:
     comment: ''
@@ -42,7 +63,42 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [184, 40.0]
+    coordinate: [376, 176.0]
+    rotation: 0
+    state: enabled
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '48000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [224, 24.0]
+    rotation: 0
+    state: enabled
+- name: analog_sig_source_x_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    freq: '600'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: '48000'
+    showports: 'False'
+    type: float
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [0, 264.0]
     rotation: 0
     state: enabled
 - name: analog_wfm_tx_0
@@ -50,13 +106,13 @@ blocks:
   parameters:
     affinity: ''
     alias: ''
-    audio_rate: '32000'
+    audio_rate: '48000'
     comment: ''
     fh: '-1.0'
-    max_dev: 75e3
+    max_dev: '5000'
     maxoutbuf: '0'
     minoutbuf: '0'
-    quad_rate: '640000'
+    quad_rate: '576000'
     tau: 75e-6
   states:
     bus_sink: false
@@ -71,7 +127,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    const: 30e-6
+    const: audio_gain
     maxoutbuf: '0'
     minoutbuf: '0'
     type: float
@@ -80,43 +136,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [256, 152.0]
-    rotation: 0
-    state: enabled
-- name: blocks_multiply_const_vxx_1
-  id: blocks_multiply_const_vxx
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    const: '32768'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    type: complex
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [696, 344.0]
-    rotation: 0
-    state: enabled
-- name: blocks_wavfile_source_0
-  id: blocks_wavfile_source
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    file: C:\Users\ambsc\Downloads\11 - Wagon Wheel.wav
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    nchan: '1'
-    repeat: 'True'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [24, 144.0]
+    coordinate: [248, 304.0]
     rotation: 0
     state: enabled
 - name: iio_pluto_sink_0
@@ -125,7 +145,7 @@ blocks:
     affinity: ''
     alias: ''
     attenuation1: '10.0'
-    bandwidth: '20000000'
+    bandwidth: '200000'
     buffer_size: '16384'
     comment: ''
     cyclic: 'False'
@@ -135,84 +155,76 @@ blocks:
     frequency: '100000000'
     fstop: '0'
     len_tag_key: ''
-    samplerate: samp_rate
+    samplerate: quad_rate
     type: fc32
     uri: 192.168.2.1
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [904, 288.0]
+    coordinate: [904, 304.0]
     rotation: 0
     state: enabled
-- name: qtgui_waterfall_sink_x_0
-  id: qtgui_waterfall_sink_x
+- name: low_pass_filter_0
+  id: low_pass_filter
   parameters:
     affinity: ''
     alias: ''
-    alpha1: '1.0'
-    alpha10: '1.0'
-    alpha2: '1.0'
-    alpha3: '1.0'
-    alpha4: '1.0'
-    alpha5: '1.0'
-    alpha6: '1.0'
-    alpha7: '1.0'
-    alpha8: '1.0'
-    alpha9: '1.0'
-    axislabels: 'True'
-    bw: samp_rate
-    color1: '0'
-    color10: '0'
-    color2: '0'
-    color3: '0'
-    color4: '0'
-    color5: '0'
-    color6: '0'
-    color7: '0'
-    color8: '0'
-    color9: '0'
+    beta: '6.76'
+    comment: ''
+    cutoff_freq: '5000'
+    decim: '1'
+    gain: '1'
+    interp: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    type: fir_filter_ccf
+    width: '2000'
+    win: window.WIN_HAMMING
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [688, 296.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_sink_x_0
+  id: qtgui_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: '48000'
     comment: ''
     fc: '0'
     fftsize: '1024'
-    freqhalf: 'True'
-    grid: 'False'
     gui_hint: ''
-    int_max: '10'
-    int_min: '-140'
-    label1: ''
-    label10: ''
-    label2: ''
-    label3: ''
-    label4: ''
-    label5: ''
-    label6: ''
-    label7: ''
-    label8: ''
-    label9: ''
-    legend: 'True'
     maxoutbuf: '0'
     minoutbuf: '0'
     name: '""'
-    nconnections: '1'
+    plotconst: 'True'
+    plotfreq: 'True'
+    plottime: 'True'
+    plotwaterfall: 'True'
+    rate: '10'
     showports: 'False'
+    showrf: 'False'
     type: complex
-    update_time: '0.10'
     wintype: window.WIN_BLACKMAN_hARRIS
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [880, 512.0]
+    coordinate: [912, 160.0]
     rotation: 0
     state: enabled
 
 connections:
-- [analog_wfm_tx_0, '0', blocks_multiply_const_vxx_1, '0']
+- [analog_sig_source_x_0, '0', blocks_multiply_const_vxx_0, '0']
+- [analog_wfm_tx_0, '0', low_pass_filter_0, '0']
 - [blocks_multiply_const_vxx_0, '0', analog_wfm_tx_0, '0']
-- [blocks_multiply_const_vxx_1, '0', iio_pluto_sink_0, '0']
-- [blocks_multiply_const_vxx_1, '0', qtgui_waterfall_sink_x_0, '0']
-- [blocks_wavfile_source_0, '0', blocks_multiply_const_vxx_0, '0']
+- [low_pass_filter_0, '0', iio_pluto_sink_0, '0']
+- [low_pass_filter_0, '0', qtgui_sink_x_0, '0']
 
 metadata:
   file_format: 1

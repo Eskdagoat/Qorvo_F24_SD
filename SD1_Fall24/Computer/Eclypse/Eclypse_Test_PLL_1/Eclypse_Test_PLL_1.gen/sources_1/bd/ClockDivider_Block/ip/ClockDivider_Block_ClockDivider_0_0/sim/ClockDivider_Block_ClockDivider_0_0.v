@@ -62,7 +62,9 @@ module ClockDivider_Block_ClockDivider_0_0 (
 input wire CLK_IN;
 output wire CLK_OUT;
 
-  ClockDivider inst (
+  ClockDivider #(
+    .DIVISOR(28'H000000C)
+  ) inst (
     .CLK_IN(CLK_IN),
     .CLK_OUT(CLK_OUT)
   );

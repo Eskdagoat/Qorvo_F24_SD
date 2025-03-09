@@ -11,10 +11,12 @@
 
 from PyQt5 import Qt
 from gnuradio import qtgui
+from PyQt5 import QtCore
 from gnuradio import analog
 from gnuradio import blocks
-from gnuradio import gr
+from gnuradio import filter
 from gnuradio.filter import firdes
+from gnuradio import gr
 from gnuradio.fft import window
 import sys
 import signal
@@ -62,74 +64,70 @@ class PlutoTransmit(gr.top_block, Qt.QWidget):
         ##################################################
         # Variables
         ##################################################
-        self.samp_rate = samp_rate = 576000
+        self.samp_rate = samp_rate = 48000
+        self.quad_rate = quad_rate = 576000
+        self.audio_gain = audio_gain = 100e-3
 
         ##################################################
         # Blocks
         ##################################################
 
-        self.qtgui_waterfall_sink_x_0 = qtgui.waterfall_sink_c(
-            1024, #size
+        self._audio_gain_range = qtgui.Range(0, 1, 50e-3, 100e-3, 200)
+        self._audio_gain_win = qtgui.RangeWidget(self._audio_gain_range, self.set_audio_gain, "'audio_gain'", "counter_slider", float, QtCore.Qt.Horizontal)
+        self.top_layout.addWidget(self._audio_gain_win)
+        self.qtgui_sink_x_0 = qtgui.sink_c(
+            1024, #fftsize
             window.WIN_BLACKMAN_hARRIS, #wintype
             0, #fc
-            samp_rate, #bw
+            48000, #bw
             "", #name
-            1, #number of inputs
+            True, #plotfreq
+            True, #plotwaterfall
+            True, #plottime
+            True, #plotconst
             None # parent
         )
-        self.qtgui_waterfall_sink_x_0.set_update_time(0.10)
-        self.qtgui_waterfall_sink_x_0.enable_grid(False)
-        self.qtgui_waterfall_sink_x_0.enable_axis_labels(True)
+        self.qtgui_sink_x_0.set_update_time(1.0/10)
+        self._qtgui_sink_x_0_win = sip.wrapinstance(self.qtgui_sink_x_0.qwidget(), Qt.QWidget)
 
+        self.qtgui_sink_x_0.enable_rf_freq(False)
 
-
-        labels = ['', '', '', '', '',
-                  '', '', '', '', '']
-        colors = [0, 0, 0, 0, 0,
-                  0, 0, 0, 0, 0]
-        alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
-                  1.0, 1.0, 1.0, 1.0, 1.0]
-
-        for i in range(1):
-            if len(labels[i]) == 0:
-                self.qtgui_waterfall_sink_x_0.set_line_label(i, "Data {0}".format(i))
-            else:
-                self.qtgui_waterfall_sink_x_0.set_line_label(i, labels[i])
-            self.qtgui_waterfall_sink_x_0.set_color_map(i, colors[i])
-            self.qtgui_waterfall_sink_x_0.set_line_alpha(i, alphas[i])
-
-        self.qtgui_waterfall_sink_x_0.set_intensity_range(-140, 10)
-
-        self._qtgui_waterfall_sink_x_0_win = sip.wrapinstance(self.qtgui_waterfall_sink_x_0.qwidget(), Qt.QWidget)
-
-        self.top_layout.addWidget(self._qtgui_waterfall_sink_x_0_win)
+        self.top_layout.addWidget(self._qtgui_sink_x_0_win)
+        self.low_pass_filter_0 = filter.fir_filter_ccf(
+            1,
+            firdes.low_pass(
+                1,
+                samp_rate,
+                5000,
+                2000,
+                window.WIN_HAMMING,
+                6.76))
         self.iio_pluto_sink_0 = iio.fmcomms2_sink_fc32('192.168.2.1' if '192.168.2.1' else iio.get_pluto_uri(), [True, True], 16384, False)
         self.iio_pluto_sink_0.set_len_tag_key('')
-        self.iio_pluto_sink_0.set_bandwidth(20000000)
+        self.iio_pluto_sink_0.set_bandwidth(200000)
         self.iio_pluto_sink_0.set_frequency(100000000)
-        self.iio_pluto_sink_0.set_samplerate(samp_rate)
+        self.iio_pluto_sink_0.set_samplerate(quad_rate)
         self.iio_pluto_sink_0.set_attenuation(0, 10.0)
         self.iio_pluto_sink_0.set_filter_params('Auto', '', 0, 0)
-        self.blocks_wavfile_source_0 = blocks.wavfile_source('C:\\Users\\ambsc\\Downloads\\11 - Wagon Wheel.wav', True)
-        self.blocks_multiply_const_vxx_1 = blocks.multiply_const_cc(32768)
-        self.blocks_multiply_const_vxx_0 = blocks.multiply_const_ff((30e-6))
+        self.blocks_multiply_const_vxx_0 = blocks.multiply_const_ff(audio_gain)
         self.analog_wfm_tx_0 = analog.wfm_tx(
-        	audio_rate=32000,
-        	quad_rate=640000,
+        	audio_rate=48000,
+        	quad_rate=576000,
         	tau=(75e-6),
-        	max_dev=75e3,
+        	max_dev=5000,
         	fh=(-1.0),
         )
+        self.analog_sig_source_x_0 = analog.sig_source_f(48000, analog.GR_COS_WAVE, 600, 1, 0, 0)
 
 
         ##################################################
         # Connections
         ##################################################
-        self.connect((self.analog_wfm_tx_0, 0), (self.blocks_multiply_const_vxx_1, 0))
+        self.connect((self.analog_sig_source_x_0, 0), (self.blocks_multiply_const_vxx_0, 0))
+        self.connect((self.analog_wfm_tx_0, 0), (self.low_pass_filter_0, 0))
         self.connect((self.blocks_multiply_const_vxx_0, 0), (self.analog_wfm_tx_0, 0))
-        self.connect((self.blocks_multiply_const_vxx_1, 0), (self.iio_pluto_sink_0, 0))
-        self.connect((self.blocks_multiply_const_vxx_1, 0), (self.qtgui_waterfall_sink_x_0, 0))
-        self.connect((self.blocks_wavfile_source_0, 0), (self.blocks_multiply_const_vxx_0, 0))
+        self.connect((self.low_pass_filter_0, 0), (self.iio_pluto_sink_0, 0))
+        self.connect((self.low_pass_filter_0, 0), (self.qtgui_sink_x_0, 0))
 
 
     def closeEvent(self, event):
@@ -145,8 +143,21 @@ class PlutoTransmit(gr.top_block, Qt.QWidget):
 
     def set_samp_rate(self, samp_rate):
         self.samp_rate = samp_rate
-        self.iio_pluto_sink_0.set_samplerate(self.samp_rate)
-        self.qtgui_waterfall_sink_x_0.set_frequency_range(0, self.samp_rate)
+        self.low_pass_filter_0.set_taps(firdes.low_pass(1, self.samp_rate, 5000, 2000, window.WIN_HAMMING, 6.76))
+
+    def get_quad_rate(self):
+        return self.quad_rate
+
+    def set_quad_rate(self, quad_rate):
+        self.quad_rate = quad_rate
+        self.iio_pluto_sink_0.set_samplerate(self.quad_rate)
+
+    def get_audio_gain(self):
+        return self.audio_gain
+
+    def set_audio_gain(self, audio_gain):
+        self.audio_gain = audio_gain
+        self.blocks_multiply_const_vxx_0.set_k(self.audio_gain)
 
 
 

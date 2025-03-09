@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.2.1 (64-bit)
+# SW Build 5266912 on Sun Dec 15 09:03:24 MST 2024
+# IP Build 5264866 on Sun Dec 15 16:27:47 MST 2024
+# SharedData Build 5264680 on Wed Dec 11 12:48:36 MST 2024
+# Start of session at: Mon Feb 10 14:12:32 2025
+# Process ID         : 21080
+# Current directory  : C:/Users/ambsc/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/SD1_Fall24/Computer/Eclypse/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.runs/ClockDivider_Block_ClockDivider_0_1_synth_1
+# Command line       : vivado.exe -log ClockDivider_Block_ClockDivider_0_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ClockDivider_Block_ClockDivider_0_1.tcl
+# Log file           : C:/Users/ambsc/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/SD1_Fall24/Computer/Eclypse/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.runs/ClockDivider_Block_ClockDivider_0_1_synth_1/ClockDivider_Block_ClockDivider_0_1.vds
+# Journal file       : C:/Users/ambsc/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/SD1_Fall24/Computer/Eclypse/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.runs/ClockDivider_Block_ClockDivider_0_1_synth_1\vivado.jou
+# Running On         : AB-Lenovo5
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+# CPU Frequency      : 2803 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16705 MB
+# Swap memory        : 2375 MB
+# Total Virtual      : 19080 MB
+# Available Virtual  : 2831 MB
+#-----------------------------------------------------------
+source ClockDivider_Block_ClockDivider_0_1.tcl -notrace

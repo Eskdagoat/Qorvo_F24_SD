@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='B:/OneDrive/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/SD1_Fall24/Computer/Eclypse/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.runs/ClockDivider_Block_ClockDivider_0_0_synth_1'
+HD_PWD='C:/Users/ambsc/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/SD1_Fall24/Computer/Eclypse/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.runs/ClockDivider_Block_ClockDivider_0_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

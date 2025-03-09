@@ -1,0 +1,33 @@
+#-----------------------------------------------------------
+# Vivado v2024.2.1 (64-bit)
+# SW Build 5266912 on Sun Dec 15 09:03:24 MST 2024
+# IP Build 5264866 on Sun Dec 15 16:27:47 MST 2024
+# SharedData Build 5264680 on Wed Dec 11 12:48:36 MST 2024
+# Start of session at: Mon Feb 10 14:12:32 2025
+# Process ID         : 24904
+# Current directory  : C:/Users/ambsc/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/SD1_Fall24/Computer/Eclypse/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.runs/ClockDivider_Block_clk_wiz_0_0_synth_1
+# Command line       : vivado.exe -log ClockDivider_Block_clk_wiz_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ClockDivider_Block_clk_wiz_0_0.tcl
+# Log file           : C:/Users/ambsc/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/SD1_Fall24/Computer/Eclypse/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.runs/ClockDivider_Block_clk_wiz_0_0_synth_1/ClockDivider_Block_clk_wiz_0_0.vds
+# Journal file       : C:/Users/ambsc/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/SD1_Fall24/Computer/Eclypse/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.runs/ClockDivider_Block_clk_wiz_0_0_synth_1\vivado.jou
+# Running On         : AB-Lenovo5
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+# CPU Frequency      : 2803 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16705 MB
+# Swap memory        : 2375 MB
+# Total Virtual      : 19080 MB
+# Available Virtual  : 2822 MB
+#-----------------------------------------------------------
+source ClockDivider_Block_clk_wiz_0_0.tcl -notrace
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: ClockDivider_Block_clk_wiz_0_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 5740b688cc50f7b8 to dir: C:/Users/ambsc/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/SD1_Fall24/Computer/Eclypse/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.runs/ClockDivider_Block_clk_wiz_0_0_synth_1
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/ambsc/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/SD1_Fall24/Computer/Eclypse/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.cache/ip/2024.2.1/5/7/5740b688cc50f7b8/ClockDivider_Block_clk_wiz_0_0.dcp to C:/Users/ambsc/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/SD1_Fall24/Computer/Eclypse/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.runs/ClockDivider_Block_clk_wiz_0_0_synth_1/ClockDivider_Block_clk_wiz_0_0.dcp.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/ambsc/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/SD1_Fall24/Computer/Eclypse/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.cache/ip/2024.2.1/5/7/5740b688cc50f7b8/ClockDivider_Block_clk_wiz_0_0_sim_netlist.v to C:/Users/ambsc/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/SD1_Fall24/Computer/Eclypse/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.runs/ClockDivider_Block_clk_wiz_0_0_synth_1/ClockDivider_Block_clk_wiz_0_0_sim_netlist.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/ambsc/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/SD1_Fall24/Computer/Eclypse/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.cache/ip/2024.2.1/5/7/5740b688cc50f7b8/ClockDivider_Block_clk_wiz_0_0_sim_netlist.vhdl to C:/Users/ambsc/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/SD1_Fall24/Computer/Eclypse/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.runs/ClockDivider_Block_clk_wiz_0_0_synth_1/ClockDivider_Block_clk_wiz_0_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/ambsc/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/SD1_Fall24/Computer/Eclypse/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.cache/ip/2024.2.1/5/7/5740b688cc50f7b8/ClockDivider_Block_clk_wiz_0_0_stub.v to C:/Users/ambsc/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/SD1_Fall24/Computer/Eclypse/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.runs/ClockDivider_Block_clk_wiz_0_0_synth_1/ClockDivider_Block_clk_wiz_0_0_stub.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/ambsc/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/SD1_Fall24/Computer/Eclypse/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.cache/ip/2024.2.1/5/7/5740b688cc50f7b8/ClockDivider_Block_clk_wiz_0_0_stub.vhdl to C:/Users/ambsc/OneDrive/_School/QORVO_RADIO/Github/Qorvo_F24_SD/SD1_Fall24/Computer/Eclypse/Eclypse_Test_PLL_1/Eclypse_Test_PLL_1.runs/ClockDivider_Block_clk_wiz_0_0_synth_1/ClockDivider_Block_clk_wiz_0_0_stub.vhdl.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP ClockDivider_Block_clk_wiz_0_0, cache-ID = 5740b688cc50f7b8.
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 10 14:12:44 2025...

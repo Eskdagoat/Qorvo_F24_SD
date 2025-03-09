@@ -1,17 +1,27 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.0",
-   "Default View_TopLeft":"-481,-167",
+   "Default View_ScaleFactor":"0.846416",
+   "Default View_TopLeft":"-673,-108",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0
 #  -string -flagsOSRD
 preplace port port-id_CLK_IN -pg 1 -lvl 0 -x -20 -y 60 -defaultsOSRD
-preplace port port-id_PMODa0 -pg 1 -lvl 2 -x 260 -y 140 -defaultsOSRD
-preplace inst ClockDivider_0 -pg 1 -lvl 1 -x 120 -y 60 -defaultsOSRD
-preplace netloc CLK_IN_1 1 0 1 N 60
-preplace netloc ClockDivider_0_CLK_OUT 1 1 1 240 60n
-levelinfo -pg 1 -20 120 260
-pagesize -pg 1 -db -bbox -sgen -120 -30 370 160
+preplace port port-id_pmod_a_7 -pg 1 -lvl 3 -x 550 -y 60 -defaultsOSRD
+preplace port port-id_pmod_a_6 -pg 1 -lvl 3 -x 550 -y 280 -defaultsOSRD
+preplace port port-id_syzygy_a_p2c_clk_p -pg 1 -lvl 0 -x -20 -y 370 -defaultsOSRD
+preplace port port-id_pmod_a_2 -pg 1 -lvl 3 -x 550 -y 460 -defaultsOSRD
+preplace port port-id_pmod_a_3 -pg 1 -lvl 3 -x 550 -y 370 -defaultsOSRD
+preplace inst ClockDivider_0 -pg 1 -lvl 2 -x 410 -y -50 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 170 -y 400 -defaultsOSRD
+preplace inst ClockDivider_1 -pg 1 -lvl 2 -x 410 -y 150 -defaultsOSRD
+preplace netloc CLK_IN_1 1 0 2 0 -50 N
+preplace netloc ClockDivider_0_CLK_OUT 1 2 1 530 -50n
+preplace netloc clk_wiz_0_clk_out2 1 1 2 260 460 NJ
+preplace netloc syzygy_a_p2c_clk_p_1 1 0 2 80 150 N
+preplace netloc clk_wiz_0_clk_out1 1 1 2 260 370 NJ
+preplace netloc ClockDivider_1_CLK_OUT 1 2 1 530 150n
+levelinfo -pg 1 -20 170 410 550
+pagesize -pg 1 -db -bbox -sgen -210 -230 670 570
 "
 }
 0

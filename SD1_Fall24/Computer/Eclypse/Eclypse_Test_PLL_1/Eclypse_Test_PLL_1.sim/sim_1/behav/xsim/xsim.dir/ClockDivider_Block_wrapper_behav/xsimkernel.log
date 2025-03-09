@@ -1,7 +1,7 @@
-Running: xsim.dir/ClockDivider_Block_wrapper_behav/xsimk.exe -simmode gui -wdb ClockDivider_Block_wrapper_behav.wdb -simrunnum 0 -socket 56599
+Running: xsim.dir/ClockDivider_Block_wrapper_behav/xsimk.exe -simmode gui -wdb ClockDivider_Block_wrapper_behav.wdb -simrunnum 0 -socket 59528
 Design successfully loaded
-Design Loading Memory Usage: 31208 KB (Peak: 31208 KB)
+Design Loading Memory Usage: 30456 KB (Peak: 30456 KB)
 Design Loading CPU Usage: 733 ms
 Simulation completed
-Simulation Memory Usage: 32364 KB (Peak: 32364 KB)
-Simulation CPU Usage: 796 ms
+Simulation Memory Usage: 31644 KB (Peak: 31644 KB)
+Simulation CPU Usage: 812 ms
