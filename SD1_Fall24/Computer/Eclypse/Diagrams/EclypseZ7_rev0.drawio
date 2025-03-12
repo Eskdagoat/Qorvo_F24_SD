@@ -459,7 +459,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="PlutoFrontEnd" id="8ING0oc60F0cmTMTEQYd">
-    <mxGraphModel dx="531" dy="310" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1687" dy="984" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="YaRtxvhDHVCH9EoEDhre-0" />
         <mxCell id="YaRtxvhDHVCH9EoEDhre-1" parent="YaRtxvhDHVCH9EoEDhre-0" />
@@ -692,8 +692,8 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="Zes8AY4vcX56vwa-JNIq" name="Page-4">
-    <mxGraphModel dx="1434" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+  <diagram id="Zes8AY4vcX56vwa-JNIq" name="Code Breakdown">
+    <mxGraphModel dx="478" dy="279" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -715,7 +715,7 @@
         <mxCell id="tb4ty2OHVC66nWEjz5E_-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="tb4ty2OHVC66nWEjz5E_-2" target="tb4ty2OHVC66nWEjz5E_-8" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="tb4ty2OHVC66nWEjz5E_-31" value="Write Frequency to 0x4500000" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="tb4ty2OHVC66nWEjz5E_-10" vertex="1" connectable="0">
+        <mxCell id="tb4ty2OHVC66nWEjz5E_-31" value="Write Frequency to 0x4500004" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="tb4ty2OHVC66nWEjz5E_-10" vertex="1" connectable="0">
           <mxGeometry x="0.1678" y="-2" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -742,7 +742,7 @@
         <mxCell id="tb4ty2OHVC66nWEjz5E_-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="tb4ty2OHVC66nWEjz5E_-8" target="tb4ty2OHVC66nWEjz5E_-14" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="590" y="310" />
+              <mxPoint x="600" y="310" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -755,28 +755,37 @@
           <mxGeometry x="460" y="270" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="tb4ty2OHVC66nWEjz5E_-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="tb4ty2OHVC66nWEjz5E_-11" target="tb4ty2OHVC66nWEjz5E_-17" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="500" y="480" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="tb4ty2OHVC66nWEjz5E_-11" value="Enable Mixer A&lt;div&gt;Disable Mixer B&lt;/div&gt;&lt;div&gt;Select Switch A&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="330" y="380" width="120" height="80" as="geometry" />
+          <mxGeometry x="325" y="400" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="tb4ty2OHVC66nWEjz5E_-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="tb4ty2OHVC66nWEjz5E_-14" target="tb4ty2OHVC66nWEjz5E_-17" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="500" y="480" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="tb4ty2OHVC66nWEjz5E_-14" value="Enable Mixer B&lt;div&gt;Disable Mixer A&lt;/div&gt;&lt;div&gt;Select Switch B&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="530" y="380" width="120" height="80" as="geometry" />
+          <mxGeometry x="540" y="400" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="tb4ty2OHVC66nWEjz5E_-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="tb4ty2OHVC66nWEjz5E_-17" target="tb4ty2OHVC66nWEjz5E_-20" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="tb4ty2OHVC66nWEjz5E_-17" value="Configure LO&lt;div&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;1. C Write to&amp;nbsp;0x45000004&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;2.&amp;nbsp;&lt;/font&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=top;" parent="1" vertex="1">
+        <mxCell id="tb4ty2OHVC66nWEjz5E_-17" value="Configure LO&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;1. C Write to&amp;nbsp;0x45000004&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;2. LO Controller copies to LO&lt;/font&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=top;" parent="1" vertex="1">
           <mxGeometry x="440" y="500" width="120" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="tb4ty2OHVC66nWEjz5E_-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="tb4ty2OHVC66nWEjz5E_-20" edge="1">
+        <mxCell id="tb4ty2OHVC66nWEjz5E_-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" parent="1" source="tb4ty2OHVC66nWEjz5E_-20" target="tb4ty2OHVC66nWEjz5E_-40" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="240" y="230" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="240" y="680" />
+              <mxPoint x="703" y="630" />
+              <mxPoint x="703" y="230" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -828,7 +837,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="tb4ty2OHVC66nWEjz5E_-40" value="Send LD Error to GNU Radio" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="tb4ty2OHVC66nWEjz5E_-40" value="Send LD Status to GNU Radio" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="642.5" y="100" width="80" height="60" as="geometry" />
         </mxCell>
         <mxCell id="tb4ty2OHVC66nWEjz5E_-41" value="&lt;b&gt;&lt;u&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;C Code&lt;/font&gt;&lt;/u&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
@@ -839,6 +848,9 @@
         </mxCell>
         <mxCell id="tb4ty2OHVC66nWEjz5E_-42" value="Start" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="80" y="170" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ofxa3KKoZKqKqVPe7Qpq-1" value="Write to I/O Expander" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="370" width="250" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
