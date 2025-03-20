@@ -11,6 +11,10 @@ parameters:
     label: Port
     dtype: int
     default: 1001
+  - id:  baseband
+    label: Baseband Frequency
+    dtype: real
+    default: 47000000
   - id: freq
     label: Center Frequency
     dtype: real

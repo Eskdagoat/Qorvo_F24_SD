@@ -11,7 +11,7 @@ class source(gr.hier_block2):
 
   rates = {24000:0, 48000:1, 96000:2, 192000:3, 384000:4, 768000:5, 1536000:6}
 
-  def __init__(self, addr, port, freq, rate, corr):
+  def __init__(self, addr, port, baseband, freq, rate, corr):
     gr.hier_block2.__init__(
       self,
       name = "eclypse_z7_source",
@@ -26,11 +26,13 @@ class source(gr.hier_block2):
     self.data_sock.send(struct.pack('<I', 1))
     fd = os.dup(self.data_sock.fileno())
     self.connect(blocks.file_descriptor_source(gr.sizeof_gr_complex, fd), self)
-    self.set_freq(freq, corr)
+    self.set_freq(freq, baseband, corr)
     self.set_rate(rate)
 
-  def set_freq(self, freq, corr):
-    self.ctrl_sock.send(struct.pack('<I', 0<<28 | int((1.0 + 1e-6 * corr) * freq)))
+  def set_freq(self, freq, baseband, corr):
+    corrected_freq = int((1.0 + 1e-6 * corr) * freq)
+    corrected_baseband = int((1.0 + 1e-6 * corr) * baseband)
+    self.ctrl_sock.send(struct.pack('<Q', (corrected_baseband << 32) | corrected_freq) )
 
   def set_rate(self, rate):
     if rate in source.rates:

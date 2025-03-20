@@ -135,7 +135,7 @@ blocks:
     freq: rx_freq*1000000
     maxoutbuf: '0'
     minoutbuf: '0'
-    port: '1000'
+    port: '1005'
     rate: rx_samp_rate
   states:
     bus_sink: false

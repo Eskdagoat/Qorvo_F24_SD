@@ -107,7 +107,7 @@ class fm(gr.top_block, Qt.QWidget):
                 10000,
                 window.WIN_HAMMING,
                 6.76))
-        self.eclypse_z7_source_0 = eclypse_z7.source(str(addr), 1000, (rx_freq*1000000), rx_samp_rate, 0)
+        self.eclypse_z7_source_0 = eclypse_z7.source(str(addr), 1005, (rx_freq*1000000), rx_samp_rate, 0)
         self.audio_sink_0 = audio.sink(48000, '', True)
         self.analog_wfm_rcv_0 = analog.wfm_rcv(
         	quad_rate=rx_samp_rate,

@@ -14,9 +14,10 @@
 #include <arpa/inet.h>
 
 volatile uint64_t *fifo;
-volatile uint32_t *rx_freq, *tx_freq;
+volatile uint32_t *rx_baseband, *rx_freq, *tx_freq;
 volatile uint16_t *rx_rate, *rx_cntr, *tx_rate, *tx_cntr;
-volatile uint8_t *rx_rst, *rx_sync, *tx_rst, *tx_sync;
+volatile uint8_t *rx_rst, *rx_sync, *tx_rst, *tx_sync, *rx_ex;
+
 
 int sock_thread[4] = {-1, -1, -1, -1};
 
@@ -37,7 +38,7 @@ int main(int argc, char *argv[])
     tx_ctrl_handler,
     tx_data_handler
   };
-  volatile void *cfg, *sts;
+  volatile void *cfg, *sts, *rffe;
   char *end;
   struct sockaddr_in addr;
   uint16_t port;
@@ -48,7 +49,7 @@ int main(int argc, char *argv[])
 
   errno = 0;
   number = (argc == 2) ? strtol(argv[1], &end, 10) : -1;
-  if(errno != 0 || end == argv[1] || number < 1 || number > 2)
+  if(errno != 0 || end == argv[1] || number < 1 || number > 2) 
   {
     printf("Usage: sdr-transceiver 1|2\n");
     return EXIT_FAILURE;
@@ -63,24 +64,41 @@ int main(int argc, char *argv[])
   switch(number)
   {
     case 1:
-      port = 1001;
+      port = 1000;
       cfg = mmap(NULL, sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x40000000);
       sts = mmap(NULL, sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x41000000);
       fifo = mmap(NULL, 8*sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x42000000);
+      rffe = mmap(NULL, sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x45000000); //to the RF Front End PCB
       break;
     case 2:
       port = 1002;
       cfg = mmap(NULL, sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x80000000);
       sts = mmap(NULL, sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x81000000);
       fifo = mmap(NULL, 8*sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x82000000);
+      rffe = mmap(NULL, 8*sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x85000000);  //to the RF Front End PCB
       break;
   }
 
+/*  Origional
   rx_rst = (uint8_t *)(cfg + 0);
-  rx_freq = (uint32_t *)(cfg + 4);
+  
+  rx_sync = (uint8_t *)(cfg + 8);
+  rx_rate = (uint16_t *)(cfg + 10);
+  rx_cntr = (uint16_t *)(sts + 0);  */
+  
+  rx_rst = (uint8_t *)(cfg + 0);
+  rx_baseband = (uint32_t *)(cfg + 4);
   rx_sync = (uint8_t *)(cfg + 8);
   rx_rate = (uint16_t *)(cfg + 10);
   rx_cntr = (uint16_t *)(sts + 0);
+  rx_freq = (uint32_t *)(rffe + 4);
+
+  // IO Expander
+  rx_ex = (uint8_t *)(rffe + 18); // IO Expander
+
+
+
+  
 
   tx_rst = (uint8_t *)(cfg + 1);
   tx_freq = (uint32_t *)(cfg + 12);
@@ -89,6 +107,7 @@ int main(int argc, char *argv[])
   tx_cntr = (uint16_t *)(sts + 2);
 
   /* set default rx phase increment */
+  *rx_baseband = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
   *rx_freq = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
   *rx_sync = 0;
   /* set default rx sample rate */
@@ -155,9 +174,10 @@ int main(int argc, char *argv[])
 void *rx_ctrl_handler(void *arg)
 {
   int sock_client = sock_thread[0];
-  uint32_t command, freq;
-
+  uint32_t  freq, baseband;
+  uint64_t command;
   /* set default rx phase increment */
+  *rx_baseband = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
   *rx_freq = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
   *rx_sync = 0;
   /* set default rx sample rate */
@@ -170,9 +190,21 @@ void *rx_ctrl_handler(void *arg)
     {
       case 0:
         /* set rx phase increment */
-        freq = command & 0xfffffff;
-        *rx_freq = (uint32_t)floor(freq/122.88e6*(1<<30)+0.5);
+        baseband = (command >> 32) & 0xFFFFFFFF;
+        freq = command & 0xFFFFFFFF;
+        *rx_baseband = (uint32_t)floor(baseband/122.88e6*(1<<30)+0.5);
+        *rx_freq= (uint32_t)floor(freq/122.88e6*(1<<30)+0.5);
         *rx_sync = freq > 0 ? 0 : 1;
+        
+        if(freq > 1000000000) // if frequency is greater than 1GHz
+        {
+          *rx_ex |= 0x11111111; // set RX on
+        }
+        else
+        {
+          *rx_ex &= ~0x00000000; // set RX off
+        }
+
         break;
       case 1:
         /* set rx sample rate */
@@ -205,6 +237,7 @@ void *rx_ctrl_handler(void *arg)
   }
 
   /* set default rx phase increment */
+  *rx_baseband = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
   *rx_freq = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
   *rx_sync = 0;
   /* set default rx sample rate */
