@@ -1,5 +1,5 @@
-id: eclypse_z7_source
-label: Eclypse Z7 Source
+id: eclypse_z7_qr_rffe
+label: Eclypse Z7 QR RF Front End
 category: Eclypse Z7
 
 parameters:
@@ -10,27 +10,23 @@ parameters:
   - id: port
     label: Port
     dtype: int
-    default: 1001
+    default: 1000
   - id: freq
     label: Center Frequency
     dtype: real
-    default: 600000
-  - id: rate
-    label: Sample Rate
-    dtype: int
-    default: 100000
+    default: 100000000
   - id: corr
     label: Freq. Correction ppm
     dtype: real
     default: 0
 
+
 outputs:
-  - domain: stream
-    dtype: complex
+
 
 templates:
-  imports: import eclypse_z7
-  make: eclypse_z7.source(${addr}, ${port}, ${freq}, ${rate}, ${corr})
+  imports: import eclypse_z7_qr
+  make: eclypse_z7.rffe(${addr}, ${port}, ${freq}, ${corr})
   callbacks:
     - set_freq(${freq}, ${corr})
     - set_rate(${rate})

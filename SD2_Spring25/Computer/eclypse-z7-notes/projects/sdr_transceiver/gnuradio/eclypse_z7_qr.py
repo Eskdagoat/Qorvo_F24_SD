@@ -7,14 +7,14 @@ import socket
 from gnuradio import gr, blocks
 
 class source(gr.hier_block2):
-  '''Eclypse Z7 Source'''
+  '''Eclypse Z7 QR Source'''
 
   rates = {24000:0, 48000:1, 96000:2, 192000:3, 384000:4, 768000:5, 1536000:6}
 
-  def __init__(self, addr, port, freq, rate, corr):
+  def __init__(self, addr, port, baseband, rate, corr):
     gr.hier_block2.__init__(
       self,
-      name = "eclypse_z7_source",
+      name = "eclypse_z7_qr_source",
       input_signature = gr.io_signature(0, 0, 0),
       output_signature = gr.io_signature(1, 1, gr.sizeof_gr_complex)
     )
@@ -26,12 +26,13 @@ class source(gr.hier_block2):
     self.data_sock.send(struct.pack('<I', 1))
     fd = os.dup(self.data_sock.fileno())
     self.connect(blocks.file_descriptor_source(gr.sizeof_gr_complex, fd), self)
-    self.set_freq(freq, corr)
+    self.set_freq(baseband, corr)
     self.set_rate(rate)
 
-  def set_freq(self, freq, corr):
-    self.ctrl_sock.send(struct.pack('<I', 0<<28 | int((1.0 + 1e-6 * corr) * freq)))
-
+  def set_freq_baseband(self, freq, corr):
+    packed_value = (1 << 29) | (0 << 28) | (int((1.0 + 1e-6 * corr) * freq) & 0x0FFFFFFF)
+    self.ctrl_sock.send(struct.pack('<I', packed_value))
+  
   def set_rate(self, rate):
     if rate in source.rates:
       code = source.rates[rate]
@@ -96,3 +97,27 @@ class sink(gr.hier_block2):
       self.disconnect(self, self.file_sink)
       self.connect(self, self.null_sink)
       self.unlock()
+
+class rffe(gr.hier_block2):
+  '''Eclypse Z7 Qorvo Radio RF Front End Control'''
+
+  def __init__(self, addr, port, freq, corr):
+    gr.hier_block2.__init__(
+      self,
+      name = "eclypse_z7_qr_rffe",
+      input_signature = gr.io_signature(0, 0, 0),
+      output_signature = gr.io_signature(1, 1, gr.sizeof_gr_complex)
+    )
+    self.ctrl_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    self.ctrl_sock.connect((addr, port))
+    self.ctrl_sock.send(struct.pack('<I', 0))
+    self.data_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    self.data_sock.connect((addr, port))
+    self.data_sock.send(struct.pack('<I', 1))
+    fd = os.dup(self.data_sock.fileno())
+    self.connect(blocks.file_descriptor_source(gr.sizeof_gr_complex, fd), self)
+    self.set_freq_rffe(freq, corr)
+
+  def set_freq_rffe(self, freq, corr):
+    packed_value = (0 << 29) | (0 << 28) | (int((1.0 + 1e-6 * corr) * freq) & 0x0FFFFFFF)
+    self.ctrl_sock.send(struct.pack('<I', packed_value))
