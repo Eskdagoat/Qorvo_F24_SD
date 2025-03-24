@@ -18,6 +18,7 @@
 
 volatile uint64_t *fifo;
 volatile uint32_t *rx_baseband, *rx_freq, *rx_ref, *tx_freq;
+volatile uint32_t *rx_IODIRA, *rx_OLATA;
 volatile uint32_t *ADF_R0, *ADF_R1, *ADF_R2, *ADF_R3, *ADF_R4, *ADF_R5;
 volatile uint16_t *rx_rate, *rx_cntr, *tx_rate, *tx_cntr;
 volatile uint8_t *rx_rst, *rx_sync, *tx_rst, *tx_sync, *rx_ex;
@@ -89,9 +90,8 @@ int main(int argc, char *argv[])
   rx_rate = (uint16_t *)(cfg + 10);
   rx_cntr = (uint16_t *)(sts + 0);
   rx_freq = (uint32_t *)(rffe + 4);
-
-  // IO Expander
-  rx_ex = (uint8_t *)(rffe + 18); // IO Expander
+  rx_IODIRA = (uint32_t *)(rffe + 0x20); // IO Expander
+  rx_OLATA = (uint32_t *)(rffe + 0x24); // IO Expander
 
   tx_rst = (uint8_t *)(cfg + 1);
   tx_freq = (uint32_t *)(cfg + 12);
@@ -99,12 +99,12 @@ int main(int argc, char *argv[])
   tx_rate = (uint16_t *)(cfg + 18);
   tx_cntr = (uint16_t *)(sts + 2);
 
-ADF_R0 = (uint32_t *)(rffe + 0x100);
-ADF_R1 = (uint32_t *)(rffe + 0x104);
-ADF_R2 = (uint32_t *)(rffe + 0x108);
-ADF_R3 = (uint32_t *)(rffe + 0x10C);
-ADF_R4 = (uint32_t *)(rffe + 0x110);
-ADF_R5 = (uint32_t *)(rffe + 0x114);
+  ADF_R5 = (uint32_t *)(rffe + 0x100);  // Offset 0x100
+  ADF_R4 = (uint32_t *)(rffe + 0x104);  // Offset 0x104
+  ADF_R3 = (uint32_t *)(rffe + 0x108);  // Offset 0x108
+  ADF_R2 = (uint32_t *)(rffe + 0x10C);  // Offset 0x10C
+  ADF_R1 = (uint32_t *)(rffe + 0x110);  // Offset 0x110
+  ADF_R0 = (uint32_t *)(rffe + 0x114);  // Offset 0x114
 
 
   /* set default rx phase increment */
@@ -207,13 +207,13 @@ void *rx_ctrl_handler(void *arg)
       }
         *rx_sync = value > 0 ? 0 : 1;
         
-        if(freq < 1000000000) // if frequency is greater than 1GHz
+        if(freq < 1e9) // if frequency is less than 1GHz
         {
-          *rx_ex = 0x3d; // Low End
+          *rx_OLATA = 0x40143d; // Low End
         }
         else
         {
-          *rx_ex = 0x3e; // High End
+          *rx_OLATA = 0x40143e; // High End
         }
 
         break;
