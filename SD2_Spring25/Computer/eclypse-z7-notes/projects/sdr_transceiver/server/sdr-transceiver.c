@@ -7,22 +7,16 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <math.h>
-#include <stdbool.h>
 #include <pthread.h>
 #include <sys/mman.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
-#include "ADF4351.h"
-
 
 volatile uint64_t *fifo;
-volatile uint32_t *rx_baseband, *rx_freq, *rx_ref, *tx_freq;
-volatile uint32_t *rx_IODIRA, *rx_OLATA;
-volatile uint32_t *ADF_R0, *ADF_R1, *ADF_R2, *ADF_R3, *ADF_R4, *ADF_R5;
+volatile uint32_t *rx_freq, *tx_freq;
 volatile uint16_t *rx_rate, *rx_cntr, *tx_rate, *tx_cntr;
-volatile uint8_t *rx_rst, *rx_sync, *tx_rst, *tx_sync, *rx_ex;
-
+volatile uint8_t *rx_rst, *rx_sync, *tx_rst, *tx_sync;
 
 int sock_thread[4] = {-1, -1, -1, -1};
 
@@ -43,7 +37,7 @@ int main(int argc, char *argv[])
     tx_ctrl_handler,
     tx_data_handler
   };
-  volatile void *cfg, *sts, *rffe;
+  volatile void *cfg, *sts;
   char *end;
   struct sockaddr_in addr;
   uint16_t port;
@@ -54,7 +48,7 @@ int main(int argc, char *argv[])
 
   errno = 0;
   number = (argc == 2) ? strtol(argv[1], &end, 10) : -1;
-  if(errno != 0 || end == argv[1] || number < 1 || number > 2) 
+  if(errno != 0 || end == argv[1] || number < 1 || number > 2)
   {
     printf("Usage: sdr-transceiver 1|2\n");
     return EXIT_FAILURE;
@@ -69,29 +63,24 @@ int main(int argc, char *argv[])
   switch(number)
   {
     case 1:
-      port = 1000;
+      port = 100;
       cfg = mmap(NULL, sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x40000000);
       sts = mmap(NULL, sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x41000000);
       fifo = mmap(NULL, 8*sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x42000000);
-      rffe = mmap(NULL, 8*sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x45000000); //to the RF Front End PCB
       break;
     case 2:
       port = 1002;
       cfg = mmap(NULL, sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x80000000);
       sts = mmap(NULL, sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x81000000);
       fifo = mmap(NULL, 8*sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x82000000);
-      rffe = mmap(NULL, 8*sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x85000000);  //to the RF Front End PCB
       break;
   }
-  
+
   rx_rst = (uint8_t *)(cfg + 0);
-  rx_baseband = (uint32_t *)(cfg + 4);
+  rx_freq = (uint32_t *)(cfg + 4);
   rx_sync = (uint8_t *)(cfg + 8);
   rx_rate = (uint16_t *)(cfg + 10);
   rx_cntr = (uint16_t *)(sts + 0);
-  rx_freq = (uint32_t *)(rffe + 4);
-  rx_IODIRA = (uint32_t *)(rffe + 0x20); // IO Expander
-  rx_OLATA = (uint32_t *)(rffe + 0x24); // IO Expander
 
   tx_rst = (uint8_t *)(cfg + 1);
   tx_freq = (uint32_t *)(cfg + 12);
@@ -99,17 +88,8 @@ int main(int argc, char *argv[])
   tx_rate = (uint16_t *)(cfg + 18);
   tx_cntr = (uint16_t *)(sts + 2);
 
-  ADF_R5 = (uint32_t *)(rffe + 0x100);  // Offset 0x100
-  ADF_R4 = (uint32_t *)(rffe + 0x104);  // Offset 0x104
-  ADF_R3 = (uint32_t *)(rffe + 0x108);  // Offset 0x108
-  ADF_R2 = (uint32_t *)(rffe + 0x10C);  // Offset 0x10C
-  ADF_R1 = (uint32_t *)(rffe + 0x110);  // Offset 0x110
-  ADF_R0 = (uint32_t *)(rffe + 0x114);  // Offset 0x114
-
-
   /* set default rx phase increment */
-  *rx_baseband = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
-  //*rx_freq = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
+  *rx_freq = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
   *rx_sync = 0;
   /* set default rx sample rate */
   *rx_rate = 640;
@@ -141,8 +121,6 @@ int main(int argc, char *argv[])
   }
 
   listen(sock_server, 1024);
-
-  
 
   while(1)
   {
@@ -177,45 +155,24 @@ int main(int argc, char *argv[])
 void *rx_ctrl_handler(void *arg)
 {
   int sock_client = sock_thread[0];
-  uint32_t  freq, baseband, command;
+  uint32_t command, freq;
+
   /* set default rx phase increment */
-  *rx_baseband = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
-  //*rx_freq = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
+  *rx_freq = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
   *rx_sync = 0;
-  ADF4351 synth = ADF4351_init(10.0e6, false, false, 1);
   /* set default rx sample rate */
   *rx_rate = 640;
 
   while(1)
   {
     if(recv(sock_client, (char *)&command, 4, MSG_WAITALL) <= 0) break;
-    switch((command >> 28) & 0x1)
+    switch(command >> 28)
     {
       case 0:
-
-      uint32_t is_baseband = (command >> 29) & 0x1; // Extract bit 29 for baseband flag
-      uint32_t value = command & 0x0FFFFFFF; // Extract lower 28 bits
-
-      if (is_baseband) {
-          // Process as baseband
-          *rx_baseband = (uint32_t)floor(value / 122.88e6 * (1 << 30) + 0.5);
-      } else {
-          // Process as frequency and send to ADF4351
-          double freq_Hz = (double)value;
-          ADF4351_setFrequency(&synth, freq_Hz, 0.0);
-
-      }
-        *rx_sync = value > 0 ? 0 : 1;
-        
-        if(freq < 1e9) // if frequency is less than 1GHz
-        {
-          *rx_OLATA = 0x40143d; // Low End
-        }
-        else
-        {
-          *rx_OLATA = 0x40143e; // High End
-        }
-
+        /* set rx phase increment */
+        freq = command & 0xfffffff;
+        *rx_freq = (uint32_t)floor(freq/122.88e6*(1<<30)+0.5);
+        *rx_sync = freq > 0 ? 0 : 1;
         break;
       case 1:
         /* set rx sample rate */
@@ -248,8 +205,7 @@ void *rx_ctrl_handler(void *arg)
   }
 
   /* set default rx phase increment */
-  *rx_baseband = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
-  //*rx_freq = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
+  *rx_freq = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
   *rx_sync = 0;
   /* set default rx sample rate */
   *rx_rate = 640;

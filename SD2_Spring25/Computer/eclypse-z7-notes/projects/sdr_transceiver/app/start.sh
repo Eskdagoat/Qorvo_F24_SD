@@ -7,6 +7,6 @@ source $apps_dir/stop.sh
 cat $apps_dir/sdr_transceiver/sdr_transceiver.bit > /dev/xdevcfg
 
 $apps_dir/sdr_transceiver/setup
-
+$apps_dir/sdr_transceiver/sdr-rffe
 $apps_dir/sdr_transceiver/sdr-transceiver 1 &
 $apps_dir/sdr_transceiver/sdr-transceiver 2 &

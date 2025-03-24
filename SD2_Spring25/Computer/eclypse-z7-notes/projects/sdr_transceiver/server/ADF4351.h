@@ -4,6 +4,10 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#define MAX(x, y) (((x) > (y)) ? (x) : (y))
+#define MIN(x, y) (((x) < (y)) ? (x) : (y))
+
+
 typedef struct {
     uint32_t R0;
     uint32_t R1;
