@@ -26,14 +26,15 @@ class source(gr.hier_block2):
     self.data_sock.send(struct.pack('<I', 1))
     fd = os.dup(self.data_sock.fileno())
     self.connect(blocks.file_descriptor_source(gr.sizeof_gr_complex, fd), self)
-    self.set_freq(freq, baseband, corr)
+    self.set_freq(freq, corr, False)
+    self.set_freq(baseband, corr, True)
     self.set_rate(rate)
 
-  def set_freq(self, freq, baseband, corr):
-    corrected_freq = int((1.0 + 1e-6 * corr) * freq)
-    corrected_baseband = int((1.0 + 1e-6 * corr) * baseband)
-    self.ctrl_sock.send(struct.pack('<Q', (corrected_baseband << 32) | corrected_freq) )
-
+  def set_freq(self, freq,  corr, is_baseband):
+    flag = 1 if is_baseband else 0
+    packed_value = (is_baseband << 29) | (0 << 28) | (int((1.0 + 1e-6 * corr) * freq) & 0x0FFFFFFF)
+    self.ctrl_sock.send(struct.pack('<I', packed_value))
+  
   def set_rate(self, rate):
     if rate in source.rates:
       code = source.rates[rate]

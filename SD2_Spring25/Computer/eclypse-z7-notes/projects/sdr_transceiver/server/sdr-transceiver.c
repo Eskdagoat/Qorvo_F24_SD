@@ -7,14 +7,18 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <math.h>
+#include <stdbool.h>
 #include <pthread.h>
 #include <sys/mman.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#include "ADF4351.h"
+
 
 volatile uint64_t *fifo;
-volatile uint32_t *rx_baseband, *rx_freq, *tx_freq;
+volatile uint32_t *rx_baseband, *rx_freq, *rx_ref, *tx_freq;
+volatile uint32_t *ADF_R0, *ADF_R1, *ADF_R2, *ADF_R3, *ADF_R4, *ADF_R5;
 volatile uint16_t *rx_rate, *rx_cntr, *tx_rate, *tx_cntr;
 volatile uint8_t *rx_rst, *rx_sync, *tx_rst, *tx_sync, *rx_ex;
 
@@ -68,7 +72,7 @@ int main(int argc, char *argv[])
       cfg = mmap(NULL, sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x40000000);
       sts = mmap(NULL, sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x41000000);
       fifo = mmap(NULL, 8*sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x42000000);
-      rffe = mmap(NULL, sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x45000000); //to the RF Front End PCB
+      rffe = mmap(NULL, 8*sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x45000000); //to the RF Front End PCB
       break;
     case 2:
       port = 1002;
@@ -78,13 +82,6 @@ int main(int argc, char *argv[])
       rffe = mmap(NULL, 8*sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x85000000);  //to the RF Front End PCB
       break;
   }
-
-/*  Origional
-  rx_rst = (uint8_t *)(cfg + 0);
-  
-  rx_sync = (uint8_t *)(cfg + 8);
-  rx_rate = (uint16_t *)(cfg + 10);
-  rx_cntr = (uint16_t *)(sts + 0);  */
   
   rx_rst = (uint8_t *)(cfg + 0);
   rx_baseband = (uint32_t *)(cfg + 4);
@@ -96,15 +93,19 @@ int main(int argc, char *argv[])
   // IO Expander
   rx_ex = (uint8_t *)(rffe + 18); // IO Expander
 
-
-
-  
-
   tx_rst = (uint8_t *)(cfg + 1);
   tx_freq = (uint32_t *)(cfg + 12);
   tx_sync = (uint8_t *)(cfg + 16);
   tx_rate = (uint16_t *)(cfg + 18);
   tx_cntr = (uint16_t *)(sts + 2);
+
+ADF_R0 = (uint32_t *)(rffe + 0x100);
+ADF_R1 = (uint32_t *)(rffe + 0x104);
+ADF_R2 = (uint32_t *)(rffe + 0x108);
+ADF_R3 = (uint32_t *)(rffe + 0x10C);
+ADF_R4 = (uint32_t *)(rffe + 0x110);
+ADF_R5 = (uint32_t *)(rffe + 0x114);
+
 
   /* set default rx phase increment */
   *rx_baseband = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
@@ -141,6 +142,8 @@ int main(int argc, char *argv[])
 
   listen(sock_server, 1024);
 
+  
+
   while(1)
   {
     if((sock_client = accept(sock_server, NULL, NULL)) < 0)
@@ -174,8 +177,7 @@ int main(int argc, char *argv[])
 void *rx_ctrl_handler(void *arg)
 {
   int sock_client = sock_thread[0];
-  uint32_t  freq, baseband;
-  uint64_t command;
+  uint32_t  freq, baseband, command;
   /* set default rx phase increment */
   *rx_baseband = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
   *rx_freq = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
@@ -186,23 +188,29 @@ void *rx_ctrl_handler(void *arg)
   while(1)
   {
     if(recv(sock_client, (char *)&command, 4, MSG_WAITALL) <= 0) break;
-    switch(command >> 28)
+    switch((command >> 28) & 0x1)
     {
       case 0:
-        /* set rx phase increment */
-        baseband = (command >> 32) & 0xFFFFFFFF;
-        freq = command & 0xFFFFFFFF;
-        *rx_baseband = (uint32_t)floor(baseband/122.88e6*(1<<30)+0.5);
-        *rx_freq= (uint32_t)floor(freq/122.88e6*(1<<30)+0.5);
-        *rx_sync = freq > 0 ? 0 : 1;
+
+      uint32_t is_baseband = (command >> 29) & 0x1; // Extract bit 29 for baseband flag
+      uint32_t value = command & 0x0FFFFFFF; // Extract lower 28 bits
+
+      if (is_baseband) {
+          // Process as baseband
+          *rx_baseband = (uint32_t)floor(value / 122.88e6 * (1 << 30) + 0.5);
+      } else {
+          // Process as frequency
+          *rx_freq = (uint32_t)floor(value / 122.88e6 * (1 << 30) + 0.5);
+      }
+        *rx_sync = value > 0 ? 0 : 1;
         
-        if(freq > 1000000000) // if frequency is greater than 1GHz
+        if(freq < 1000000000) // if frequency is greater than 1GHz
         {
-          *rx_ex |= 0x11111111; // set RX on
+          *rx_ex = 0x3d; // Low End
         }
         else
         {
-          *rx_ex &= ~0x00000000; // set RX off
+          *rx_ex = 0x3e; // set RX off
         }
 
         break;
