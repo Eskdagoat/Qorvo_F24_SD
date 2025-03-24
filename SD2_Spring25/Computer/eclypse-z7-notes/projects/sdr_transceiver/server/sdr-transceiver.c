@@ -109,7 +109,7 @@ ADF_R5 = (uint32_t *)(rffe + 0x114);
 
   /* set default rx phase increment */
   *rx_baseband = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
-  *rx_freq = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
+  //*rx_freq = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
   *rx_sync = 0;
   /* set default rx sample rate */
   *rx_rate = 640;
@@ -180,8 +180,9 @@ void *rx_ctrl_handler(void *arg)
   uint32_t  freq, baseband, command;
   /* set default rx phase increment */
   *rx_baseband = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
-  *rx_freq = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
+  //*rx_freq = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
   *rx_sync = 0;
+  ADF4351 synth = ADF4351_init(10.0e6, false, false, 1);
   /* set default rx sample rate */
   *rx_rate = 640;
 
@@ -199,8 +200,10 @@ void *rx_ctrl_handler(void *arg)
           // Process as baseband
           *rx_baseband = (uint32_t)floor(value / 122.88e6 * (1 << 30) + 0.5);
       } else {
-          // Process as frequency
-          *rx_freq = (uint32_t)floor(value / 122.88e6 * (1 << 30) + 0.5);
+          // Process as frequency and send to ADF4351
+          double freq_Hz = (double)value;
+          ADF4351_setFrequency(&synth, freq_Hz, 0.0);
+
       }
         *rx_sync = value > 0 ? 0 : 1;
         
@@ -210,7 +213,7 @@ void *rx_ctrl_handler(void *arg)
         }
         else
         {
-          *rx_ex = 0x3e; // set RX off
+          *rx_ex = 0x3e; // High End
         }
 
         break;
@@ -246,7 +249,7 @@ void *rx_ctrl_handler(void *arg)
 
   /* set default rx phase increment */
   *rx_baseband = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
-  *rx_freq = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
+  //*rx_freq = (uint32_t)floor(600000/122.88e6*(1<<30)+0.5);
   *rx_sync = 0;
   /* set default rx sample rate */
   *rx_rate = 640;
