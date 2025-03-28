@@ -48,7 +48,7 @@ class sink(gr.hier_block2):
   def __init__(self, addr, port, freq, rate, corr, ptt):
     gr.hier_block2.__init__(
       self,
-      name = "eclypse_z7_sink",
+      name = "eclypse_z7_qr_sink",
       input_signature = gr.io_signature(1, 1, gr.sizeof_gr_complex),
       output_signature = gr.io_signature(0, 0, 0)
     )

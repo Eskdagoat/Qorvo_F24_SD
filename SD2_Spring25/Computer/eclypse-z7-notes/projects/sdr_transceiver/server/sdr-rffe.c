@@ -7,7 +7,6 @@
 #include <fcntl.h>
 #include <math.h>
 #include <string.h>
-#include <pthread.h>
 #include <sys/mman.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -18,19 +17,8 @@ volatile uint32_t *rx_freq;
 volatile uint32_t *rx_IODIRA, *rx_OLATA;
 volatile uint32_t *ADF_R0, *ADF_R1, *ADF_R2, *ADF_R3, *ADF_R4, *ADF_R5;
 
-// Socket tracking
-int sock_thread[4] = {-1, -1, -1, -1};
-pthread_t thread;
-
-void *rx_rffe_handler(void *arg);
-
-// Thread handler table
-void *(*handler[4])(void *) = {
-    rx_rffe_handler,
-    NULL,
-    NULL,
-    NULL
-};
+// Forward declaration
+void rx_rffe_handler(int sock_client);
 
 int main() {
     int fd, sock_server, sock_client;
@@ -54,16 +42,18 @@ int main() {
     }
 
     // Assign register pointers
-    rx_freq   = (uint32_t *)(rffe + 0x04);
-    rx_IODIRA = (uint32_t *)(rffe + 0x20);
-    rx_OLATA  = (uint32_t *)(rffe + 0x24);
+    rx_freq   = (volatile uint32_t *)((char *)rffe + 0x04);
+    rx_IODIRA = (volatile uint32_t *)((char *)rffe + 0x20);
+    rx_OLATA  = (volatile uint32_t *)((char *)rffe + 0x24);
 
-    ADF_R5 = (uint32_t *)(rffe + 0x100);
-    ADF_R4 = (uint32_t *)(rffe + 0x104);
-    ADF_R3 = (uint32_t *)(rffe + 0x108);
-    ADF_R2 = (uint32_t *)(rffe + 0x10C);
-    ADF_R1 = (uint32_t *)(rffe + 0x110);
-    ADF_R0 = (uint32_t *)(rffe + 0x114);
+    ADF_R5 = (volatile uint32_t *)((char *)rffe + 0x100);
+    ADF_R4 = (volatile uint32_t *)((char *)rffe + 0x104);
+    ADF_R3 = (volatile uint32_t *)((char *)rffe + 0x108);
+    ADF_R2 = (volatile uint32_t *)((char *)rffe + 0x10C);
+    ADF_R1 = (volatile uint32_t *)((char *)rffe + 0x110);
+    ADF_R0 = (volatile uint32_t *)((char *)rffe + 0x114);
+
+    printf("Registers Assigned\n");
 
     // Setup TCP socket
     if ((sock_server = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
@@ -84,7 +74,6 @@ int main() {
     }
 
     listen(sock_server, 1024);
-
     printf("RF controller listening on port %d...\n", port);
 
     while (1) {
@@ -95,31 +84,25 @@ int main() {
         }
 
         result = recv(sock_client, &command, sizeof(command), MSG_WAITALL);
-        if (result <= 0 || command > 3 || sock_thread[command] > -1) {
+        if (result <= 0 || command != 0) {
             close(sock_client);
             continue;
         }
 
-        sock_thread[command] = sock_client;
-
-        if (pthread_create(&thread, NULL, handler[command], NULL) != 0) {
-            perror("pthread_create");
-            close(sock_client);
-            sock_thread[command] = -1;
-            continue;
-        }
-
-        pthread_detach(thread);
+        // Direct call without threading
+        rx_rffe_handler(sock_client);
     }
 
     close(sock_server);
     return EXIT_SUCCESS;
 }
 
-void *rx_rffe_handler(void *arg) {
-    int sock_client = sock_thread[0];
+void rx_rffe_handler(int sock_client) {
+    printf("RX Handler\n");
     uint32_t command;
+
     ADF4351 synth = ADF4351_init(10.0e6, false, false, 1);
+    printf("Created synth\n");
 
     while (1) {
         if (recv(sock_client, &command, sizeof(command), MSG_WAITALL) <= 0)
@@ -127,6 +110,7 @@ void *rx_rffe_handler(void *arg) {
 
         uint32_t value = command & 0x0FFFFFFF;  // 28-bit frequency
         double freq_Hz = (double)value;
+        printf("Frequency: %.2f Hz\n", freq_Hz);
 
         if (!ADF4351_setFrequency(&synth, freq_Hz, 0.0)) {
             fprintf(stderr, "ADF4351 failed to lock at %.2f Hz\n", freq_Hz);
@@ -142,21 +126,25 @@ void *rx_rffe_handler(void *arg) {
         *ADF_R2 = regs.R2;
         *ADF_R1 = regs.R1;
         *ADF_R0 = regs.R0;
+        printf("Registers written\n");
 
         // IO expander for band select
-        if(freq_Hz < 1e9) // if frequency is less than 1GHz
-        {
-          *rx_OLATA = 0x40143d; // Low End
-        }
-        else
-        {
-          *rx_OLATA = 0x40143e; // High End
+        *rx_OLATA = 0xFFFFFFFF;
+        printf("Readback: 0x%08X\n", *rx_OLATA);
+
+        if (freq_Hz < 1e9) {
+            printf("Low End Expander\n");
+            *rx_OLATA = 0x40143D;
+        } else {
+            printf("High End Expander\n");
+            *rx_OLATA = 0x40143E;
         }
 
-        break;  // Remove this if you want persistent socket sessions
+        uint32_t test_read = *rx_OLATA;
+        printf("Wrote and read back: 0x%08X\n", test_read);
+
+       // break;  // One-shot session per connection
     }
 
     close(sock_client);
-    sock_thread[0] = -1;
-    return NULL;
 }

@@ -25,10 +25,9 @@ outputs:
 
 
 templates:
-  imports: import eclypse_z7_qr
-  make: eclypse_z7.rffe(${addr}, ${port}, ${freq}, ${corr})
+  imports: import eclypse_z7_qr_rffe
+  make: eclypse_z7_qr_rffe.rffe(${addr}, ${port}, ${freq}, ${corr})
   callbacks:
     - set_freq(${freq}, ${corr})
-    - set_rate(${rate})
 
 file_format: 1

@@ -9,7 +9,7 @@ from gnuradio import gr, blocks
 class rffe(gr.hier_block2):
   '''Eclypse Z7 Qorvo Radio RF Front End Control'''
 
-  def __init__(self, addr, port, freq):
+  def __init__(self, addr, port, freq, corr):
     gr.hier_block2.__init__(
       self,
       name = "eclypse_z7_qr_rffe",
@@ -24,9 +24,7 @@ class rffe(gr.hier_block2):
     self.data_sock.send(struct.pack('<I', 1))
     fd = os.dup(self.data_sock.fileno())
     self.connect(blocks.file_descriptor_source(gr.sizeof_gr_complex, fd), self)
-    self.set_freq(freq, corr, False)
+    self.set_freq(freq, corr)
 
-  def set_freq(self, freq,  corr, is_baseband):
-    flag = 1 if is_baseband else 0
-    packed_value = (is_baseband << 29) | (0 << 28) | (int((1.0 + 1e-6 * corr) * freq) & 0x0FFFFFFF)
-    self.ctrl_sock.send(struct.pack('<I', packed_value))
+  def set_freq(self, freq, corr):
+    self.ctrl_sock.send(struct.pack('<I', 0<<28 | int((1.0 + 1e-6 * corr) * freq)))

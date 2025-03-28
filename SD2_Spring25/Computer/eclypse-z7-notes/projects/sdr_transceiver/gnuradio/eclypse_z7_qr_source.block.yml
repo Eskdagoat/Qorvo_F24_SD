@@ -30,7 +30,7 @@ outputs:
 
 templates:
   imports: import eclypse_z7_qr
-  make: eclypse_z7.source(${addr}, ${port}, ${baseband}, ${rate}, ${corr})
+  make: eclypse_z7_qr.source(${addr}, ${port}, ${baseband}, ${rate}, ${corr})
   callbacks:
     - set_freq(${baseband}, ${corr})
     - set_rate(${rate})
