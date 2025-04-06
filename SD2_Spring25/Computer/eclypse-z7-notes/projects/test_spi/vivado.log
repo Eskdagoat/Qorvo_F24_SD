@@ -1,0 +1,281 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sat Apr  5 23:40:59 2025
+# Process ID         : 153141
+# Current directory  : /home/andrew/OLD/eclypse-z7-notes/projects/test_spi
+# Command line       : vivado
+# Log file           : /home/andrew/OLD/eclypse-z7-notes/projects/test_spi/vivado.log
+# Journal file       : /home/andrew/OLD/eclypse-z7-notes/projects/test_spi/vivado.jou
+# Running On         : AB-UB24Vivado
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.2 LTS
+# Processor Detail   : Intel(R) Core(TM) i7-10700K CPU @ 3.80GHz
+# CPU Frequency      : 3791.994 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 8
+# Host memory        : 16768 MB
+# Swap memory        : 0 MB
+# Total Virtual      : 16768 MB
+# Available Virtual  : 14208 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/andrew/OLD/eclypse-z7-notes/tmp/cores'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2024.2/data/ip'.
+INFO: [Project 1-5579] Found utility IPs instantiated in one or more block designs which have equivalent inline hdl with improved performance and reduced diskspace. It is recommended to migrate these utility IPs to inline hdl using the command upgrade_project -migrate_to_inline_hdl. The utility IPs may be deprecated in future releases. More information on inline hdl is available in UG994.
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Sat Apr  5 23:42:56 2025] Launched synth_1...
+Run output will be captured here: /home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.runs/synth_1/runme.log
+[Sat Apr  5 23:42:57 2025] Launched impl_1...
+Run output will be captured here: /home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.runs/impl_1/runme.log
+open_bd_design {/home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.srcs/sources_1/bd/system/system.bd}
+Reading block design file </home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.srcs/sources_1/bd/system/system.bd>...
+Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - pll_0
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - ps_0
+Adding component instance block -- pavel-demin:user:cdce_iic:1.0 - iic_0
+Adding component instance block -- pavel-demin:user:cdce_gpio:1.0 - gpio_0
+Adding component instance block -- pavel-demin:user:dac_gpio:1.0 - gpio_1
+Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - const_0
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_0
+Adding component instance block -- pavel-demin:user:axis_zmod_adc:1.0 - adc_0
+Adding component instance block -- xilinx.com:ip:axis_broadcaster:1.1 - bcast_0
+Adding component instance block -- xilinx.com:ip:axis_combiner:1.1 - comb_0
+Adding component instance block -- pavel-demin:user:axis_zmod_dac:1.0 - dac_0
+Adding component instance block -- pavel-demin:user:axi_hub:1.0 - hub_0
+Adding component instance block -- pavel-demin:user:port_slicer:1.0 - rst_slice_0
+Adding component instance block -- pavel-demin:user:port_slicer:1.0 - rst_slice_1
+Adding component instance block -- pavel-demin:user:port_slicer:1.0 - cfg_slice_0
+Adding component instance block -- pavel-demin:user:port_slicer:1.0 - cfg_slice_1
+Adding component instance block -- pavel-demin:user:port_slicer:1.0 - slice_0
+Adding component instance block -- pavel-demin:user:port_slicer:1.0 - slice_1
+Adding component instance block -- pavel-demin:user:port_slicer:1.0 - slice_2
+Adding component instance block -- pavel-demin:user:axis_constant:1.0 - phase_0
+Adding component instance block -- xilinx.com:ip:dds_compiler:6.0 - dds_0
+Adding component instance block -- pavel-demin:user:axis_lfsr:1.0 - lfsr_0
+Adding component instance block -- xilinx.com:ip:cmpy:6.0 - mult_0
+Adding component instance block -- xilinx.com:ip:axis_broadcaster:1.1 - bcast_0
+Adding component instance block -- pavel-demin:user:axis_variable:1.0 - rate_0
+Adding component instance block -- pavel-demin:user:axis_variable:1.0 - rate_1
+Adding component instance block -- xilinx.com:ip:cic_compiler:4.0 - cic_0
+Adding component instance block -- xilinx.com:ip:cic_compiler:4.0 - cic_1
+Adding component instance block -- xilinx.com:ip:axis_combiner:1.1 - comb_0
+Adding component instance block -- xilinx.com:ip:axis_dwidth_converter:1.1 - conv_0
+Adding component instance block -- xilinx.com:ip:fir_compiler:7.2 - fir_0
+Adding component instance block -- xilinx.com:ip:axis_subset_converter:1.1 - subset_0
+Adding component instance block -- xilinx.com:ip:floating_point:7.1 - fp_0
+Adding component instance block -- xilinx.com:ip:axis_dwidth_converter:1.1 - conv_1
+Adding component instance block -- pavel-demin:user:axis_fifo:1.0 - fifo_0
+Adding component instance block -- pavel-demin:user:port_slicer:1.0 - slice_0
+Adding component instance block -- pavel-demin:user:port_slicer:1.0 - slice_1
+Adding component instance block -- pavel-demin:user:port_slicer:1.0 - slice_2
+Adding component instance block -- pavel-demin:user:axis_fifo:1.0 - fifo_0
+Adding component instance block -- xilinx.com:ip:axis_dwidth_converter:1.1 - conv_0
+Adding component instance block -- xilinx.com:ip:floating_point:7.1 - fp_0
+Adding component instance block -- xilinx.com:ip:fir_compiler:7.2 - fir_0
+Adding component instance block -- xilinx.com:ip:axis_dwidth_converter:1.1 - conv_1
+Adding component instance block -- xilinx.com:ip:axis_broadcaster:1.1 - bcast_0
+Adding component instance block -- pavel-demin:user:axis_variable:1.0 - rate_0
+Adding component instance block -- pavel-demin:user:axis_variable:1.0 - rate_1
+Adding component instance block -- xilinx.com:ip:cic_compiler:4.0 - cic_0
+Adding component instance block -- xilinx.com:ip:cic_compiler:4.0 - cic_1
+Adding component instance block -- xilinx.com:ip:axis_combiner:1.1 - comb_0
+Adding component instance block -- pavel-demin:user:axis_constant:1.0 - phase_0
+Adding component instance block -- xilinx.com:ip:dds_compiler:6.0 - dds_0
+Adding component instance block -- pavel-demin:user:axis_lfsr:1.0 - lfsr_0
+Adding component instance block -- xilinx.com:ip:cmpy:6.0 - mult_0
+Adding component instance block -- xilinx.com:ip:xlconcat:2.1 - concat_0
+Adding component instance block -- pavel-demin:user:axi_hub:1.0 - hub_0
+Adding component instance block -- pavel-demin:user:port_slicer:1.0 - rst_slice_0
+Adding component instance block -- pavel-demin:user:port_slicer:1.0 - rst_slice_1
+Adding component instance block -- pavel-demin:user:port_slicer:1.0 - cfg_slice_0
+Adding component instance block -- pavel-demin:user:port_slicer:1.0 - cfg_slice_1
+Adding component instance block -- pavel-demin:user:port_slicer:1.0 - slice_0
+Adding component instance block -- pavel-demin:user:port_slicer:1.0 - slice_1
+Adding component instance block -- pavel-demin:user:port_slicer:1.0 - slice_2
+Adding component instance block -- pavel-demin:user:axis_constant:1.0 - phase_0
+Adding component instance block -- xilinx.com:ip:dds_compiler:6.0 - dds_0
+Adding component instance block -- pavel-demin:user:axis_lfsr:1.0 - lfsr_0
+Adding component instance block -- xilinx.com:ip:cmpy:6.0 - mult_0
+Adding component instance block -- xilinx.com:ip:axis_broadcaster:1.1 - bcast_0
+Adding component instance block -- pavel-demin:user:axis_variable:1.0 - rate_0
+Adding component instance block -- pavel-demin:user:axis_variable:1.0 - rate_1
+Adding component instance block -- xilinx.com:ip:cic_compiler:4.0 - cic_0
+Adding component instance block -- xilinx.com:ip:cic_compiler:4.0 - cic_1
+Adding component instance block -- xilinx.com:ip:axis_combiner:1.1 - comb_0
+Adding component instance block -- xilinx.com:ip:axis_dwidth_converter:1.1 - conv_0
+Adding component instance block -- xilinx.com:ip:fir_compiler:7.2 - fir_0
+Adding component instance block -- xilinx.com:ip:axis_subset_converter:1.1 - subset_0
+Adding component instance block -- xilinx.com:ip:floating_point:7.1 - fp_0
+Adding component instance block -- xilinx.com:ip:axis_dwidth_converter:1.1 - conv_1
+Adding component instance block -- pavel-demin:user:axis_fifo:1.0 - fifo_0
+Adding component instance block -- pavel-demin:user:port_slicer:1.0 - slice_0
+Adding component instance block -- pavel-demin:user:port_slicer:1.0 - slice_1
+Adding component instance block -- pavel-demin:user:port_slicer:1.0 - slice_2
+Adding component instance block -- pavel-demin:user:axis_fifo:1.0 - fifo_0
+Adding component instance block -- xilinx.com:ip:axis_dwidth_converter:1.1 - conv_0
+Adding component instance block -- xilinx.com:ip:floating_point:7.1 - fp_0
+Adding component instance block -- xilinx.com:ip:fir_compiler:7.2 - fir_0
+Adding component instance block -- xilinx.com:ip:axis_dwidth_converter:1.1 - conv_1
+Adding component instance block -- xilinx.com:ip:axis_broadcaster:1.1 - bcast_0
+Adding component instance block -- pavel-demin:user:axis_variable:1.0 - rate_0
+Adding component instance block -- pavel-demin:user:axis_variable:1.0 - rate_1
+Adding component instance block -- xilinx.com:ip:cic_compiler:4.0 - cic_0
+Adding component instance block -- xilinx.com:ip:cic_compiler:4.0 - cic_1
+Adding component instance block -- xilinx.com:ip:axis_combiner:1.1 - comb_0
+Adding component instance block -- pavel-demin:user:axis_constant:1.0 - phase_0
+Adding component instance block -- xilinx.com:ip:dds_compiler:6.0 - dds_0
+Adding component instance block -- pavel-demin:user:axis_lfsr:1.0 - lfsr_0
+Adding component instance block -- xilinx.com:ip:cmpy:6.0 - mult_0
+Adding component instance block -- xilinx.com:ip:xlconcat:2.1 - concat_0
+Adding component instance block -- pavel-demin:user:axis_fifo:1.0 - fifo_0
+Adding component instance block -- pavel-demin:user:axis_spi:1.0 - spi_0
+Adding component instance block -- pavel-demin:user:axis_fifo:1.0 - fifo_1
+Adding component instance block -- pavel-demin:user:axis_spi:1.0 - spi_1
+Adding component instance block -- xilinx.com:module_ref:Top_Level:1.0 - Top_Level_0
+Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - pll_1
+Successfully read diagram <system> from block design file </home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.srcs/sources_1/bd/system/system.bd>
+open_bd_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 8674.809 ; gain = 0.000 ; free physical = 8404 ; free virtual = 12740
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+startgroup
+set_property -dict [list \
+  CONFIG.CLKOUT1_JITTER {410.894} \
+  CONFIG.CLKOUT1_PHASE_ERROR {83.589} \
+  CONFIG.CLKOUT2_JITTER {410.894} \
+  CONFIG.CLKOUT2_PHASE_ERROR {83.589} \
+  CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {10} \
+  CONFIG.CLKOUT2_USED {true} \
+  CONFIG.MMCM_CLKFBOUT_MULT_F {10} \
+  CONFIG.MMCM_CLKIN2_PERIOD {10.000} \
+  CONFIG.MMCM_CLKOUT0_DIVIDE_F {125} \
+  CONFIG.MMCM_CLKOUT1_DIVIDE {125} \
+  CONFIG.NUM_OUT_CLKS {2} \
+] [get_bd_cells pll_1]
+endgroup
+delete_bd_objs [get_bd_nets pll_1_clk_out1]
+connect_bd_net [get_bd_pins Top_Level_0/clk_in] [get_bd_pins pll_1/clk_out1]
+connect_bd_net [get_bd_ports ref_in_lo] [get_bd_pins pll_1/clk_out2]
+save_bd_design
+Wrote  : </home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.srcs/sources_1/bd/system/system.bd> 
+Wrote  : </home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.srcs/utils_1/imports/synth_1/system_wrapper.dcp with file /home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.runs/synth_1/system_wrapper.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+CRITICAL WARNING: [BD 41-1356] Slave segment </trx_0/hub_0/s_axi/reg0> is not assigned into address space </ps_0/Data>. Please use Address Editor to either assign or exclude it.
+CRITICAL WARNING: [BD 41-1356] Slave segment </trx_1/hub_0/s_axi/reg0> is not assigned into address space </ps_0/Data>. Please use Address Editor to either assign or exclude it.
+WARNING: [BD 5-699] No address segments matched 'get_bd_addr_segs -of_objects /ps_0/Data'
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter M_TDATA_NUM_BYTES(3) on '/trx_0/rx_0/subset_0' with propagated value(4). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter M_TDATA_NUM_BYTES(3) on '/trx_1/rx_0/subset_0' with propagated value(4). Command ignored
+INFO: [xilinx.com:ip:cic_compiler:4.0-913] /trx_0/tx_0/cic_0 Input_Data_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:cic_compiler:4.0-913] /trx_1/tx_0/cic_1 Input_Data_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:cmpy:6.0-913] /trx_1/rx_0/mult_0 APortWidth has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:cmpy:6.0-913] /trx_1/rx_0/mult_0 BPortWidth has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:cmpy:6.0-308] /trx_1/rx_0/mult_0 S_AXIS_B-TDATA: Validating field: real(24:0): fix24_23 against /trx_1/rx_0/dds_0 M_AXIS_DATA-TDATA: chan_0_cosine(24:0): fix24_23.
+INFO: [xilinx.com:ip:cmpy:6.0-308] /trx_1/rx_0/mult_0 S_AXIS_B-TDATA: Validating field: imag(48:24): fix24_23 against /trx_1/rx_0/dds_0 M_AXIS_DATA-TDATA: chan_0_sine(48:24): fix24_23.
+INFO: [xilinx.com:ip:cic_compiler:4.0-913] /trx_1/rx_0/cic_0 Input_Data_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:cic_compiler:4.0-913] /trx_1/rx_0/cic_1 Input_Data_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+WARNING: [xilinx.com:ip:fir_compiler:7.2-304] /trx_1/tx_0/fir_0 S_AXIS_DATA-TDATA: Data transfer transaction mismatch. /trx_1/tx_0/fir_0 transactions: 2. /trx_1/tx_0/fp_0 M_AXIS_RESULT-TDATA transactions: 1.
+INFO: [xilinx.com:ip:fir_compiler:7.2-315] /trx_1/tx_0/fir_0 S_AXIS_DATA-TDATA: Will use first transaction for compatibility check
+INFO: [xilinx.com:ip:fir_compiler:7.2-913] /trx_1/tx_0/fir_0 Data_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+WARNING: [xilinx.com:ip:fir_compiler:7.2-304] /trx_1/tx_0/fir_0 S_AXIS_DATA-TDATA: Data transfer transaction mismatch. /trx_1/tx_0/fir_0 transactions: 2. /trx_1/tx_0/fp_0 M_AXIS_RESULT-TDATA transactions: 1.
+INFO: [xilinx.com:ip:fir_compiler:7.2-315] /trx_1/tx_0/fir_0 S_AXIS_DATA-TDATA: Will use first transaction for compatibility check
+INFO: [xilinx.com:ip:fir_compiler:7.2-308] /trx_1/tx_0/fir_0 S_AXIS_DATA-TDATA: Validating field: chan_0_path_0(24:0): fix24_22 against /trx_1/tx_0/fp_0 M_AXIS_RESULT-TDATA: data(24:0): fix24_22.
+INFO: [xilinx.com:ip:cmpy:6.0-913] /trx_0/tx_0/mult_0 APortWidth has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:cmpy:6.0-913] /trx_0/tx_0/mult_0 BPortWidth has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:cmpy:6.0-308] /trx_0/tx_0/mult_0 S_AXIS_B-TDATA: Validating field: real(24:0): fix24_23 against /trx_0/tx_0/dds_0 M_AXIS_DATA-TDATA: chan_0_cosine(24:0): fix24_23.
+INFO: [xilinx.com:ip:cmpy:6.0-308] /trx_0/tx_0/mult_0 S_AXIS_B-TDATA: Validating field: imag(48:24): fix24_23 against /trx_0/tx_0/dds_0 M_AXIS_DATA-TDATA: chan_0_sine(48:24): fix24_23.
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /pll_0 clk_wiz propagate
+INFO: [xilinx.com:ip:fir_compiler:7.2-913] /trx_1/rx_0/fir_0 Data_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:floating_point:7.1-913] /trx_1/rx_0/fp_0 A_Precision_Type has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:floating_point:7.1-913] /trx_1/rx_0/fp_0 C_A_Exponent_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:floating_point:7.1-913] /trx_1/rx_0/fp_0 C_A_Fraction_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:cic_compiler:4.0-913] /trx_1/tx_0/cic_0 Input_Data_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:cmpy:6.0-913] /trx_1/tx_0/mult_0 APortWidth has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:cmpy:6.0-913] /trx_1/tx_0/mult_0 BPortWidth has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:cmpy:6.0-308] /trx_1/tx_0/mult_0 S_AXIS_B-TDATA: Validating field: real(24:0): fix24_23 against /trx_1/tx_0/dds_0 M_AXIS_DATA-TDATA: chan_0_cosine(24:0): fix24_23.
+INFO: [xilinx.com:ip:cmpy:6.0-308] /trx_1/tx_0/mult_0 S_AXIS_B-TDATA: Validating field: imag(48:24): fix24_23 against /trx_1/tx_0/dds_0 M_AXIS_DATA-TDATA: chan_0_sine(48:24): fix24_23.
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /pll_1 clk_wiz propagate
+INFO: [xilinx.com:ip:cmpy:6.0-913] /trx_0/rx_0/mult_0 APortWidth has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:cmpy:6.0-913] /trx_0/rx_0/mult_0 BPortWidth has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:cmpy:6.0-308] /trx_0/rx_0/mult_0 S_AXIS_B-TDATA: Validating field: real(24:0): fix24_23 against /trx_0/rx_0/dds_0 M_AXIS_DATA-TDATA: chan_0_cosine(24:0): fix24_23.
+INFO: [xilinx.com:ip:cmpy:6.0-308] /trx_0/rx_0/mult_0 S_AXIS_B-TDATA: Validating field: imag(48:24): fix24_23 against /trx_0/rx_0/dds_0 M_AXIS_DATA-TDATA: chan_0_sine(48:24): fix24_23.
+INFO: [xilinx.com:ip:cic_compiler:4.0-913] /trx_0/tx_0/cic_1 Input_Data_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:cic_compiler:4.0-913] /trx_0/rx_0/cic_0 Input_Data_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:cic_compiler:4.0-913] /trx_0/rx_0/cic_1 Input_Data_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:fir_compiler:7.2-913] /trx_0/rx_0/fir_0 Data_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:floating_point:7.1-913] /trx_0/rx_0/fp_0 A_Precision_Type has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:floating_point:7.1-913] /trx_0/rx_0/fp_0 C_A_Exponent_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:floating_point:7.1-913] /trx_0/rx_0/fp_0 C_A_Fraction_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+WARNING: [xilinx.com:ip:fir_compiler:7.2-304] /trx_0/tx_0/fir_0 S_AXIS_DATA-TDATA: Data transfer transaction mismatch. /trx_0/tx_0/fir_0 transactions: 2. /trx_0/tx_0/fp_0 M_AXIS_RESULT-TDATA transactions: 1.
+INFO: [xilinx.com:ip:fir_compiler:7.2-315] /trx_0/tx_0/fir_0 S_AXIS_DATA-TDATA: Will use first transaction for compatibility check
+INFO: [xilinx.com:ip:fir_compiler:7.2-913] /trx_0/tx_0/fir_0 Data_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+WARNING: [xilinx.com:ip:fir_compiler:7.2-304] /trx_0/tx_0/fir_0 S_AXIS_DATA-TDATA: Data transfer transaction mismatch. /trx_0/tx_0/fir_0 transactions: 2. /trx_0/tx_0/fp_0 M_AXIS_RESULT-TDATA transactions: 1.
+INFO: [xilinx.com:ip:fir_compiler:7.2-315] /trx_0/tx_0/fir_0 S_AXIS_DATA-TDATA: Will use first transaction for compatibility check
+INFO: [xilinx.com:ip:fir_compiler:7.2-308] /trx_0/tx_0/fir_0 S_AXIS_DATA-TDATA: Validating field: chan_0_path_0(24:0): fix24_22 against /trx_0/tx_0/fp_0 M_AXIS_RESULT-TDATA: data(24:0): fix24_22.
+CRITICAL WARNING: [BD 41-237] Bus Interface property TDATA_NUM_BYTES does not match between /trx_0/rx_0/mult_0/S_AXIS_A(4) and /bcast_0/M00_AXIS(2)
+CRITICAL WARNING: [BD 41-237] Bus Interface property TDATA_NUM_BYTES does not match between /trx_1/rx_0/mult_0/S_AXIS_A(4) and /bcast_0/M01_AXIS(2)
+CRITICAL WARNING: [BD 41-237] Bus Interface property TDATA_NUM_BYTES does not match between /trx_0/rx_0/mult_0/S_AXIS_CTRL(1) and /trx_0/rx_0/lfsr_0/m_axis(8)
+CRITICAL WARNING: [BD 41-237] Bus Interface property TDATA_NUM_BYTES does not match between /trx_0/tx_0/mult_0/S_AXIS_CTRL(1) and /trx_0/tx_0/lfsr_0/m_axis(8)
+CRITICAL WARNING: [BD 41-237] Bus Interface property TDATA_NUM_BYTES does not match between /comb_0/S00_AXIS(2) and /trx_0/tx_0/mult_0/M_AXIS_DOUT(6)
+CRITICAL WARNING: [BD 41-237] Bus Interface property TDATA_NUM_BYTES does not match between /trx_1/rx_0/mult_0/S_AXIS_CTRL(1) and /trx_1/rx_0/lfsr_0/m_axis(8)
+CRITICAL WARNING: [BD 41-237] Bus Interface property TDATA_NUM_BYTES does not match between /trx_1/tx_0/mult_0/S_AXIS_CTRL(1) and /trx_1/tx_0/lfsr_0/m_axis(8)
+CRITICAL WARNING: [BD 41-237] Bus Interface property TDATA_NUM_BYTES does not match between /comb_0/S01_AXIS(2) and /trx_1/tx_0/mult_0/M_AXIS_DOUT(6)
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/trx_0/hub_0/s01_axis_tvalid
+/trx_0/hub_0/s02_axis_tvalid
+/trx_0/hub_0/s03_axis_tvalid
+/trx_0/hub_0/s04_axis_tvalid
+/trx_0/hub_0/s05_axis_tvalid
+/trx_1/hub_0/s01_axis_tvalid
+/trx_1/hub_0/s02_axis_tvalid
+/trx_1/hub_0/s03_axis_tvalid
+/trx_1/hub_0/s04_axis_tvalid
+/trx_1/hub_0/s05_axis_tvalid
+/Top_Level_0/miso_exp
+/Top_Level_0/muxout_lo
+
+Wrote  : </home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.srcs/sources_1/bd/system/system.bd> 
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/trx_0/rx_0/mult_0/s_axis_a_tdata'(32) to pin: '/trx_0/rx_0/S_AXIS_A_tdata'(16) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/trx_0/rx_0/mult_0/s_axis_ctrl_tdata'(8) to pin: '/trx_0/rx_0/lfsr_0/m_axis_tdata'(64) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/trx_0/tx_0/mult_0/s_axis_ctrl_tdata'(8) to pin: '/trx_0/tx_0/lfsr_0/m_axis_tdata'(64) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/trx_1/rx_0/mult_0/s_axis_a_tdata'(32) to pin: '/trx_1/rx_0/S_AXIS_A_tdata'(16) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/trx_1/rx_0/mult_0/s_axis_ctrl_tdata'(8) to pin: '/trx_1/rx_0/lfsr_0/m_axis_tdata'(64) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/trx_1/tx_0/mult_0/s_axis_ctrl_tdata'(8) to pin: '/trx_1/tx_0/lfsr_0/m_axis_tdata'(64) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/comb_0/s_axis_tdata'(16) to pin: '/trx_0/M_AXIS_DOUT_tdata'(48) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/comb_0/s_axis_tdata'(16) to pin: '/trx_1/M_AXIS_DOUT_tdata'(48) - Only lower order bits will be connected.
+Verilog Output written to : /home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/synth/system.v
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/trx_0/rx_0/mult_0/s_axis_a_tdata'(32) to pin: '/trx_0/rx_0/S_AXIS_A_tdata'(16) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/trx_0/rx_0/mult_0/s_axis_ctrl_tdata'(8) to pin: '/trx_0/rx_0/lfsr_0/m_axis_tdata'(64) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/trx_0/tx_0/mult_0/s_axis_ctrl_tdata'(8) to pin: '/trx_0/tx_0/lfsr_0/m_axis_tdata'(64) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/trx_1/rx_0/mult_0/s_axis_a_tdata'(32) to pin: '/trx_1/rx_0/S_AXIS_A_tdata'(16) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/trx_1/rx_0/mult_0/s_axis_ctrl_tdata'(8) to pin: '/trx_1/rx_0/lfsr_0/m_axis_tdata'(64) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/trx_1/tx_0/mult_0/s_axis_ctrl_tdata'(8) to pin: '/trx_1/tx_0/lfsr_0/m_axis_tdata'(64) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/comb_0/s_axis_tdata'(16) to pin: '/trx_0/M_AXIS_DOUT_tdata'(48) - Only lower order bits will be connected.
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/comb_0/s_axis_tdata'(16) to pin: '/trx_1/M_AXIS_DOUT_tdata'(48) - Only lower order bits will be connected.
+Verilog Output written to : /home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/sim/system.v
+Verilog Output written to : /home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/hdl/system_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block pll_1 .
+Exporting to file /home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/hw_handoff/system.hwh
+Generated Hardware Definition File /home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.gen/sources_1/bd/system/synth/system.hwdef
+[Sat Apr  5 23:57:47 2025] Launched synth_1...
+Run output will be captured here: /home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.runs/synth_1/runme.log
+[Sat Apr  5 23:57:47 2025] Launched impl_1...
+Run output will be captured here: /home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 9122.902 ; gain = 448.094 ; free physical = 8132 ; free virtual = 12402
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Sat Apr  5 23:58:11 2025] Launched synth_1...
+Run output will be captured here: /home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.runs/synth_1/runme.log
+[Sat Apr  5 23:58:11 2025] Launched impl_1...
+Run output will be captured here: /home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.runs/impl_1/runme.log
+file copy -force /home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.runs/impl_1/system_wrapper.bit /home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.bit
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Apr  6 00:38:34 2025...
