@@ -1,6 +1,6 @@
 CFLAGS = -O3 -march=armv7-a -mtune=cortex-a9 -mfpu=neon -mfloat-abi=hard
 
-all: sdr-transceiver setup sdr-rffe
+all: sdr-transceiver setup sdr-rffe rffe-test
 
 # Main transceiver build 
 sdr-transceiver: sdr-transceiver.c
@@ -13,7 +13,10 @@ sdr-rffe: sdr-rffe.c ADF4351.c
 # Setup utility build
 setup: setup.c
 	gcc $(CFLAGS) -o $@ $^
+	
+rffe-test: rffe-test.c
+	gcc $(CFLAGS) -o $@ $^
 
 clean:
-	rm -f sdr-transceiver sdr-rffe setup
+	rm -f sdr-transceiver sdr-rffe setup rffe-test
 

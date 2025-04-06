@@ -111,7 +111,7 @@ class fm(gr.top_block, Qt.QWidget):
                 10000,
                 window.WIN_HAMMING,
                 6.76))
-        self.eclypse_z7_source_0 = eclypse_z7.source(addr, 1002, 60000000, rx_samp_rate, 0)
+        self.eclypse_z7_source_0 = eclypse_z7.source(addr, 1001, rx_freq, rx_samp_rate, 0)
         self.audio_sink_0 = audio.sink(48000, '', True)
         self.analog_wfm_rcv_0 = analog.wfm_rcv(
         	quad_rate=rx_samp_rate,
@@ -157,6 +157,7 @@ class fm(gr.top_block, Qt.QWidget):
 
     def set_rx_freq(self, rx_freq):
         self.rx_freq = rx_freq
+        self.eclypse_z7_source_0.set_freq(self.rx_freq, 0)
         self.qtgui_sink_x_0.set_frequency_range((self.rx_freq*1000000), self.rx_samp_rate)
 
     def get_rx_baseband(self):

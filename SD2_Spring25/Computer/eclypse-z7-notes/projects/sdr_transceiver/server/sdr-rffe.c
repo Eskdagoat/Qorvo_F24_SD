@@ -13,10 +13,8 @@
 #include "ADF4351.h"
 
 // Hardware register pointers
-volatile uint32_t *rx_freq;
-volatile uint32_t *rx_IODIRA, *rx_OLATA;
-volatile uint32_t *ADF_R0, *ADF_R1, *ADF_R2, *ADF_R3, *ADF_R4, *ADF_R5;
-
+volatile uint32_t *ADF_R0, *ADF_R1, *ADF_R2, *ADF_R3, *ADF_R4, *ADF_R5, *LO_Start, *EXP_REG, *EXP_Start;
+volatile uint32_t *Test;
 // Forward declaration
 void rx_rffe_handler(int sock_client);
 
@@ -27,6 +25,7 @@ int main() {
     ssize_t result;
     int yes = 1;
     uint16_t port = 1000;
+    volatile void *rffe;
 
     // Open /dev/mem
     if ((fd = open("/dev/mem", O_RDWR | O_SYNC)) < 0) {
@@ -35,23 +34,27 @@ int main() {
     }
 
     // Map RF Front-End memory block
-    volatile void *rffe = mmap(NULL, 8 * sysconf(_SC_PAGESIZE), PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0x45000000);
+   rffe = mmap(NULL, 8*sysconf(_SC_PAGESIZE), PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0x40500000);
     if (rffe == MAP_FAILED) {
         perror("mmap");
         return EXIT_FAILURE;
     }
 
-    // Assign register pointers
-    rx_freq   = (volatile uint32_t *)((char *)rffe + 0x04);
-    rx_IODIRA = (volatile uint32_t *)((char *)rffe + 0x20);
-    rx_OLATA  = (volatile uint32_t *)((char *)rffe + 0x24);
 
-    ADF_R5 = (volatile uint32_t *)((char *)rffe + 0x100);
-    ADF_R4 = (volatile uint32_t *)((char *)rffe + 0x104);
-    ADF_R3 = (volatile uint32_t *)((char *)rffe + 0x108);
-    ADF_R2 = (volatile uint32_t *)((char *)rffe + 0x10C);
-    ADF_R1 = (volatile uint32_t *)((char *)rffe + 0x110);
-    ADF_R0 = (volatile uint32_t *)((char *)rffe + 0x114);
+
+    // Assign register pointers
+
+
+    ADF_R5 = (uint32_t *)(rffe + 224);
+    ADF_R4 = (uint32_t *)(rffe + 192);
+    ADF_R3 = (uint32_t *)(rffe + 160);
+    ADF_R2 = (uint32_t *)(rffe + 128);
+    ADF_R1 = (uint32_t *)(rffe + 64);
+    ADF_R0 = (uint32_t *)(rffe + 32);
+    LO_Start = (uint32_t *)(rffe);
+    EXP_REG = (uint32_t *)(rffe + 288);
+    EXP_Start = (uint32_t *)(rffe + 320);
+    Test = (uint32_t *)(rffe + 320);
 
     printf("Registers Assigned\n");
 
@@ -100,11 +103,15 @@ int main() {
 void rx_rffe_handler(int sock_client) {
     printf("RX Handler\n");
     uint32_t command;
+    int run = 0; 
 
     ADF4351 synth = ADF4351_init(10.0e6, false, false, 1);
     printf("Created synth\n");
 
     while (1) {
+        run = run +1;
+        *Test = run;
+        printf("Run number: %X\n", *Test);
         if (recv(sock_client, &command, sizeof(command), MSG_WAITALL) <= 0)
             break;
 
@@ -120,28 +127,40 @@ void rx_rffe_handler(int sock_client) {
         ADF4351_Regs regs = ADF4351_getRegisters(&synth);
 
         // Write ADF4351 registers: R5 to R0
-        *ADF_R5 = regs.R5;
-        *ADF_R4 = regs.R4;
-        *ADF_R3 = regs.R3;
-        *ADF_R2 = regs.R2;
-        *ADF_R1 = regs.R1;
-        *ADF_R0 = regs.R0;
+        *ADF_R5 = (uint32_t)regs.R5;
+        printf("ADF_R5 0x%X\n", *ADF_R5);
+        *ADF_R4 = (uint32_t)regs.R4;
+        printf("ADF_R4 0x%X\n", *ADF_R4);
+        *ADF_R3 = (uint32_t)regs.R3;
+        printf("ADF_R3 0x%X\n", *ADF_R3);
+        *ADF_R2 = (uint32_t)regs.R2;
+        printf("ADF_R2 0x%X\n", *ADF_R2);
+        *ADF_R1 = (uint32_t)regs.R1;
+        printf("ADF_R1 0x%X\n", *ADF_R1);
+        *ADF_R0 = (uint32_t)regs.R0;
+        printf("ADF_R0 0x%X\n", *ADF_R0);
+
+        *LO_Start = 0xFFFFFFFF;
+        printf("LO Start 0x%X\n", *LO_Start);
+
         printf("Registers written\n");
 
+        printf("regs.R0: 0x%08X\n", (uint32_t)regs.R0);
         // IO expander for band select
-        *rx_OLATA = 0xFFFFFFFF;
-        printf("Readback: 0x%08X\n", *rx_OLATA);
+        *EXP_REG = 0xFFFFFFFF;
+        *EXP_Start = 1;
 
         if (freq_Hz < 1e9) {
             printf("Low End Expander\n");
-            *rx_OLATA = 0x40143D;
+            *EXP_REG = 0x40143D;
+            *EXP_Start = 1;
         } else {
             printf("High End Expander\n");
-            *rx_OLATA = 0x40143E;
+            *EXP_REG = 0x40143E;
+            *EXP_Start = 1;
         }
 
-        uint32_t test_read = *rx_OLATA;
-        printf("Wrote and read back: 0x%08X\n", test_read);
+        printf("Wrote and read back: 0x%X\n", *EXP_REG);
 
        // break;  // One-shot session per connection
     }

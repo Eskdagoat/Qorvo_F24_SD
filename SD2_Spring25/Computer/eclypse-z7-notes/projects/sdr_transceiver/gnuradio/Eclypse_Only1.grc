@@ -153,10 +153,10 @@ blocks:
     alias: ''
     comment: ''
     corr: '0'
-    freq: '60000000'
+    freq: rx_freq
     maxoutbuf: '0'
     minoutbuf: '0'
-    port: '1002'
+    port: '1001'
     rate: rx_samp_rate
   states:
     bus_sink: false

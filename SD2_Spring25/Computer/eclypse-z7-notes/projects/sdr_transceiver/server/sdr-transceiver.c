@@ -163,6 +163,9 @@ void *rx_ctrl_handler(void *arg)
   /* set default rx sample rate */
   *rx_rate = 640;
 
+printf("rx_freq: %u\n", *rx_freq);  // Print the value of rx_freq
+printf("rx_rate: %u\n", *rx_rate);  // Print the value of rx_rate
+  
   while(1)
   {
     if(recv(sock_client, (char *)&command, 4, MSG_WAITALL) <= 0) break;
