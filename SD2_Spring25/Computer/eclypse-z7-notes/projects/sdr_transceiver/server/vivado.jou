@@ -1,0 +1,38 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sat Apr 12 23:31:33 2025
+# Process ID         : 15838
+# Current directory  : /home/andrew/OLD/eclypse-z7-notes/projects/sdr_transceiver/server
+# Command line       : vivado
+# Log file           : /home/andrew/OLD/eclypse-z7-notes/projects/sdr_transceiver/server/vivado.log
+# Journal file       : /home/andrew/OLD/eclypse-z7-notes/projects/sdr_transceiver/server/vivado.jou
+# Running On         : AB-UB24Vivado
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.2 LTS
+# Processor Detail   : Intel(R) Core(TM) i7-10700K CPU @ 3.80GHz
+# CPU Frequency      : 3791.996 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 8
+# Host memory        : 16768 MB
+# Swap memory        : 0 MB
+# Total Virtual      : 16768 MB
+# Available Virtual  : 14557 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.xpr
+open_bd_design {/home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.srcs/sources_1/bd/system/system.bd}
+update_compile_order -fileset sources_1
+ipx::edit_ip_in_project -upgrade true -name axis_spi_v1_0_project -directory /home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.tmp/axis_spi_v1_0_project /home/andrew/OLD/eclypse-z7-notes/tmp/cores/axis_spi/component.xml
+update_compile_order -fileset sources_1
+close_project
+startgroup
+set_property CONFIG.SPI_DATA_WIDTH {16} [get_bd_cells spi_2]
+endgroup
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+file copy -force /home/andrew/OLD/eclypse-z7-notes/tmp/sdr_transceiver.runs/impl_1/system_wrapper.bit /home/andrew/OLD/eclypse-z7-notes/sdr_transceiver16.bit

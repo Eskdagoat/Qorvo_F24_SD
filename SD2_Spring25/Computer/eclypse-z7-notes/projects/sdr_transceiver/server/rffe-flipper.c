@@ -17,6 +17,8 @@ volatile uint32_t *ADF_R0, *ADF_R1, *ADF_R2, *ADF_R3, *ADF_R4, *ADF_R5, *LO_Star
 volatile uint32_t *Test;
 // Forward declaration
 void rx_rffe_handler(int sock_client);
+void write_to_LO_Start(volatile uint32_t *LO_Start, uint32_t to_split);
+
 
 int main() {
     int fd, sock_server, sock_client;
@@ -25,7 +27,6 @@ int main() {
     ssize_t result;
     int yes = 1;
     uint16_t port = 1000;
-    volatile void *rffe;
 
     // Open /dev/mem
     if ((fd = open("/dev/mem", O_RDWR | O_SYNC)) < 0) {
@@ -39,22 +40,6 @@ int main() {
         perror("mmap");
         return EXIT_FAILURE;
     }
-
-
-
-    // Assign register pointers
-
-
-   // ADF_R5 = (uint32_t *)(rffe + 224);
-  //  ADF_R4 = (uint32_t *)(rffe + 192);
-  //  ADF_R3 = (uint32_t *)(rffe + 160);
- //   ADF_R2 = (uint32_t *)(rffe + 128);
- //   ADF_R1 = (uint32_t *)(rffe + 64);
- //  ADF_R0 = (uint32_t *)(rffe + 32);
-    //LO_Start = (uint32_t *)(rffe);
- //   EXP_REG = (uint32_t *)(rffe + 288);
- //   EXP_Start = (uint32_t *)(rffe + 320);
- //   Test = (uint32_t *)(rffe + 320);
 
     printf("Registers Assigned\n");
 
@@ -103,11 +88,13 @@ int main() {
 void rx_rffe_handler(int sock_client) {
     printf("RX Handler\n");
     uint32_t command;
+    uint32_t allF = 0xFFFFFFFF;
+    uint32_t oneeight = 0x12345678;
     int run = 0; 
 
     ADF4351 synth = ADF4351_init(10.0e6, false, false, 1);
     printf("Created synth\n");
-    *LO_Start = 0xAAAAAA;
+    //*LO_Start = 0xAAAAAA;
     while (1) {
         run = run +1;
         printf("Run number: %X\n", run);
@@ -124,13 +111,15 @@ void rx_rffe_handler(int sock_client) {
         }
 
         ADF4351_Regs regs = ADF4351_getRegisters(&synth);
-        *LO_Start = 0xFFFFFFFF;
+        write_to_LO_Start(LO_Start, oneeight);
         sleep(1);
         // Write ADF4351 registers: R5 to R0
-        *LO_Start = regs.R5;
+        write_to_LO_Start(LO_Start, regs.R5);
+        //*LO_Start = regs.R5;
         printf("ADF_R5 0x%X\n", regs.R5);
         sleep(5);
-        *LO_Start = regs.R4;
+        write_to_LO_Start(LO_Start, regs.R4);
+        //*LO_Start = regs.R4;
         printf("ADF_R4 0x%X\n", regs.R4);
         sleep(5);
         *LO_Start = regs.R3;
@@ -170,4 +159,21 @@ void rx_rffe_handler(int sock_client) {
     }
 
     close(sock_client);
+}
+
+void write_to_LO_Start(volatile uint32_t *LO_Start, uint32_t to_split) {
+    // Split the 32-bit value into two 16-bit parts
+    uint16_t low = to_split & 0xFFFF;           // Lower 16 bits
+    uint16_t high = (to_split >> 16) & 0xFFFF;  // Upper 16 bits
+
+    // Write the lower 16 bits to LO_Start
+    *LO_Start = low;  // Write the lower 16 bits
+    printf("Written Lower 16 bits: 0x%04X\n", low);
+
+    // Wait for a short amount of time before writing the upper 16 bits
+    usleep(100);  // Adjust the delay as needed (in microseconds)
+
+    // Write the upper 16 bits to the same location (LO_Start points to the same place)
+    *LO_Start = high;  // Write the upper 16 bits
+    printf("Written Upper 16 bits: 0x%04X\n", high);
 }

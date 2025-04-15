@@ -34,8 +34,8 @@ int main() {
     }
 
     // Map RF Front-End memory block
-   LO_Start = mmap(NULL, sysconf(_SC_PAGESIZE), PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0x46000000);
-    if (LO_Start == MAP_FAILED) {
+   rffe = mmap(NULL, 8*sysconf(_SC_PAGESIZE), PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0x40500000);
+    if (rffe == MAP_FAILED) {
         perror("mmap");
         return EXIT_FAILURE;
     }
@@ -45,16 +45,16 @@ int main() {
     // Assign register pointers
 
 
-   // ADF_R5 = (uint32_t *)(rffe + 224);
-  //  ADF_R4 = (uint32_t *)(rffe + 192);
-  //  ADF_R3 = (uint32_t *)(rffe + 160);
- //   ADF_R2 = (uint32_t *)(rffe + 128);
- //   ADF_R1 = (uint32_t *)(rffe + 64);
- //  ADF_R0 = (uint32_t *)(rffe + 32);
-    //LO_Start = (uint32_t *)(rffe);
- //   EXP_REG = (uint32_t *)(rffe + 288);
- //   EXP_Start = (uint32_t *)(rffe + 320);
- //   Test = (uint32_t *)(rffe + 320);
+    ADF_R5 = (uint32_t *)(rffe + 224);
+    ADF_R4 = (uint32_t *)(rffe + 192);
+    ADF_R3 = (uint32_t *)(rffe + 160);
+    ADF_R2 = (uint32_t *)(rffe + 128);
+    ADF_R1 = (uint32_t *)(rffe + 64);
+    ADF_R0 = (uint32_t *)(rffe + 32);
+    LO_Start = (uint32_t *)(rffe);
+    EXP_REG = (uint32_t *)(rffe + 288);
+    EXP_Start = (uint32_t *)(rffe + 320);
+    Test = (uint32_t *)(rffe + 320);
 
     printf("Registers Assigned\n");
 
@@ -107,10 +107,11 @@ void rx_rffe_handler(int sock_client) {
 
     ADF4351 synth = ADF4351_init(10.0e6, false, false, 1);
     printf("Created synth\n");
-    *LO_Start = 0xAAAAAA;
+
     while (1) {
         run = run +1;
-        printf("Run number: %X\n", run);
+        *Test = run;
+        printf("Run number: %X\n", *Test);
         if (recv(sock_client, &command, sizeof(command), MSG_WAITALL) <= 0)
             break;
 
@@ -124,47 +125,42 @@ void rx_rffe_handler(int sock_client) {
         }
 
         ADF4351_Regs regs = ADF4351_getRegisters(&synth);
-        *LO_Start = 0xFFFFFFFF;
-        sleep(1);
-        // Write ADF4351 registers: R5 to R0
-        *LO_Start = regs.R5;
-        printf("ADF_R5 0x%X\n", regs.R5);
-        sleep(5);
-        *LO_Start = regs.R4;
-        printf("ADF_R4 0x%X\n", regs.R4);
-        sleep(5);
-        *LO_Start = regs.R3;
-        printf("ADF_R3 0x%X\n", regs.R3);
-        sleep(5);
-        *LO_Start = regs.R2;
-        printf("ADF_R2 0x%X\n", regs.R2);
-        sleep(5);
-        *LO_Start = regs.R1;
-        printf("ADF_R1 0x%X\n", regs.R1);
-        sleep(5);
-        *LO_Start = regs.R0;
-        printf("ADF_R0 0x%X\n", regs.R0);
-        sleep(5);
 
+        // Write ADF4351 registers: R5 to R0
+        *ADF_R5 = (uint32_t)regs.R5;
+        printf("ADF_R5 0x%X\n", *ADF_R5);
+        *ADF_R4 = (uint32_t)regs.R4;
+        printf("ADF_R4 0x%X\n", *ADF_R4);
+        *ADF_R3 = (uint32_t)regs.R3;
+        printf("ADF_R3 0x%X\n", *ADF_R3);
+        *ADF_R2 = (uint32_t)regs.R2;
+        printf("ADF_R2 0x%X\n", *ADF_R2);
+        *ADF_R1 = (uint32_t)regs.R1;
+        printf("ADF_R1 0x%X\n", *ADF_R1);
+        *ADF_R0 = (uint32_t)regs.R0;
+        printf("ADF_R0 0x%X\n", *ADF_R0);
+
+        *LO_Start = 0xFFFFFFFF;
+        printf("LO Start 0x%X\n", *LO_Start);
 
         printf("Registers written\n");
 
         printf("regs.R0: 0x%08X\n", (uint32_t)regs.R0);
         // IO expander for band select
-       // *EXP_REG = 0xFFFFFFFF;
-      //  *EXP_Start = 1;
+        *EXP_REG = 0xFFFFFFFF;
+        *EXP_Start = 1;
 
         if (freq_Hz < 1e9) {
             printf("Low End Expander\n");
-            //*EXP_REG = 0x40143D;
-            //*EXP_Start = 1;
+            *EXP_REG = 0x40143D;
+            *EXP_Start = 1;
         } else {
             printf("High End Expander\n");
-            //*EXP_REG = 0x40143E;
-            //*EXP_Start = 1;
+            *EXP_REG = 0x40143E;
+            *EXP_Start = 1;
         }
 
-        //printf("Wrote and read back: 0x%X\n", *EXP_REG);
+        printf("Wrote and read back: 0x%X\n", *EXP_REG);
 
        // break;  // One-shot session per connection
     }
