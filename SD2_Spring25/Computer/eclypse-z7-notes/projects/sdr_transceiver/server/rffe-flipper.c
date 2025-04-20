@@ -36,6 +36,8 @@ int main() {
 
     // Map RF Front-End memory block
    LO_Start = mmap(NULL, sysconf(_SC_PAGESIZE), PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0x46000000);
+   EXP_REG = mmap(NULL, sysconf(_SC_PAGESIZE), PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0x47000000);
+
     if (LO_Start == MAP_FAILED) {
         perror("mmap");
         return EXIT_FAILURE;
@@ -114,43 +116,45 @@ void rx_rffe_handler(int sock_client) {
         write_to_LO_Start(LO_Start, oneeight);
         sleep(1);
         // Write ADF4351 registers: R5 to R0
-        write_to_LO_Start(LO_Start, regs.R5);
-        //*LO_Start = regs.R5;
+        //write_to_LO_Start(LO_Start, regs.R5);
+        *LO_Start = regs.R5;
         printf("ADF_R5 0x%X\n", regs.R5);
-        sleep(5);
-        write_to_LO_Start(LO_Start, regs.R4);
-        //*LO_Start = regs.R4;
+       // sleep(5);
+        //write_to_LO_Start(LO_Start, regs.R4);
+        *LO_Start = regs.R4;
         printf("ADF_R4 0x%X\n", regs.R4);
-        sleep(5);
+        //sleep(5);
         *LO_Start = regs.R3;
         printf("ADF_R3 0x%X\n", regs.R3);
-        sleep(5);
+        //sleep(5);
         *LO_Start = regs.R2;
         printf("ADF_R2 0x%X\n", regs.R2);
-        sleep(5);
+       // sleep(5);
         *LO_Start = regs.R1;
         printf("ADF_R1 0x%X\n", regs.R1);
-        sleep(5);
+       // sleep(5);
         *LO_Start = regs.R0;
         printf("ADF_R0 0x%X\n", regs.R0);
-        sleep(5);
+       // sleep(5);
 
 
         printf("Registers written\n");
 
         printf("regs.R0: 0x%08X\n", (uint32_t)regs.R0);
-        // IO expander for band select
-       // *EXP_REG = 0xFFFFFFFF;
-      //  *EXP_Start = 1;
+
 
         if (freq_Hz < 1e9) {
             printf("Low End Expander\n");
-            //*EXP_REG = 0x40143D;
-            //*EXP_Start = 1;
+            *EXP_REG = 0x40;
+            sleep(1);
+            *EXP_REG = 0x12;
+            sleep(1);
+            *EXP_REG = 0x3D;
         } else {
             printf("High End Expander\n");
-            //*EXP_REG = 0x40143E;
-            //*EXP_Start = 1;
+            *EXP_REG = 0x40;
+            *EXP_REG = 0x12;
+            *EXP_REG = 0x3E;
         }
 
         //printf("Wrote and read back: 0x%X\n", *EXP_REG);

@@ -77,7 +77,7 @@ int main() {
     }
 
     listen(sock_server, 1024);
-    printf("RF controller listening on port %d...\n", port);
+    printf("TEST RFFE listening on port %d...\n", port);
 
     while (1) {
         sock_client = accept(sock_server, NULL, NULL);
@@ -107,7 +107,7 @@ void rx_rffe_handler(int sock_client) {
 
     ADF4351 synth = ADF4351_init(10.0e6, false, false, 1);
     printf("Created synth\n");
-    *LO_Start = 0xAAAAAA;
+    *LO_Start = 0xAA;
     while (1) {
         run = run +1;
         printf("Run number: %X\n", run);
@@ -124,10 +124,10 @@ void rx_rffe_handler(int sock_client) {
         }
 
         ADF4351_Regs regs = ADF4351_getRegisters(&synth);
-        *LO_Start = 0xFFFFFFFF;
+        *LO_Start = 0xFF;
         sleep(1);
         // Write ADF4351 registers: R5 to R0
-        *LO_Start = regs.R5;
+       /*  *LO_Start = regs.R5;
         printf("ADF_R5 0x%X\n", regs.R5);
         sleep(5);
         *LO_Start = regs.R4;
@@ -145,7 +145,7 @@ void rx_rffe_handler(int sock_client) {
         *LO_Start = regs.R0;
         printf("ADF_R0 0x%X\n", regs.R0);
         sleep(5);
-
+*/
 
         printf("Registers written\n");
 
@@ -156,7 +156,9 @@ void rx_rffe_handler(int sock_client) {
 
         if (freq_Hz < 1e9) {
             printf("Low End Expander\n");
-            //*EXP_REG = 0x40143D;
+            *LO_Start = 0x40;
+            sleep(1);
+            *LO_Start = 0x12;
             //*EXP_Start = 1;
         } else {
             printf("High End Expander\n");

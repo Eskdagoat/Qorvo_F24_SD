@@ -21,8 +21,8 @@ int main(int argc, char *argv[])
 
   spi = mmap(NULL, sysconf(_SC_PAGESIZE), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0x42000000);
 
-  *spi = 0x555555;
-  *spi = 0xAAAAAA;
+  *spi = 0x55;
+  *spi = 0xAA;
 
   return EXIT_SUCCESS;
 }
