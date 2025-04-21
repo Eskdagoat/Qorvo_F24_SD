@@ -15,12 +15,13 @@ regs->R1 = ((MOD & 0xFFF) << 3) | (1 << 15);
 if (prescaler89) regs->R1 |= (1 << 27);
 regs->R1 |= 0x1;
 
-// R2
+// R2 
 regs->R2 = ((dev->rCounter & 0x3FF) << 14);
 if (dev->refDbl) regs->R2 |= (1 << 25);
 if (dev->rdiv2)  regs->R2 |= (1 << 24);
 regs->R2 |= (6 << 9);  // Charge pump current
 regs->R2 |= (1 << 8) | (1 << 7) | (1 << 6);  // LDF, LDP, PD polarity
+regs->R2 |= (6 << 26); //MUXOUT for Lock Detect
 regs->R2 |= 0x2;
 
 // R3
