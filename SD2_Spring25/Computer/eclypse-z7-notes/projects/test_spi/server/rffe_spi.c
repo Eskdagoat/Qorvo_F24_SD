@@ -169,7 +169,4 @@ void rx_rffe_handler(int sock_client) {
         //printf("Wrote and read back: 0x%X\n", *EXP_REG);
 
        // break;  // One-shot session per connection
-    }
-
-    close(sock_client);
-}
+    } 

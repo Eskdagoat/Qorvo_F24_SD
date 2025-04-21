@@ -13,7 +13,7 @@
 #include "ADF4351.h"
 
 // Hardware register pointers
-volatile uint32_t *LO_Start, *EXP_REG, *MUX_OUT;
+volatile uint32_t *LO_Start, *EXP_REG;
 // Forward declaration
 void rx_rffe_handler(int sock_client);
 
@@ -24,6 +24,7 @@ int main() {
     ssize_t result;
     int yes = 1;
     uint16_t port = 1000;
+    volatile void *rffe;
 
     // Open /dev/mem
     if ((fd = open("/dev/mem", O_RDWR | O_SYNC)) < 0) {
@@ -34,12 +35,15 @@ int main() {
     // Map RF Front-End memory block
    LO_Start = mmap(NULL, sysconf(_SC_PAGESIZE), PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0x45000000);
    EXP_REG = mmap(NULL, sysconf(_SC_PAGESIZE), PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0x46000000);
-   MUX_OUT = mmap(NULL, sysconf(_SC_PAGESIZE), PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0x47000000);
 
     if (LO_Start == MAP_FAILED) {
         perror("mmap");
         return EXIT_FAILURE;
     }
+
+
+
+    printf("Registers Assigned\n");
 
     // Setup TCP socket
     if ((sock_server = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
@@ -64,7 +68,9 @@ int main() {
 
 
     *EXP_REG = 0x40;
+    sleep(1);
     *EXP_REG = 0x00;
+    sleep(1);
     *EXP_REG = 0x00;
     printf("Configured expander");
 
@@ -92,7 +98,6 @@ int main() {
 void rx_rffe_handler(int sock_client) {
     printf("RX Handler\n");
     uint32_t command;
-    uint8_t mux_status;
     int run = 0; 
 
     ADF4351 synth = ADF4351_init(10.0e6, false, false, 1);
@@ -129,16 +134,22 @@ void rx_rffe_handler(int sock_client) {
         // Write ADF4351 registers: R5 to R0
         *LO_Start = regs.R5;
         printf("ADF_R5 0x%X\n", regs.R5);
+        sleep(1);
         *LO_Start = regs.R4;
         printf("ADF_R4 0x%X\n", regs.R4);
+        sleep(1);
         *LO_Start = regs.R3;
         printf("ADF_R3 0x%X\n", regs.R3);
+        sleep(1);
         *LO_Start = regs.R2;
         printf("ADF_R2 0x%X\n", regs.R2);
+        sleep(1);
         *LO_Start = regs.R1;
         printf("ADF_R1 0x%X\n", regs.R1);
+        sleep(1);
         *LO_Start = regs.R0;
         printf("ADF_R0 0x%X\n", regs.R0);
+        sleep(1);
         printf("Registers written\n");
 
       if (freq_Hz < 1e9) {
@@ -152,16 +163,8 @@ void rx_rffe_handler(int sock_client) {
         *EXP_REG = 0x12;
         *EXP_REG = 0x3A;
     }
-
-    if(*MUX_OUT>=1){
-        mux_status = 1;
+       // break;  // One-shot session per connection
     }
-    else{
-        mux_status = 0;}
-    if(send(sock_client, &mux_status, sizeof(mux_status), MSG_NOSIGNAL) < 0) { 
-             break; // If sending fails, break out of the loop      
-            }
 
-        }
     close(sock_client);
 }
