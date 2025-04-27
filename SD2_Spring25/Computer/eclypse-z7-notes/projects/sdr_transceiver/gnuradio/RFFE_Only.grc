@@ -22,7 +22,7 @@ options:
     run_options: prompt
     sizing_mode: fixed
     thread_safe_setters: ''
-    title: Not titled yet
+    title: Qorvo_Radio RF Front End
     window_size: (1000,1000)
   states:
     bus_sink: false
@@ -42,29 +42,8 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [16, 128.0]
+    coordinate: [16, 136.0]
     rotation: 180
-    state: enabled
-- name: rx_baseband
-  id: variable_qtgui_range
-  parameters:
-    comment: ''
-    gui_hint: ''
-    label: Frequency (MHz)
-    min_len: '200'
-    orient: QtCore.Qt.Horizontal
-    rangeType: float
-    start: '1000000'
-    step: '1000'
-    stop: '60000000'
-    value: '47000000'
-    widget: counter_slider
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [656, 32.0]
-    rotation: 0
     state: enabled
 - name: rx_freq
   id: variable_qtgui_range
@@ -112,7 +91,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [16, 208.0]
+    coordinate: [56, 264.0]
     rotation: 0
     state: enabled
 connections: []

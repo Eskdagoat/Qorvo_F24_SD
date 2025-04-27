@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: GPL-3.0
 #
 # GNU Radio Python Flow Graph
-# Title: Not titled yet
+# Title: Qorvo_Radio RF Front End
 # Author: qorvo-radio
 # GNU Radio version: 3.10.9.2
 
@@ -28,9 +28,9 @@ import eclypse_z7_qr_rffe
 class RFFE_Only(gr.top_block, Qt.QWidget):
 
     def __init__(self):
-        gr.top_block.__init__(self, "Not titled yet", catch_exceptions=True)
+        gr.top_block.__init__(self, "Qorvo_Radio RF Front End", catch_exceptions=True)
         Qt.QWidget.__init__(self)
-        self.setWindowTitle("Not titled yet")
+        self.setWindowTitle("Qorvo_Radio RF Front End")
         qtgui.util.check_set_qss()
         try:
             self.setWindowIcon(Qt.QIcon.fromTheme('gnuradio-grc'))
@@ -62,7 +62,6 @@ class RFFE_Only(gr.top_block, Qt.QWidget):
         ##################################################
         self.samp_rate = samp_rate = 32000
         self.rx_freq = rx_freq = 104700000
-        self.rx_baseband = rx_baseband = 47000000
         self.addr = addr = "192.168.49.70"
 
         ##################################################
@@ -72,9 +71,6 @@ class RFFE_Only(gr.top_block, Qt.QWidget):
         self._rx_freq_range = qtgui.Range(80000000, 120000000, 100000, 104700000, 200)
         self._rx_freq_win = qtgui.RangeWidget(self._rx_freq_range, self.set_rx_freq, "Frequency (Hz)", "counter_slider", int, QtCore.Qt.Horizontal)
         self.top_layout.addWidget(self._rx_freq_win)
-        self._rx_baseband_range = qtgui.Range(1000000, 60000000, 1000, 47000000, 200)
-        self._rx_baseband_win = qtgui.RangeWidget(self._rx_baseband_range, self.set_rx_baseband, "Frequency (MHz)", "counter_slider", float, QtCore.Qt.Horizontal)
-        self.top_layout.addWidget(self._rx_baseband_win)
         self.eclypse_z7_qr_rffe_0 = eclypse_z7_qr_rffe.rffe(addr, 1000, rx_freq, 0)
 
 
@@ -99,12 +95,6 @@ class RFFE_Only(gr.top_block, Qt.QWidget):
     def set_rx_freq(self, rx_freq):
         self.rx_freq = rx_freq
         self.eclypse_z7_qr_rffe_0.set_freq(self.rx_freq, 0)
-
-    def get_rx_baseband(self):
-        return self.rx_baseband
-
-    def set_rx_baseband(self, rx_baseband):
-        self.rx_baseband = rx_baseband
 
     def get_addr(self):
         return self.addr

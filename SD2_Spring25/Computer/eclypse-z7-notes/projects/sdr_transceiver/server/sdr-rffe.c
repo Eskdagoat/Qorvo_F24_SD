@@ -64,9 +64,11 @@ int main() {
 
 
     *EXP_REG = 0x40;
+    usleep(500);
     *EXP_REG = 0x00;
+    usleep(500);
     *EXP_REG = 0x00;
-    printf("Configured expander");
+    printf("Configured expander 0x40 0x00 0x00");
 
     while (1) {
         sock_client = accept(sock_server, NULL, NULL);
@@ -108,15 +110,21 @@ void rx_rffe_handler(int sock_client) {
         printf("Frequency: %.2f Hz\n", freq_Hz);
 
         if (freq_Hz < 1e9) {
-            printf("Low End Expander\n");
+            printf("Low End Expander 0x40 0x12 0x3D\n");
             *EXP_REG = 0x40;
+            usleep(500);
             *EXP_REG = 0x12;
+            usleep(500);
             *EXP_REG = 0x3D;
+            usleep(500);
         } else {
-            printf("High End Expander\n");
+            printf("High End Expander 0x40 0x12 0x3E\n");
             *EXP_REG = 0x40;
+            usleep(500);
             *EXP_REG = 0x12;
+            usleep(500);
             *EXP_REG = 0x3E;
+            usleep(500);
         }
 
         if (!ADF4351_setFrequency(&synth, freq_Hz, 0.0)) {
@@ -129,32 +137,45 @@ void rx_rffe_handler(int sock_client) {
         // Write ADF4351 registers: R5 to R0
         *LO_Start = regs.R5;
         printf("ADF_R5 0x%X\n", regs.R5);
+        usleep(500);
         *LO_Start = regs.R4;
         printf("ADF_R4 0x%X\n", regs.R4);
+        usleep(500);
         *LO_Start = regs.R3;
         printf("ADF_R3 0x%X\n", regs.R3);
+        usleep(500);
         *LO_Start = regs.R2;
         printf("ADF_R2 0x%X\n", regs.R2);
+        usleep(500);
         *LO_Start = regs.R1;
         printf("ADF_R1 0x%X\n", regs.R1);
+        usleep(500);
         *LO_Start = regs.R0;
         printf("ADF_R0 0x%X\n", regs.R0);
-        printf("Registers written\n");
+        usleep(500);
+        printf("Registers written\n"); 
 
       if (freq_Hz < 1e9) {
-        printf("Low End Expander - LO CS Disabled\n");
+        printf("Low End Expander - LO CS Disabled 0x40 0x12 0x39\n");
         *EXP_REG = 0x40;
+        usleep(500);
         *EXP_REG = 0x12;
+        usleep(500);
         *EXP_REG = 0x39;
+        usleep(500);
     } else {
-        printf("High End Expander - LO CS Disabled\n");
+        printf("High End Expander - LO CS Disabled 0x40  0x12 0x39\n");
         *EXP_REG = 0x40;
+        usleep(500);
         *EXP_REG = 0x12;
+        usleep(500);
         *EXP_REG = 0x3A;
+        usleep(500);
     }
 
     if(*MUX_OUT>=1){
         mux_status = 1;
+        printf("MUXOUT = 1");
     }
     else{
         mux_status = 0;}
