@@ -7,14 +7,14 @@ import socket
 from gnuradio import gr, blocks
 
 class source(gr.hier_block2):
-  '''Eclypse Z7 Source'''
+  '''Eclypse Z7 Qorvo Radio Source'''
 
   rates = {24000:0, 48000:1, 96000:2, 192000:3, 384000:4, 768000:5, 1536000:6}
 
   def __init__(self, addr, port, freq, rate, corr):
     gr.hier_block2.__init__(
       self,
-      name = "eclypse_z7_source",
+      name = "eclypse_z7_qr_source",
       input_signature = gr.io_signature(0, 0, 0),
       output_signature = gr.io_signature(1, 1, gr.sizeof_float)
     )
@@ -43,14 +43,14 @@ class source(gr.hier_block2):
       raise ValueError("acceptable sample rates are 24k, 48k, 96k, 192k, 384k, 768k, 1536k")
 
 class sink(gr.hier_block2):
-  '''Eclypse Z7 Sink'''
+  '''Eclypse Z7 Qorvo Radio Sink'''
 
   rates = {24000:0, 48000:1, 96000:2, 192000:3, 384000:4, 768000:5, 1536000:6}
 
   def __init__(self, addr, port, freq, rate, corr, ptt):
     gr.hier_block2.__init__(
       self,
-      name = "eclypse_z7_sink",
+      name = "eclypse_z7_qr_sink",
       input_signature = gr.io_signature(1, 1, gr.sizeof_float),
       output_signature = gr.io_signature(0, 0, 0)
     )

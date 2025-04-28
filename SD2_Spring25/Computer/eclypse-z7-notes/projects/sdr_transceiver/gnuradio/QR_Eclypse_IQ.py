@@ -5,8 +5,9 @@
 # SPDX-License-Identifier: GPL-3.0
 #
 # GNU Radio Python Flow Graph
-# Title: Not titled yet
-# Author: andrew
+# Title: Qorvo Radio Complex I Q
+# Author: Andrew Bowman
+# Description: Qorvo Radio Eclypse Z7 with complex input
 # GNU Radio version: 3.10.9.2
 
 from PyQt5 import Qt
@@ -34,9 +35,9 @@ import sip
 class QR_Eclypse_IQ(gr.top_block, Qt.QWidget):
 
     def __init__(self):
-        gr.top_block.__init__(self, "Not titled yet", catch_exceptions=True)
+        gr.top_block.__init__(self, "Qorvo Radio Complex I Q", catch_exceptions=True)
         Qt.QWidget.__init__(self)
-        self.setWindowTitle("Not titled yet")
+        self.setWindowTitle("Qorvo Radio Complex I Q")
         qtgui.util.check_set_qss()
         try:
             self.setWindowIcon(Qt.QIcon.fromTheme('gnuradio-grc'))

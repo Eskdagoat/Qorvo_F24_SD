@@ -1,12 +1,12 @@
 options:
   parameters:
-    author: andrew
+    author: Andrew Bowman
     catch_exceptions: 'True'
     category: '[GRC Hier Blocks]'
     cmake_opt: ''
     comment: ''
     copyright: ''
-    description: ''
+    description: Qorvo Radio Eclypse Z7 with complex input
     gen_cmake: 'On'
     gen_linking: dynamic
     generate_options: qt_gui
@@ -22,7 +22,7 @@ options:
     run_options: prompt
     sizing_mode: fixed
     thread_safe_setters: ''
-    title: Not titled yet
+    title: Qorvo Radio Complex I Q
     window_size: (1000,1000)
   states:
     bus_sink: false
@@ -42,7 +42,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [16, 120.0]
+    coordinate: [8, 128.0]
     rotation: 180
     state: enabled
 - name: rx_baseband
