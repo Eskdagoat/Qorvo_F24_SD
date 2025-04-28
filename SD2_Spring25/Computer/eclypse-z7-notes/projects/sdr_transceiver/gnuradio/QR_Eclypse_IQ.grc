@@ -1,8 +1,8 @@
 options:
   parameters:
-    author: ''
+    author: andrew
     catch_exceptions: 'True'
-    category: Custom
+    category: '[GRC Hier Blocks]'
     cmake_opt: ''
     comment: ''
     copyright: ''
@@ -11,7 +11,7 @@ options:
     gen_linking: dynamic
     generate_options: qt_gui
     hier_block_src_path: '.:'
-    id: fm
+    id: QR_Eclypse_IQ
     max_nouts: '0'
     output_language: python
     placement: (0,0)
@@ -22,13 +22,13 @@ options:
     run_options: prompt
     sizing_mode: fixed
     thread_safe_setters: ''
-    title: Qorvo Radio Eclypse and Pluto Front End
-    window_size: 1280, 1024
+    title: Not titled yet
+    window_size: (1000,1000)
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [16, 24.0]
+    coordinate: [8, 8]
     rotation: 0
     state: enabled
 
@@ -37,7 +37,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '"192.168.1.100"'
+    value: '"192.168.49.70"'
   states:
     bus_sink: false
     bus_source: false
@@ -50,20 +50,20 @@ blocks:
   parameters:
     comment: ''
     gui_hint: ''
-    label: Frequency (MHz)
+    label: Frequency (Hz)
     min_len: '200'
     orient: QtCore.Qt.Horizontal
-    rangeType: float
+    rangeType: int
     start: '1000000'
-    step: '1000'
-    stop: '60000000'
+    step: '100000'
+    stop: '80000000'
     value: '47000000'
     widget: counter_slider
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [664, 24.0]
+    coordinate: [656, 16.0]
     rotation: 0
     state: enabled
 - name: rx_freq
@@ -84,7 +84,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [504, 20.0]
+    coordinate: [504, 16.0]
     rotation: 0
     state: enabled
 - name: rx_samp_rate
@@ -125,7 +125,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [640, 240.0]
+    coordinate: [712, 240.0]
     rotation: 0
     state: true
 - name: audio_sink_0
@@ -145,6 +145,22 @@ blocks:
     coordinate: [1112, 248.0]
     rotation: 0
     state: true
+- name: blocks_float_to_complex_0
+  id: blocks_float_to_complex
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [304, 344.0]
+    rotation: 0
+    state: enabled
 - name: eclypse_z7_qr_rffe_0
   id: eclypse_z7_qr_rffe
   parameters:
@@ -161,83 +177,46 @@ blocks:
     coordinate: [16, 200.0]
     rotation: 0
     state: enabled
-- name: eclypse_z7_source_0
-  id: eclypse_z7_source
+- name: eclypse_z7_qr_source_0
+  id: eclypse_z7_qr_source
   parameters:
     addr: addr
     affinity: ''
     alias: ''
     comment: ''
     corr: '0'
-    freq: rx_baseband
+    freq: rx_freq
     maxoutbuf: '0'
     minoutbuf: '0'
     port: '1001'
-    rate: samp_rate
+    rate: rx_samp_rate
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [16, 320.0]
+    coordinate: [16, 304.0]
     rotation: 0
     state: enabled
-- name: iio_pluto_sink_0
-  id: iio_pluto_sink
+- name: eclypse_z7_qr_source_0_0
+  id: eclypse_z7_qr_source
   parameters:
+    addr: addr
     affinity: ''
     alias: ''
-    attenuation1: '10.0'
-    bandwidth: '20000000'
-    buffer_size: '32768'
     comment: ''
-    cyclic: 'False'
-    filter: ''
-    filter_source: '''Auto'''
-    fpass: '0'
-    frequency: '47000000'
-    fstop: '0'
-    len_tag_key: ''
-    samplerate: '768000'
-    type: fc32
-    uri: 192.168.2.1
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [976, 412.0]
-    rotation: 0
-    state: true
-- name: iio_pluto_source_0
-  id: iio_pluto_source
-  parameters:
-    affinity: ''
-    alias: ''
-    bandwidth: '20000000'
-    bbdc: 'True'
-    buffer_size: '32768'
-    comment: ''
-    filter: ''
-    filter_source: '''Auto'''
-    fpass: '0'
-    frequency: '104700000'
-    fstop: '0'
-    gain1: '''slow_attack'''
-    len_tag_key: packet_len
-    manual_gain1: '64'
+    corr: '0'
+    freq: rx_freq
     maxoutbuf: '0'
     minoutbuf: '0'
-    quadrature: 'True'
-    rfdc: 'True'
-    samplerate: '768000'
-    type: fc32
-    uri: 192.168.2.1
+    port: '1002'
+    rate: rx_samp_rate
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [608, 396.0]
+    coordinate: [16, 432.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: low_pass_filter_0
   id: low_pass_filter
   parameters:
@@ -259,7 +238,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [360, 192.0]
+    coordinate: [528, 196.0]
     rotation: 0
     state: true
 - name: qtgui_sink_x_0
@@ -288,7 +267,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [360, 404.0]
+    coordinate: [520, 416.0]
     rotation: 0
     state: true
 - name: rational_resampler_xxx_0
@@ -308,15 +287,16 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [912, 220.0]
+    coordinate: [912, 224.0]
     rotation: 0
     state: true
 
 connections:
 - [analog_wfm_rcv_0, '0', rational_resampler_xxx_0, '0']
-- [eclypse_z7_source_0, '0', low_pass_filter_0, '0']
-- [eclypse_z7_source_0, '0', qtgui_sink_x_0, '0']
-- [iio_pluto_source_0, '0', iio_pluto_sink_0, '0']
+- [blocks_float_to_complex_0, '0', low_pass_filter_0, '0']
+- [blocks_float_to_complex_0, '0', qtgui_sink_x_0, '0']
+- [eclypse_z7_qr_source_0, '0', blocks_float_to_complex_0, '0']
+- [eclypse_z7_qr_source_0_0, '0', blocks_float_to_complex_0, '1']
 - [low_pass_filter_0, '0', analog_wfm_rcv_0, '0']
 - [rational_resampler_xxx_0, '0', audio_sink_0, '0']
 

@@ -91,7 +91,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [56, 264.0]
+    coordinate: [16, 208.0]
     rotation: 0
     state: enabled
 connections: []

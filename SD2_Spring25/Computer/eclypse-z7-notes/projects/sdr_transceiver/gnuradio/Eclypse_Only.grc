@@ -1,6 +1,6 @@
 options:
   parameters:
-    author: andrew
+    author: Andrew Bowman
     catch_exceptions: 'True'
     category: '[GRC Hier Blocks]'
     cmake_opt: ''
@@ -11,7 +11,7 @@ options:
     gen_linking: dynamic
     generate_options: qt_gui
     hier_block_src_path: '.:'
-    id: test
+    id: QR_Eclypse_Only
     max_nouts: '0'
     output_language: python
     placement: (0,0)
@@ -22,7 +22,7 @@ options:
     run_options: prompt
     sizing_mode: fixed
     thread_safe_setters: ''
-    title: Not titled yet
+    title: Qorvo Radio Eclypse Only
     window_size: (1000,1000)
   states:
     bus_sink: false
@@ -44,27 +44,6 @@ blocks:
     bus_structure: null
     coordinate: [16, 120.0]
     rotation: 180
-    state: enabled
-- name: freq
-  id: variable_qtgui_range
-  parameters:
-    comment: ''
-    gui_hint: ''
-    label: ''
-    min_len: '200'
-    orient: QtCore.Qt.Horizontal
-    rangeType: int
-    start: '90000000'
-    step: '50000'
-    stop: '107000000'
-    value: '100300000'
-    widget: counter_slider
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 16.0]
-    rotation: 0
     state: enabled
 - name: rx_freq
   id: variable_qtgui_range
@@ -151,13 +130,12 @@ blocks:
     addr: str(addr)
     affinity: ''
     alias: ''
-    baseband: '47000000'
     comment: ''
     corr: '0'
-    freq: freq
+    freq: rx_freq
     maxoutbuf: '0'
     minoutbuf: '0'
-    port: '1002'
+    port: '1001'
     rate: rx_samp_rate
   states:
     bus_sink: false
