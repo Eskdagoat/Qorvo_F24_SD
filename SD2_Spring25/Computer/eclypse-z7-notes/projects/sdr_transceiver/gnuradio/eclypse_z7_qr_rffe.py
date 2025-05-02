@@ -59,4 +59,5 @@ class rffe(gr.hier_block2):
 
     def set_freq(self, freq, corr):
         # Set frequency on the control socket (using passed frequency and correction)
-        self.ctrl_sock.send(struct.pack('<I', 0 << 28 | int((1.0 + 1e-6 * corr) * freq)))
+        freq_value = int((1.0 + 1e-6 * corr) * freq)
+        self.ctrl_sock.send(struct.pack('<I', freq_value))  # Send 32-bit frequency value

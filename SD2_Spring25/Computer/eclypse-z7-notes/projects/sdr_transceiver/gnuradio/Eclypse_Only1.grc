@@ -37,34 +37,13 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '"192.168.49.70"'
+    value: '"192.168.1.100"'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [48, 200.0]
+    coordinate: [40, 216.0]
     rotation: 180
-    state: enabled
-- name: rx_baseband
-  id: variable_qtgui_range
-  parameters:
-    comment: ''
-    gui_hint: ''
-    label: Frequency (MHz)
-    min_len: '200'
-    orient: QtCore.Qt.Horizontal
-    rangeType: float
-    start: '1000000'
-    step: '1000'
-    stop: '60000000'
-    value: '47000000'
-    widget: counter_slider
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [656, 16.0]
-    rotation: 0
     state: enabled
 - name: rx_freq
   id: variable_qtgui_range
@@ -75,7 +54,7 @@ blocks:
     min_len: '200'
     orient: QtCore.Qt.Horizontal
     rangeType: int
-    start: '80000000'
+    start: '40000000'
     step: '100000'
     stop: '120000000'
     value: '103700000'

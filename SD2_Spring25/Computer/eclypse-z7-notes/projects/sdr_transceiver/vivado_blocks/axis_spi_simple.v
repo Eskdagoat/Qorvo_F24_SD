@@ -7,7 +7,7 @@ module axis_spi_QR #
 )
 (
   input  wire              clk,
-  input  wire              resetn,
+  input  wire              aresetn,
 
   // AXI-Stream slave
   input  wire [31:0]       s_axis_tdata,
@@ -37,7 +37,7 @@ module axis_spi_QR #
   assign busy = busy_reg;
 
   always @(posedge clk) begin
-    if (!resetn) begin
+    if (!aresetn) begin
       shift_reg <= 32'h0000_0000;
       bit_cnt   <= 0;
       clk_cnt   <= 0;

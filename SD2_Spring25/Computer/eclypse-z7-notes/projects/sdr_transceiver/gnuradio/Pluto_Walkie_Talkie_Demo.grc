@@ -51,7 +51,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [256, 8.0]
+    coordinate: [280, 8.0]
     rotation: 0
     state: enabled
 - name: samp_rate
@@ -63,7 +63,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [160, 8.0]
+    coordinate: [184, 8.0]
     rotation: 0
     state: enabled
 - name: analog_simple_squelch_cc_0
@@ -135,6 +135,37 @@ blocks:
     coordinate: [1216, 448.0]
     rotation: 0
     state: enabled
+- name: iio_pluto_source_0
+  id: iio_pluto_source
+  parameters:
+    affinity: ''
+    alias: ''
+    bandwidth: '20000000'
+    bbdc: 'True'
+    buffer_size: '32768'
+    comment: ''
+    filter: ''
+    filter_source: '''Auto'''
+    fpass: '0'
+    frequency: freq
+    fstop: '0'
+    gain1: '''slow_attack'''
+    len_tag_key: packet_len
+    manual_gain1: '64'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    quadrature: 'True'
+    rfdc: 'True'
+    samplerate: '768000'
+    type: fc32
+    uri: 192.168.2.1
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [288, 172.0]
+    rotation: 0
+    state: true
 - name: low_pass_filter_0
   id: low_pass_filter
   parameters:
@@ -398,41 +429,17 @@ blocks:
     coordinate: [832, 136.0]
     rotation: 0
     state: enabled
-- name: soapy_rtlsdr_source_0
-  id: soapy_rtlsdr_source
-  parameters:
-    affinity: ''
-    agc: 'False'
-    alias: ''
-    bias: 'False'
-    bufflen: '16384'
-    center_freq: freq
-    comment: ''
-    dev_args: ''
-    freq_correction: '0'
-    gain: '20'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    samp_rate: samp_rate
-    type: fc32
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [312, 232.0]
-    rotation: 0
-    state: enabled
 
 connections:
 - [analog_simple_squelch_cc_0, '0', analog_wfm_rcv_0, '0']
 - [analog_wfm_rcv_0, '0', blocks_multiply_const_vxx_0, '0']
 - [blocks_multiply_const_vxx_0, '0', audio_sink_0, '0']
+- [iio_pluto_source_0, '0', low_pass_filter_0, '0']
+- [iio_pluto_source_0, '0', qtgui_freq_sink_x_0, '0']
+- [iio_pluto_source_0, '0', qtgui_time_sink_x_0, '0']
+- [iio_pluto_source_0, '0', qtgui_waterfall_sink_x_0, '0']
 - [low_pass_filter_0, '0', analog_simple_squelch_cc_0, '0']
-- [soapy_rtlsdr_source_0, '0', low_pass_filter_0, '0']
-- [soapy_rtlsdr_source_0, '0', qtgui_freq_sink_x_0, '0']
-- [soapy_rtlsdr_source_0, '0', qtgui_time_sink_x_0, '0']
-- [soapy_rtlsdr_source_0, '0', qtgui_waterfall_sink_x_0, '0']
 
 metadata:
   file_format: 1
-  grc_version: 3.10.10.0
+  grc_version: 3.10.9.2

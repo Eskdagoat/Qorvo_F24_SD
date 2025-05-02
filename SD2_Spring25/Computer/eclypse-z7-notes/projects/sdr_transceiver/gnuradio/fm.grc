@@ -37,7 +37,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '"192.168.49.70"'
+    value: '"192.168.1.100"'
   states:
     bus_sink: false
     bus_source: false
@@ -169,16 +169,16 @@ blocks:
     alias: ''
     comment: ''
     corr: '0'
-    freq: '600000'
+    freq: rx_freq
     maxoutbuf: '0'
     minoutbuf: '0'
-    port: '100'
-    rate: '100000'
+    port: '1001'
+    rate: samp_rate
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [48, 352.0]
+    coordinate: [16, 320.0]
     rotation: 0
     state: enabled
 - name: low_pass_filter_0

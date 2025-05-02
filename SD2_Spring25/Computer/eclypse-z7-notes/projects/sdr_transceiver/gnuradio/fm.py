@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: GPL-3.0
 #
 # GNU Radio Python Flow Graph
-# Title: Fm
+# Title: Qorvo Radio Eclypse and Pluto Front End
 # GNU Radio version: 3.10.9.2
 
 from PyQt5 import Qt
@@ -23,7 +23,9 @@ from PyQt5 import Qt
 from argparse import ArgumentParser
 from gnuradio.eng_arg import eng_float, intx
 from gnuradio import eng_notation
+from gnuradio import iio
 import eclypse_z7
+import eclypse_z7_qr_rffe
 import sip
 
 
@@ -31,9 +33,9 @@ import sip
 class fm(gr.top_block, Qt.QWidget):
 
     def __init__(self):
-        gr.top_block.__init__(self, "Fm", catch_exceptions=True)
+        gr.top_block.__init__(self, "Qorvo Radio Eclypse and Pluto Front End", catch_exceptions=True)
         Qt.QWidget.__init__(self)
-        self.setWindowTitle("Fm")
+        self.setWindowTitle("Qorvo Radio Eclypse and Pluto Front End")
         qtgui.util.check_set_qss()
         try:
             self.setWindowIcon(Qt.QIcon.fromTheme('gnuradio-grc'))
@@ -67,13 +69,13 @@ class fm(gr.top_block, Qt.QWidget):
         self.rx_samp_rate = rx_samp_rate = 768000
         self.rx_freq = rx_freq = 103700000
         self.rx_baseband = rx_baseband = 47000000
-        self.addr = addr = "192.168.49.70"
+        self.addr = addr = "192.168.1.100"
 
         ##################################################
         # Blocks
         ##################################################
 
-        self._rx_freq_range = qtgui.Range(80000000, 120000000, 100000, 103700000, 200)
+        self._rx_freq_range = qtgui.Range(80000000, 2400000000, 100000, 103700000, 200)
         self._rx_freq_win = qtgui.RangeWidget(self._rx_freq_range, self.set_rx_freq, "Frequency (Hz)", "counter_slider", int, QtCore.Qt.Horizontal)
         self.top_layout.addWidget(self._rx_freq_win)
         self._rx_baseband_range = qtgui.Range(1000000, 60000000, 1000, 47000000, 200)
@@ -111,7 +113,25 @@ class fm(gr.top_block, Qt.QWidget):
                 10000,
                 window.WIN_HAMMING,
                 6.76))
-        self.eclypse_z7_source_0 = eclypse_z7.source(addr, 1001, rx_freq, rx_samp_rate, 0)
+        self.iio_pluto_source_0 = iio.fmcomms2_source_fc32('192.168.2.1' if '192.168.2.1' else iio.get_pluto_uri(), [True, True], 32768)
+        self.iio_pluto_source_0.set_len_tag_key('packet_len')
+        self.iio_pluto_source_0.set_frequency(rx_freq)
+        self.iio_pluto_source_0.set_samplerate(768000)
+        self.iio_pluto_source_0.set_gain_mode(0, 'slow_attack')
+        self.iio_pluto_source_0.set_gain(0, 64)
+        self.iio_pluto_source_0.set_quadrature(True)
+        self.iio_pluto_source_0.set_rfdc(True)
+        self.iio_pluto_source_0.set_bbdc(True)
+        self.iio_pluto_source_0.set_filter_params('Auto', '', 0, 0)
+        self.iio_pluto_sink_0 = iio.fmcomms2_sink_fc32('192.168.2.1' if '192.168.2.1' else iio.get_pluto_uri(), [True, True], 32768, False)
+        self.iio_pluto_sink_0.set_len_tag_key('')
+        self.iio_pluto_sink_0.set_bandwidth(20000000)
+        self.iio_pluto_sink_0.set_frequency(47000000)
+        self.iio_pluto_sink_0.set_samplerate(768000)
+        self.iio_pluto_sink_0.set_attenuation(0, 10.0)
+        self.iio_pluto_sink_0.set_filter_params('Auto', '', 0, 0)
+        self.eclypse_z7_source_0 = eclypse_z7.source(addr, 1002, rx_baseband, rx_samp_rate, 0)
+        self.eclypse_z7_qr_rffe_0 = eclypse_z7_qr_rffe.rffe(addr, 1000, rx_freq, 0)
         self.audio_sink_0 = audio.sink(48000, '', True)
         self.analog_wfm_rcv_0 = analog.wfm_rcv(
         	quad_rate=rx_samp_rate,
@@ -125,6 +145,7 @@ class fm(gr.top_block, Qt.QWidget):
         self.connect((self.analog_wfm_rcv_0, 0), (self.rational_resampler_xxx_0, 0))
         self.connect((self.eclypse_z7_source_0, 0), (self.low_pass_filter_0, 0))
         self.connect((self.eclypse_z7_source_0, 0), (self.qtgui_sink_x_0, 0))
+        self.connect((self.iio_pluto_source_0, 0), (self.iio_pluto_sink_0, 0))
         self.connect((self.low_pass_filter_0, 0), (self.analog_wfm_rcv_0, 0))
         self.connect((self.rational_resampler_xxx_0, 0), (self.audio_sink_0, 0))
 
@@ -157,7 +178,8 @@ class fm(gr.top_block, Qt.QWidget):
 
     def set_rx_freq(self, rx_freq):
         self.rx_freq = rx_freq
-        self.eclypse_z7_source_0.set_freq(self.rx_freq, 0)
+        self.eclypse_z7_qr_rffe_0.set_freq(self.rx_freq, 0)
+        self.iio_pluto_source_0.set_frequency(self.rx_freq)
         self.qtgui_sink_x_0.set_frequency_range((self.rx_freq*1000000), self.rx_samp_rate)
 
     def get_rx_baseband(self):
@@ -165,6 +187,7 @@ class fm(gr.top_block, Qt.QWidget):
 
     def set_rx_baseband(self, rx_baseband):
         self.rx_baseband = rx_baseband
+        self.eclypse_z7_source_0.set_freq(self.rx_baseband, 0)
 
     def get_addr(self):
         return self.addr

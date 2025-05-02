@@ -31,7 +31,7 @@ regs->R3 = (1 << 22) | (1 << 21) | 0x3;
 regs->R4 = (1 << 23) | ((divSel & 0x7) << 20) | (3 << 3) | (1 << 5) | 0x4;
 
 // R5
-regs->R5 = (1 << 22) | 0x5;
+regs->R5 = 0x00580005;
 }
 
 // Constructor-like init function

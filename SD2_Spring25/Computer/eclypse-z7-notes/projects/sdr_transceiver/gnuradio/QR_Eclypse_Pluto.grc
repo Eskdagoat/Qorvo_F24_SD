@@ -77,7 +77,7 @@ blocks:
     rangeType: int
     start: '80000000'
     step: '100000'
-    stop: '120000000'
+    stop: '2400000000'
     value: '103700000'
     widget: counter_slider
   states:
@@ -108,7 +108,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [232, 24.0]
+    coordinate: [264, 24.0]
     rotation: 0
     state: enabled
 - name: analog_wfm_rcv_0
@@ -172,8 +172,8 @@ blocks:
     freq: rx_baseband
     maxoutbuf: '0'
     minoutbuf: '0'
-    port: '1001'
-    rate: samp_rate
+    port: '1002'
+    rate: rx_samp_rate
   states:
     bus_sink: false
     bus_source: false
@@ -219,7 +219,7 @@ blocks:
     filter: ''
     filter_source: '''Auto'''
     fpass: '0'
-    frequency: '104700000'
+    frequency: rx_freq
     fstop: '0'
     gain1: '''slow_attack'''
     len_tag_key: packet_len
